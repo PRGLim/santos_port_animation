@@ -1,0 +1,71 @@
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.controls .buttons {
+  display: flex;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 1.2em;
+
+}
+
+.controls input[type="range"] {
+  width: 300px;
+}
+
+.controls .time-display {
+  font-family: monospace;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.vessel-label {
+  pointer-events: none;
+  text-align: center;
+  transform: translate(-50%, -120%); /* centraliza acima do ponto */
+}
+
+.speed-buttons button{
+  border: black 1px solid;
+  border-radius: 5px;
+  padding: 3px;
+  margin-top: 3px;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.speed-control button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: white;
+}
+
+.speed-value {
+  font-weight: bold;
+  min-width: 40px;
+  text-align: center;
+}
