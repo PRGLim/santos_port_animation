@@ -7,6 +7,9 @@ type DetailRow = {
   beam: string
   draft: string
   berth: string
+  berth_arrival: string
+  berth_departure: string
+  berth_ideal_duration: string
 }
 
 export async function loadVesselDetailFromCSV(): Promise<Map<number, VesselDetail>> {
@@ -30,7 +33,10 @@ export async function loadVesselDetailFromCSV(): Promise<Map<number, VesselDetai
         Number(row.loa),
         Number(row.beam),
         Number(row.draft),
-        row.berth
+        row.berth,
+        row.berth_arrival,
+        row.berth_departure,
+        row.berth_ideal_duration
       )
     )
   })

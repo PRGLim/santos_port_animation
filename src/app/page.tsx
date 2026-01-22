@@ -10,11 +10,10 @@ import { loadVesselDetailFromCSV } from "../animation/loaders/loadVesselDetailsF
 import { VesselDetail } from "../animation/entities/VesselDetail"
 import { updateVessels } from "../animation/services/updateVesselForMap"
 import MapView from "../components/map/mapView"
-import { PlayPauseButton } from "../components/controls/playPause"
 import { SpeedControl } from "../components/controls/speedControl"
-import { TimeDisplay } from "../components/controls/timeDisplay"
 import { BottomControl } from "../components/controls/timeSlider"
 import { SimulationController } from "../animation/core/SimulationController"
+import VesselPanel from "../components/vessel_panel/vesselPanel"
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
 export default function Home() {
@@ -27,8 +26,12 @@ export default function Home() {
   const [simEnd, setSimEnd] = useState(1)
   const [speed, setSpeed] = useState(1)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [selectedVesselId, setSelectedVesselId] = useState<number | null>(null)
+
+
 
   const vesselDetailsRef = useRef<Map<number, VesselDetail> | null>(null)
+
   type VesselState = {
       lng: number
       lat: number
@@ -111,9 +114,19 @@ useEffect(() => {
     onMapReady={(map) => {
       mapRef.current = map
     }}
+    selectedVesselId={selectedVesselId}
+    onVesselSelect={setSelectedVesselId}
   />
 
-  {/* CONTROLES FLOTAÇÕES (speed) */}
+
+  { selectedVesselId &&
+    <VesselPanel
+      vessel={vesselDetailsRef.current?.get(Number(selectedVesselId)) ?? null}
+      onClose={() => setSelectedVesselId(null)}
+      currentTime={simTime}/>
+  }
+
+  {/* (speed control) */}
   <div className="controls-top">
 
     <SpeedControl
@@ -123,7 +136,7 @@ useEffect(() => {
     />
   </div>
 
-
+  {/* (bottom controls) */}
   <BottomControl
     isPlaying={isPlaying}
     onToggle={() => {

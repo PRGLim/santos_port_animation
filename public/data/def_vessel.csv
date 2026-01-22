@@ -1,4 +1,4 @@
-vessel_id;loa;draft;beam;berth
-1;230;20;13;Berço 39
-2;230;20;13;Berço 38
-3;230;36;12;Berço DPW-4
+vessel_id;loa;draft;beam;berth;berth_arrival;berth_departure;berth_ideal_duration
+1;230;20;13;Berço 39;0.00555556;0.0138889;0.003
+2;230;20;13;Berço 38;20;50;10
+3;230;36;12;Berço DPW-4;20;50;10

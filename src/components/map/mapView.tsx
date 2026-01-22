@@ -8,12 +8,15 @@ mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
 type Props = {
   onMapReady?: (map: mapboxgl.Map) => void
+  onVesselSelect?: (id: number) => void
+  selectedVesselId?: number | null
 }
 
-export default function MapView({ onMapReady }: Props) {
+export default function MapView({ onMapReady, onVesselSelect, selectedVesselId }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<mapboxgl.Map | null>(null)
 
+  
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
 
@@ -26,6 +29,7 @@ export default function MapView({ onMapReady }: Props) {
 
     mapRef.current = map
 
+    // When loaded
     map.on("load", () => {
       // ===== Sources =====
       map.addSource("vessel", {
@@ -38,7 +42,7 @@ export default function MapView({ onMapReady }: Props) {
         data: { type: "FeatureCollection", features: [] },
       })
 
-      // ===== Image =====
+      // Image
       map.loadImage("/image/vessel.png", (err, image) => {
         if (err || !image) return
         if (!map.hasImage("vessel-icon")) {
@@ -56,7 +60,7 @@ export default function MapView({ onMapReady }: Props) {
             "icon-ignore-placement": true,
             "icon-rotate": ["get", "heading"],
             "icon-rotation-alignment": "map",
-          },
+          }
         })
       })
 
@@ -84,9 +88,69 @@ export default function MapView({ onMapReady }: Props) {
         },
       })
 
+      // TO DO: CHANGE COLOR WHEN SELECTED 
+      map.addLayer({
+        id: "vessel-selected",
+        type: "symbol",
+        source: "vessel",
+        filter: ["==", ["get", "id"], -1],
+        layout: {
+          "icon-image": "vessel-icon",
+          "icon-size": 0.02,
+          "icon-rotate": ["get", "heading"],
+          
+        },
+        paint: {
+          "icon-color": "#000000",
+          "icon-opacity": 0.3
+        }
+
+      })
+
       onMapReady?.(map)
     })
+
+    map.on("mouseenter", "vessel-layer", () => {
+      map.getCanvas().style.cursor = "pointer"
+    })
+
+    map.on("mouseleave", "vessel-layer", () => {
+      map.getCanvas().style.cursor = ""
+    })
+
+    // When vessel clicked
+    map.on("click", "vessel-layer", (e) => {
+      const id = Number(e.features?.[0]?.properties?.id)
+      onVesselSelect?.(id)
+      console.log(id)
+    }  )
+
+
   }, [])
+
+  useEffect(() => {
+  const map = mapRef.current
+  if (!map) return
+
+  // função segura
+  const updateSelectedVessel = () => {
+    if (!map.getLayer("vessel-selected")) return
+
+    map.setFilter("vessel-selected", [
+      "==",
+      ["get", "id"],
+      selectedVesselId ?? -1,
+    ])
+  }
+
+  // se o style já carregou
+  if (map.isStyleLoaded()) {
+    updateSelectedVessel()
+  } else {
+    // espera carregar
+    map.once("load", updateSelectedVessel)
+  }
+}, [selectedVesselId])
 
   return <div ref={containerRef} className="map-container" />
 }

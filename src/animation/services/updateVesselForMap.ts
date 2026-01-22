@@ -10,6 +10,17 @@ type VesselState = {
   heading: number
 }
 
+
+const EPS = 1e-7
+
+function hasChanges(a: VesselState, b: VesselState) {
+  return (
+    Math.abs(a.lng - b.lng) > EPS ||
+    Math.abs(a.lat - b.lat) > EPS ||
+    Math.abs(a.heading - b.heading) > 0.1
+  )
+}
+
 export function updateVessels(
   map: mapboxgl.Map,
   vessels: Vessel[],
@@ -17,31 +28,53 @@ export function updateVessels(
   vesselPositions: Map<number, VesselState>,
   vesselDetails?: Map<number, VesselDetail>
 ) {
+
+  let updateNeeded = false 
+
+
   //Remove navios finalizados
   vesselPositions.forEach((_state, vesselId) => {
     const vessel = vessels.find(v => v.id === vesselId)
     if (!vessel) {
       vesselPositions.delete(vesselId)
+      updateNeeded = true
       return
     }
 
     const lastExecEnd = Math.max(...vessel.executions.map(e => e.endTime))
     if (time > lastExecEnd) {
       vesselPositions.delete(vesselId)
+      updateNeeded = true
     }
   })
 
   // Atualiza estados
   vessels.forEach(vessel => {
+
     const state = vessel.getStateAt(time)
     if (!state) return
 
-    vesselPositions.set(vessel.id, {
+    const prev = vesselPositions.get(vessel.id)
+    const next: VesselState = {
       lng: state.position.lng,
       lat: state.position.lat,
-      heading: state.heading,
-    })
+      heading: state.heading
+    }
+
+    if (!prev || hasChanges(prev, next)){
+      vesselPositions.set(vessel.id, next)
+      updateNeeded = true
+    }
+
+    if (!updateNeeded) return
+
+    // vesselPositions.set(vessel.id, {
+    //   lng: state.position.lng,
+    //   lat: state.position.lat,
+    //   heading: state.heading,
+    // })
   })
+
 
   // Vessel Image 
   const vesselFeatures: Feature<Geometry, GeoJsonProperties>[] =
