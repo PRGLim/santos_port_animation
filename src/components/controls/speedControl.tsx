@@ -11,8 +11,8 @@ type Props = {
 export function SpeedControl({ speed, onIncrease, onDecrease }: Props) {
   return (
     <div className="speed-control">
-      <button onClick={onDecrease}>➖</button>
       <span className="speed-value">{speed.toFixed(1)}x</span>
+      <button onClick={onDecrease}>➖</button>
       <button onClick={onIncrease}>➕</button>
     </div>
   )

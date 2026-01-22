@@ -113,7 +113,7 @@ useEffect(() => {
     }}
   />
 
-  {/* CONTROLES FLOTAÇÕES (play + speed) */}
+  {/* CONTROLES FLOTAÇÕES (speed) */}
   <div className="controls-top">
 
     <SpeedControl

@@ -17,7 +17,7 @@ export function updateVessels(
   vesselPositions: Map<number, VesselState>,
   vesselDetails?: Map<number, VesselDetail>
 ) {
-  // ===== Remove navios finalizados =====
+  //Remove navios finalizados
   vesselPositions.forEach((_state, vesselId) => {
     const vessel = vessels.find(v => v.id === vesselId)
     if (!vessel) {
@@ -31,7 +31,7 @@ export function updateVessels(
     }
   })
 
-  // ===== Atualiza estados =====
+  // Atualiza estados
   vessels.forEach(vessel => {
     const state = vessel.getStateAt(time)
     if (!state) return
@@ -43,7 +43,7 @@ export function updateVessels(
     })
   })
 
-  // ===== Ícones =====
+  // Vessel Image 
   const vesselFeatures: Feature<Geometry, GeoJsonProperties>[] =
     Array.from(vesselPositions.entries()).map(([id, pos]) => ({
       type: "Feature",
@@ -57,7 +57,7 @@ export function updateVessels(
     features: vesselFeatures,
   })
 
-  // ===== Labels =====
+  //Labels
   const labelFeatures: Feature<Geometry, GeoJsonProperties>[] =
     Array.from(vesselPositions.entries()).map(([id, pos]) => {
       const detail = vesselDetails?.get(id)
