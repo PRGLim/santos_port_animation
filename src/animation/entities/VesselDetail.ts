@@ -1,3 +1,5 @@
+import { VesselStatus } from "../types/vesselStatus"
+
 export class VesselDetail {
   id: number
   loa: number
@@ -8,6 +10,8 @@ export class VesselDetail {
   berth_departure: string
   berth_ideal_duration: string
 
+
+
   constructor(
     id: number,
     loa: number,
@@ -16,7 +20,8 @@ export class VesselDetail {
     berth: string,
     berth_arrival: string,
     berth_departure: string,
-    berth_ideal_duration: string
+    berth_ideal_duration: string,
+
   ) {
     this.id = id
     this.loa = loa
@@ -27,4 +32,7 @@ export class VesselDetail {
     this.berth_departure = berth_departure
     this.berth_ideal_duration = berth_ideal_duration
   }
+
+
+
 }

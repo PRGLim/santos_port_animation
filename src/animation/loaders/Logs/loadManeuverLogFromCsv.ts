@@ -6,7 +6,7 @@ type ManeuverLogRow = {
 }
 
 export async function loadManeuverLog(): Promise<{ vesselId: number, maneuverId: number }[]> {
-  const res = await fetch("/data/maneuvers_log.csv")
+  const res = await fetch("/data/Logs/maneuvers_log.csv")
   const text = await res.text()
 
   const parsed = Papa.parse<ManeuverLogRow>(text, {

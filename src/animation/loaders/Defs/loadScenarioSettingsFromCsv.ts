@@ -7,7 +7,7 @@ type SettingsRow = {
 }
 
 export async function loadSettingsLog(): Promise<{ scenario_id: string, startDay: string }[]> {
-  const res = await fetch("/data/scenario_settings.csv")
+  const res = await fetch("/data/Defs/scenario_settings.csv")
   const text = await res.text()
 
   const parsed = Papa.parse<SettingsRow>(text, {

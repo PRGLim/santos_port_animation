@@ -5,7 +5,8 @@ import { gradualAngleCalculator } from "../../utils/navigation"
 export class Vessel {
   id: number
   executions: VesselRouteExecution[]
-  heading: number = 0   
+  heading: number = 0
+     
 
   constructor(
     id: number,

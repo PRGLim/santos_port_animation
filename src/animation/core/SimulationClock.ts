@@ -24,7 +24,7 @@ export class SimulationClock {
       const delta = now - this.lastFrameTime
       this.lastFrameTime = now
 
-      this.time += delta * this.speed / 1000 * 1000 // delta em ms * speed
+      this.time += delta * this.speed
 
       if (this.time >= this.end) {
         this.time = this.end

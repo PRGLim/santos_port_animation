@@ -1,5 +1,5 @@
-import { loadDefManeuvers } from "../loaders/loadManeuverDefFromCsv"
-import { loadManeuverLog } from "../loaders/loadManeuverLogFromCsv"
+import { loadDefManeuvers } from "../loaders/Defs/loadManeuverDefFromCsv"
+import { loadManeuverLog } from "../loaders/Logs/loadManeuverLogFromCsv"
 
 export async function resolveVesselBerths(): Promise<Map<number, string>> {
   const [maneuverDefs, maneuverLogs] = await Promise.all([

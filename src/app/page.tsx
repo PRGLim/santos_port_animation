@@ -6,7 +6,7 @@ import mapboxgl from "mapbox-gl"
 import './page.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-import { loadVesselDetailFromCSV } from "../animation/loaders/loadVesselDetailsFromCsv"
+import { loadVesselDetailFromCSV } from "../animation/loaders/Defs/loadVesselDetailsFromCsv"
 import { VesselDetail } from "../animation/entities/VesselDetail"
 import { updateVessels } from "../animation/services/updateVesselForMap"
 import MapView from "../components/map/mapView"
@@ -14,12 +14,18 @@ import { SpeedControl } from "../components/controls/speedControl"
 import { BottomControl } from "../components/controls/timeSlider"
 import { SimulationController } from "../animation/core/SimulationController"
 import VesselPanel from "../components/vessel_panel/vesselPanel"
+import EnvironmentPanel from "../components/environment_panel/environmentPanel"
+import { EnvValue } from "../animation/entities/Environments/EnvValue"
+import { loadEnvFromCSV } from "../animation/loaders/Envinroment/loadEnvironmentFromCsv"
+import { EnvSnapshot } from "../animation/entities/Environments/EnvTeste"
+import { useEnvironment } from "../animation/services/useTide"
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
 export default function Home() {
   const mapRef = useRef<mapboxgl.Map | null>(null)
   const simRef = useRef<SimulationController | null>(null)
-  
+  const vesselPositions = useRef<Map<number, VesselState>>(new Map())
+  const vesselDetailsRef = useRef<Map<number, VesselDetail> | null>(null)
 
   const [simTime, setSimTime] = useState<number>(0)
   const [simStart, setSimStart] = useState(0)
@@ -28,17 +34,34 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [selectedVesselId, setSelectedVesselId] = useState<number | null>(null)
 
+  const [tideEnv, setTideEnv] = useState<EnvSnapshot[]>([])
 
 
-  const vesselDetailsRef = useRef<Map<number, VesselDetail> | null>(null)
 
-  type VesselState = {
-      lng: number
-      lat: number
-      heading: number
-    }
 
-  const vesselPositions = useRef<Map<number, VesselState>>(new Map())
+  // ===============================
+  // LOAD ENVIRONMENT DATAS
+  // ===============================
+
+  useEffect(() => {
+  async function loadEnvTables() {
+    const start = new Date("2025-01-01 00:00:00")
+    const end = new Date("2025-01-01 01:00:00")
+
+    const env = await loadEnvFromCSV(
+      "/data/Env/i_tide_height_log.csv",
+      new Date(start).getTime(),
+      new Date(end).getTime()
+    )
+    setTideEnv(env)
+  }
+
+  loadEnvTables()
+}, [])
+
+  const { tide } = useEnvironment(simTime, {
+    tide: tideEnv,
+  })
 
 
   // ===============================
@@ -85,6 +108,10 @@ useEffect(() => {
 }, [])
 
 
+  // ===============================
+  // BUTTONS CONTROL FUNCTIONS
+  // ===============================
+
   const increaseSpeed = () => {
     setSpeed((prev) => {
       const next = Math.min(prev + 0.5, 4)
@@ -106,6 +133,7 @@ useEffect(() => {
   // UI
   // ===============================
 
+
   return (
 
 <div className="map-wrapper">
@@ -118,6 +146,7 @@ useEffect(() => {
     onVesselSelect={setSelectedVesselId}
   />
 
+    {/* <EnvironmentPanel tide={tide}/> */}
 
   { selectedVesselId &&
     <VesselPanel

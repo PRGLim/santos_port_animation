@@ -9,7 +9,7 @@ type DefManeuverRow = {
 }
 
 export async function loadDefManeuvers(): Promise<Map<number, {dock_angle: string, undock_angle: string, berth: string}>> {
-  const res = await fetch("/data/def_maneuver.csv")
+  const res = await fetch("/data/Defs/def_maneuver.csv")
   const text = await res.text()
 
   const parsed = Papa.parse<DefManeuverRow>(text, { header: true, skipEmptyLines: true })

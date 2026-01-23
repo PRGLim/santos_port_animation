@@ -37,16 +37,6 @@ export default function VesselPanel({ vessel, onClose , currentTime}: Props) {
             </tr>
         </tbody>
         </table>
-         {Number(vessel?.berth_arrival) < msToHour(currentTime)  &&
-          <ProgressBerth
-            arrivalTime={vessel?.berth_arrival} 
-            duration={vessel?.berth_ideal_duration} 
-            actualEnd={vessel?.berth_departure}
-            currentTime={currentTime}
-            />
-         }
-
-        
     </div>
   )
 }

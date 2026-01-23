@@ -3,6 +3,7 @@ import mapboxgl from "mapbox-gl"
 import { Feature, Geometry, GeoJsonProperties } from "geojson"
 import { Vessel } from "../entities/Vessel"
 import { VesselDetail } from "../entities/VesselDetail"
+import { VesselStatus } from "../types/vesselStatus"
 
 type VesselState = {
   lng: number
@@ -32,9 +33,11 @@ export function updateVessels(
   let updateNeeded = false 
 
 
+
   //Remove navios finalizados
   vesselPositions.forEach((_state, vesselId) => {
     const vessel = vessels.find(v => v.id === vesselId)
+    
     if (!vessel) {
       vesselPositions.delete(vesselId)
       updateNeeded = true
@@ -50,8 +53,11 @@ export function updateVessels(
 
   // Atualiza estados
   vessels.forEach(vessel => {
-
+    const detail = vesselDetails?.get(vessel.id)
     const state = vessel.getStateAt(time)
+
+  
+
     if (!state) return
 
     const prev = vesselPositions.get(vessel.id)

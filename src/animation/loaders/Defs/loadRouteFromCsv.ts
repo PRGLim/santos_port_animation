@@ -1,6 +1,6 @@
 import Papa from "papaparse"
-import { Route } from "../entities/Route"
-import { Point } from "../entities/Point"
+import { Route } from "@/src/animation/entities/Route"
+import { Point } from "@/src/animation/entities/Point"
 
 type RouteRow = {
   route_id: string
@@ -12,7 +12,7 @@ type RouteRow = {
 
 export async function loadRoutesFromCSV(): Promise<Map<number, Route>> {
   // ✅ caminho correto
-  const res = await fetch("/data/def_routes.csv")
+  const res = await fetch("/data/Defs/def_routes.csv")
   const csvText = await res.text()
   console.log("CSV RAW:", csvText.slice(0, 200))
 

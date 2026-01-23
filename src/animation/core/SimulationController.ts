@@ -1,8 +1,8 @@
 // animation/simulation/SimulationController.ts
 import { SimulationClock } from "../core/SimulationClock"
 import { Vessel } from "../entities/Vessel"
-import { loadRoutesFromCSV } from "../loaders/loadRouteFromCsv"
-import { loadShipLogsFromCSV } from "../loaders/loadShipLogFromCsv"
+import { loadRoutesFromCSV } from "../loaders/Defs/loadRouteFromCsv"
+import { loadShipLogsFromCSV } from "../loaders/Logs/loadShipLogFromCsv"
 
 type TickCallback = (time: number, vessels: Vessel[]) => void
 

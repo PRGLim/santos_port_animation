@@ -1,8 +1,8 @@
 import Papa from "papaparse"
-import { VesselRouteExecution } from "../entities/VesselRouteExecution"
-import { Route } from "../entities/Route"
+import { VesselRouteExecution } from "../../entities/VesselRouteExecution"
+import { Route } from "../../entities/Route"
 import { loadManeuverLog } from "./loadManeuverLogFromCsv"
-import { loadDefManeuvers } from "./loadManeuverDefFromCsv"
+import { loadDefManeuvers } from "../Defs/loadManeuverDefFromCsv"
 
 type ShipLogRow = {
   vessel_id: string
@@ -16,7 +16,7 @@ export async function loadShipLogsFromCSV(
   routes: Map<number, Route>
 
 ): Promise<VesselRouteExecution[]> {
-  const res = await fetch("/data/ship_log.csv")
+  const res = await fetch("/data/Logs/ship_log.csv")
   const text = await res.text()
 
   const parsed = Papa.parse<ShipLogRow>(text, {
