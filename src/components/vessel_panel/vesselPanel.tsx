@@ -1,6 +1,5 @@
 import { VesselDetail } from "@/src/animation/entities/VesselDetail"
-import ProgressBerth from "./progressBar"
-import { msToHour } from "@/src/utils/formatters"
+
 type Props = {
   vessel: VesselDetail | null
   onClose: () => void

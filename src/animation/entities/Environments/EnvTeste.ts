@@ -4,6 +4,6 @@ export type StationValue = {
 }
 
 export type EnvSnapshot = {
-  time: string
+  time: Date
   values: StationValue[]
 }

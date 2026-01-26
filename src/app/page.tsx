@@ -15,10 +15,9 @@ import { BottomControl } from "../components/controls/timeSlider"
 import { SimulationController } from "../animation/core/SimulationController"
 import VesselPanel from "../components/vessel_panel/vesselPanel"
 import EnvironmentPanel from "../components/environment_panel/environmentPanel"
-import { EnvValue } from "../animation/entities/Environments/EnvValue"
 import { loadEnvFromCSV } from "../animation/loaders/Envinroment/loadEnvironmentFromCsv"
 import { EnvSnapshot } from "../animation/entities/Environments/EnvTeste"
-import { useEnvironment } from "../animation/services/useTide"
+import { useEnvironment } from "../animation/services/useEnvironment"
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
 export default function Home() {
@@ -34,34 +33,78 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [selectedVesselId, setSelectedVesselId] = useState<number | null>(null)
 
-  const [tideEnv, setTideEnv] = useState<EnvSnapshot[]>([])
+  const [tideHeightEnv, setTideHeightEnv] = useState<EnvSnapshot[]>([])
+  const [currentEnv, setCurrentEnv] = useState<EnvSnapshot[]>([])
+  const [sunsetSunriseEnv, setSunsetSunriseEnv] = useState<EnvSnapshot[]>([])
+  const [visibilityEnv, setVisibilityEnv] = useState<EnvSnapshot[]>([])
+  const [waveFreqEnv, setWaveFreqEnv] = useState<EnvSnapshot[]>([])
+  const [waveHeightEnv, setWaveHeightEnv] = useState<EnvSnapshot[]>([])
+  const [windSpeedEnv, setWindSpeedEnv] = useState<EnvSnapshot[]>([])
 
+  type EnvKey =
+    | "tideHeight"
+    | "current"
+    | "visibility"
+    | "waveFreq"
+    | "waveHeight"
+    | "windSpeed"
 
+  type EnvState = Record<EnvKey, EnvSnapshot[]>
 
+  const [envs, setEnvs] = useState<EnvState>({
+    tideHeight: [],
+    current: [],
+    visibility: [],
+    waveFreq: [],
+    waveHeight: [],
+    windSpeed: [],
+  })
+
+  const ENV_CONFIG: Record<EnvKey, string> = {
+    tideHeight: "/data/Env/i_tide_height_log.csv",
+    current: "/data/Env/i_current_data.csv",
+    visibility: "/data/Env/i_visibility_log.csv",
+    waveFreq: "/data/Env/i_wave_freq_log.csv",
+    waveHeight: "/data/Env/i_wave_height_log.csv",
+    windSpeed: "/data/Env/i_wind_speed_log.csv",
+  }
 
   // ===============================
   // LOAD ENVIRONMENT DATAS
   // ===============================
 
   useEffect(() => {
-  async function loadEnvTables() {
-    const start = new Date("2025-01-01 00:00:00")
-    const end = new Date("2025-01-01 01:00:00")
+    const start = new Date("2025-01-01 00:00:00").getTime()
+    const end = new Date("2025-01-01 01:00:00").getTime()
 
-    const env = await loadEnvFromCSV(
-      "/data/Env/i_tide_height_log.csv",
-      new Date(start).getTime(),
-      new Date(end).getTime()
-    )
-    setTideEnv(env)
-  }
+    async function loadAllEnvs() {
+      const entries = await Promise.all(
+        Object.entries(ENV_CONFIG).map(async ([key, file]) => {
+          const data = await loadEnvFromCSV(file, start, end)
+          return [key, data] as [EnvKey, EnvSnapshot[]]
+        })
+      )
 
-  loadEnvTables()
-}, [])
+      setEnvs(Object.fromEntries(entries) as EnvState)
+    }
 
-  const { tide } = useEnvironment(simTime, {
-    tide: tideEnv,
+    loadAllEnvs()
+  }, [])
+
+
+  const { tideHeight, current, visibility, waveFreq, waveHeight, windSpeed } = useEnvironment(simTime, {
+    tideHeight: envs.tideHeight,
+    current: envs.current,
+    visibility: envs.visibility,
+    waveFreq: envs.waveFreq,
+    waveHeight: envs.waveHeight,
+    windSpeed: envs.windSpeed
   })
+
+  console.log(current)
+
+
+
 
 
   // ===============================
@@ -137,7 +180,6 @@ useEffect(() => {
   return (
 
 <div className="map-wrapper">
-
   <MapView
     onMapReady={(map) => {
       mapRef.current = map
@@ -146,7 +188,14 @@ useEffect(() => {
     onVesselSelect={setSelectedVesselId}
   />
 
-    {/* <EnvironmentPanel tide={tide}/> */}
+  <EnvironmentPanel 
+    tideHeight={tideHeight} 
+    current={current} 
+    visibility={visibility} 
+    waveFreq={waveFreq}
+    waveHeight={waveHeight}
+    windSpeed={windSpeed}
+    /> 
 
   { selectedVesselId &&
     <VesselPanel

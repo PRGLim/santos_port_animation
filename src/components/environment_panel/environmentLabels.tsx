@@ -1,19 +1,32 @@
-import { EnvValue } from "@/src/animation/entities/Environments/EnvValue"
+import { EnvSnapshot } from "@/src/animation/entities/Environments/EnvTeste"
 
 
 type Props = {
-  current: Array<EnvValue>
+  current: EnvSnapshot | null
 }
 
-export default function EnvironmentLabel({current}: Props) {
-
-
+export default function EnvironmentLabel({ current }: Props) {
   return (
-    <div className="enviroment-label">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=sailing" />
-        {current.map(station => (
-            <p key={station.station}> {station.station}: {station.value} </p>
-        ))}
+    <div className="environment-label">
+      { current &&
+        <table>
+          <thead>
+            <tr>
+              {current!.values.map(v => (
+                <th key={v.station}>{v.station}</th>
+              ))}
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              {current!.values.map(v => (
+                <td key={v.station}>{v.value}</td>
+              ))}
+            </tr>
+          </tbody>
+      </table>
+      }
     </div>
   )
 }

@@ -16,7 +16,7 @@ export async function loadShipLogsFromCSV(
   routes: Map<number, Route>
 
 ): Promise<VesselRouteExecution[]> {
-  const res = await fetch("/data/Logs/ship_log.csv")
+  const res = await fetch("/data/Logs/ship_log_V02.csv")
   const text = await res.text()
 
   const parsed = Papa.parse<ShipLogRow>(text, {

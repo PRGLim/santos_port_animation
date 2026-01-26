@@ -8,8 +8,6 @@ export async function loadEnvFromCSV(filename: string, simStartTime: number, sim
   const res = await fetch(filename)
   const csvText = await res.text()
 
-  console.log(simEndTime)
-
   const parsed = Papa.parse<RawRow>(csvText, {
     header: true,
     skipEmptyLines: true,
@@ -24,6 +22,7 @@ export async function loadEnvFromCSV(filename: string, simStartTime: number, sim
 
     const time = new Date(timeStr).getTime()
 
+    const date = new Date(timeStr)
 
     if (time < simStartTime || time > simEndTime) return
 
@@ -41,8 +40,8 @@ export async function loadEnvFromCSV(filename: string, simStartTime: number, sim
       })
     })
 
-    result.push({ time: timeStr, values })
+    result.push({ time: date, values })
   })
-
+  
   return result 
 }
