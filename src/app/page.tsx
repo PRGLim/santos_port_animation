@@ -41,6 +41,8 @@ export default function Home() {
   const [waveHeightEnv, setWaveHeightEnv] = useState<EnvSnapshot[]>([])
   const [windSpeedEnv, setWindSpeedEnv] = useState<EnvSnapshot[]>([])
 
+
+
   type EnvKey =
     | "tideHeight"
     | "current"
@@ -100,11 +102,6 @@ export default function Home() {
     waveHeight: envs.waveHeight,
     windSpeed: envs.windSpeed
   })
-
-  console.log(current)
-
-
-
 
 
   // ===============================

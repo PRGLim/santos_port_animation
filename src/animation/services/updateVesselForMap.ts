@@ -30,14 +30,11 @@ export function updateVessels(
   vesselDetails?: Map<number, VesselDetail>
 ) {
 
-  let updateNeeded = false 
-
-
+  let updateNeeded = true 
 
   //Remove navios finalizados
   vesselPositions.forEach((_state, vesselId) => {
     const vessel = vessels.find(v => v.id === vesselId)
-    
     if (!vessel) {
       vesselPositions.delete(vesselId)
       updateNeeded = true
@@ -57,8 +54,10 @@ export function updateVessels(
     const state = vessel.getStateAt(time)
 
   
-
-    if (!state) return
+    if (!state){
+      vesselPositions.delete(vessel.id)
+      return
+    } 
 
     const prev = vesselPositions.get(vessel.id)
     const next: VesselState = {
@@ -74,13 +73,7 @@ export function updateVessels(
 
     if (!updateNeeded) return
 
-    // vesselPositions.set(vessel.id, {
-    //   lng: state.position.lng,
-    //   lat: state.position.lat,
-    //   heading: state.heading,
-    // })
   })
-
 
   // Vessel Image 
   const vesselFeatures: Feature<Geometry, GeoJsonProperties>[] =
@@ -105,7 +98,7 @@ export function updateVessels(
         geometry: { type: "Point", coordinates: [pos.lng, pos.lat] },
         properties: {
           title: `Vessel ${id}`,
-          subtitle: detail?.berth ?? "",
+          subtitle: detail?.vessel_berth ?? "",
         },
       }
     })

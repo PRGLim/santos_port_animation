@@ -122,7 +122,6 @@ export default function MapView({ onMapReady, onVesselSelect, selectedVesselId }
     map.on("click", "vessel-layer", (e) => {
       const id = Number(e.features?.[0]?.properties?.id)
       onVesselSelect?.(id)
-      console.log(id)
     }  )
 
 

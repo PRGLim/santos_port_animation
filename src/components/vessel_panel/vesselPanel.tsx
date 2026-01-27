@@ -1,4 +1,5 @@
 import { VesselDetail } from "@/src/animation/entities/VesselDetail"
+import { Ship } from "lucide-react"
 
 type Props = {
   vessel: VesselDetail | null
@@ -7,7 +8,7 @@ type Props = {
 }
 
 export default function VesselPanel({ vessel, onClose , currentTime}: Props) {
-  if (vessel?.id === null) return null
+  if (vessel?.vessel_id === null) return null
 
   return (
     <div className="vessel-panel">
@@ -15,10 +16,10 @@ export default function VesselPanel({ vessel, onClose , currentTime}: Props) {
     
     <button onClick={onClose}>✖</button>
       <div className="Row1">
-         <span className="material-symbols-outlined">sailing</span>
-          <h3>Vessel: {vessel?.id}</h3>
+          <Ship />
+          <h3>Vessel: {vessel?.vessel_id}</h3>
       </div>
-      <p>DESTINO: {vessel?.berth}</p>
+      <p>DESTINO: {vessel?.vessel_beam}</p>
 
         <table>
         <thead>
@@ -30,9 +31,9 @@ export default function VesselPanel({ vessel, onClose , currentTime}: Props) {
         </thead>
         <tbody>
             <tr>
-            <td>{vessel?.beam}</td>
-            <td>{vessel?.loa}</td>
-            <td>{vessel?.draft}</td>
+            <td>{vessel?.vessel_beam}</td>
+            <td>{vessel?.vessel_loa}</td>
+            <td>{vessel?.vessel_draft}</td>
             </tr>
         </tbody>
         </table>

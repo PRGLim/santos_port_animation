@@ -2,6 +2,7 @@ import { Route } from "./Route"
 import { Point } from "./Point"
 import { VesselDetail } from "./VesselDetail"
 import { angleCalculator } from "@/src/utils/navigation"
+import { Console } from "console"
 
 export class VesselRouteExecution {
   vesselId: number
@@ -47,7 +48,7 @@ export class VesselRouteExecution {
     if (!this.isActiveAt(time)) return null
 
     if (this.route.berthRoute && this.maneuver != undefined) {
-      console.log("Berth Logic")
+
       if (!this.maneuver) return null
        var angle = 0
         if(this.forward)
@@ -82,7 +83,7 @@ export class VesselRouteExecution {
     return {
       lat: p0.lat + (p1.lat - p0.lat) * localProgress,
       lng: p0.lng + (p1.lng - p0.lng) * localProgress,
-    }}
+  }}
 
 }
 

@@ -12,6 +12,7 @@ export async function loadSettingsLog(): Promise<{ scenario_id: string, startDay
 
   const parsed = Papa.parse<SettingsRow>(text, {
     header: true,
+    delimiter: ";",
     skipEmptyLines: true,
   })
 

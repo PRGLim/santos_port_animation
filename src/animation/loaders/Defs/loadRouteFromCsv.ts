@@ -3,33 +3,32 @@ import { Route } from "@/src/animation/entities/Route"
 import { Point } from "@/src/animation/entities/Point"
 
 type RouteRow = {
-  route_id: string
-  lat: string
-  lng: string
-  seq: string
-  berthRoute: string
+  ROUTE_ID: string
+  SEGMENT: string
+  POINT: string
+  X: string
+  Y: string
+  IS_BERTH_ROUTE: string
 }
 
 export async function loadRoutesFromCSV(): Promise<Map<number, Route>> {
-  // ✅ caminho correto
   const res = await fetch("/data/Defs/def_routes.csv")
   const csvText = await res.text()
-  console.log("CSV RAW:", csvText.slice(0, 200))
-
   const parsed = Papa.parse<RouteRow>(csvText, {
     header: true,
+    delimiter: ";",
     skipEmptyLines: true,
   })
 
   const routesMap = new Map<number, [Point[], boolean]>()
 
   parsed.data.forEach((row) => {
-    const routeId = Number(row.route_id)
-    const berthRoute = row.berthRoute === "1"
+    const routeId = Number(row.ROUTE_ID)
+    const berthRoute = row.IS_BERTH_ROUTE === "True"
 
     const point: Point = {
-      lat: parseFloat(row.lat),
-      lng: parseFloat(row.lng),
+      lat: parseFloat(row.X),
+      lng: parseFloat(row.Y),
     }
 
     if (!routesMap.has(routeId)) {

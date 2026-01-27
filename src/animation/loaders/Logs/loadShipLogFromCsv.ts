@@ -5,18 +5,18 @@ import { loadManeuverLog } from "./loadManeuverLogFromCsv"
 import { loadDefManeuvers } from "../Defs/loadManeuverDefFromCsv"
 
 type ShipLogRow = {
-  vessel_id: string
-  route_id: string
-  start_time: string
-  end_time: string
-  forward: string
+  ARRIVAL_ID: string
+  ROUTE_ID: string
+  START_TIME: string
+  END_TIME: string
+  FORWARD: string
 }
 
 export async function loadShipLogsFromCSV(
   routes: Map<number, Route>
 
 ): Promise<VesselRouteExecution[]> {
-  const res = await fetch("/data/Logs/ship_log_V02.csv")
+  const res = await fetch("/data/Logs/animation_movements.csv")
   const text = await res.text()
 
   const parsed = Papa.parse<ShipLogRow>(text, {
@@ -29,14 +29,13 @@ export async function loadShipLogsFromCSV(
   const maneuverLog = await loadManeuverLog()
   const maneuverDef = await loadDefManeuvers()
 
-
   parsed.data.forEach(async (row) => {
-    
-    const vesselId = Number(row.vessel_id)
-    const routeId = Number(row.route_id)
-    const startTime = Number(row.start_time) * 1000
-    const endTime = Number(row.end_time) * 1000
-    const forward = row.forward === "1" // a coluna nova do CSV
+
+    const vesselId = Number(row.ARRIVAL_ID)
+    const routeId = Number(row.ROUTE_ID)
+    const startTime = Number(row.START_TIME) * 1000
+    const endTime = Number(row.END_TIME) * 1000
+    const forward = row.FORWARD === "1" // a coluna nova do CSV
 
 
     const route = routes.get(routeId)

@@ -16,7 +16,6 @@ export class SimulationController {
   async init() {
     const routes = await loadRoutesFromCSV()
     const executions = await loadShipLogsFromCSV(routes)
-
     const vesselsMap = new Map<number, Vessel>()
 
     executions.forEach((e) => {

@@ -1,27 +1,28 @@
 import Papa from "papaparse"
 
 type DefManeuverRow = {
-  maneuver_id: string
-  berth: string
-  type: string
-  dock_angle: string
-  undock_angle: string
+  MANEUVER_ID: string
+  BERTH: string
+  TYPE: string
+  DOCK_ANGLE: string
+  UNDOCK_ANGLE: string
 }
 
 export async function loadDefManeuvers(): Promise<Map<number, {dock_angle: string, undock_angle: string, berth: string}>> {
-  const res = await fetch("/data/Defs/def_maneuver.csv")
+  const res = await fetch("/data/Defs/def_maneuvers.csv")
   const text = await res.text()
 
-  const parsed = Papa.parse<DefManeuverRow>(text, { header: true, skipEmptyLines: true })
+    
+  const parsed = Papa.parse<DefManeuverRow>(text, { header: true, delimiter: ";", skipEmptyLines: true,  })
 
   const map = new Map<number, {dock_angle: string, undock_angle: string, berth: string}>()
   parsed.data.forEach(row => {
-    const maneuver_id = Number(row.maneuver_id)
+    const maneuver_id = Number(row.MANEUVER_ID)
 
     map.set(maneuver_id, {
-      dock_angle: row.dock_angle,
-      undock_angle: row.undock_angle,
-      berth: row.berth
+      dock_angle: row.DOCK_ANGLE,
+      undock_angle: row.UNDOCK_ANGLE,
+      berth: row.BERTH
     })
 })
 

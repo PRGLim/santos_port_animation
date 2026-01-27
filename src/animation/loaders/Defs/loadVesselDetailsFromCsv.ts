@@ -2,41 +2,42 @@ import Papa from "papaparse"
 import { VesselDetail } from "../../entities/VesselDetail"
 
 type DetailRow = {
-  vessel_id: string
-  loa: string
-  beam: string
-  draft: string
-  berth: string
-  berth_arrival: string
-  berth_departure: string
-  berth_ideal_duration: string
+  ARRIVAL_ID: number
+  LOA: number
+  BEAM: number
+  DRAFT: number
+  BERTH: string
+  CATEGORY: string
+  DETAILED_CATEGORY: string
+  PROCESS_TIME: string
 }
 
 export async function loadVesselDetailFromCSV(): Promise<Map<number, VesselDetail>> {
-  const res = await fetch("/data/Defs/def_vessel.csv")
+  const res = await fetch("/data/Defs/vessel_info_log.csv")
   const csvText = await res.text()
 
   const parsed = Papa.parse<DetailRow>(csvText, {
     header: true,
+    delimiter: ";",
     skipEmptyLines: true,
   })
 
   const vesselMap = new Map<number, VesselDetail>()
 
   parsed.data.forEach(row => {
-    const id = Number(row.vessel_id)
+    const id = Number(row.ARRIVAL_ID)
 
     vesselMap.set(
       id,
       new VesselDetail(
         id,
-        Number(row.loa),
-        Number(row.beam),
-        Number(row.draft),
-        row.berth,
-        row.berth_arrival,
-        row.berth_departure,
-        row.berth_ideal_duration,
+        Number(row.LOA),
+        Number(row.BEAM),
+        Number(row.DRAFT),
+        row.BERTH,
+        row.CATEGORY,
+        row.DETAILED_CATEGORY,
+        row.PROCESS_TIME
       )
     )
   })

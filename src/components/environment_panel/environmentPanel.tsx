@@ -45,6 +45,7 @@ export default function EnvironmentPanel(props: Props) {
       {/* 🔹 CONTEÚDO (painel inteiro) */}
       <CollapsibleContent>
         <div className="environment-panel relative w-[320px]">
+
           <button
             onClick={() => setOpen(false)}
             className="absolute right-2 top-2 z-10 rounded p-1 hover:bg-muted"
