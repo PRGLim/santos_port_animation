@@ -154,7 +154,7 @@ useEffect(() => {
 
   const increaseSpeed = () => {
     setSpeed((prev) => {
-      const next = Math.min(prev + 0.5, 4)
+      const next = Math.min(prev + 0.5, 10)
       simRef.current?.setSpeed(next)
       return next
     })

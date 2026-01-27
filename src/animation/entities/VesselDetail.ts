@@ -1,4 +1,3 @@
-import { VesselStatus } from "../types/vesselStatus"
 
 export class VesselDetail {
   vessel_id: number
@@ -30,7 +29,5 @@ export class VesselDetail {
     this.vessel_detail_category = vessel_detail_category
     this.vessel_process_time = vessel_process_time
   }
-
-
 
 }

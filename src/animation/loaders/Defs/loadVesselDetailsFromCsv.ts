@@ -1,5 +1,6 @@
 import Papa from "papaparse"
 import { VesselDetail } from "../../entities/VesselDetail"
+import { SCENARIO } from "../../core/constants"
 
 type DetailRow = {
   ARRIVAL_ID: number
@@ -13,7 +14,8 @@ type DetailRow = {
 }
 
 export async function loadVesselDetailFromCSV(): Promise<Map<number, VesselDetail>> {
-  const res = await fetch("/data/Defs/vessel_info_log.csv")
+  const file = "/data/Defs/vessel_info_log" + SCENARIO + ".csv"
+  const res = await fetch(file)
   const csvText = await res.text()
 
   const parsed = Papa.parse<DetailRow>(csvText, {

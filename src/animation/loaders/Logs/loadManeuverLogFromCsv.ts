@@ -1,4 +1,5 @@
 import Papa from "papaparse"
+import { SCENARIO } from "../../core/constants"
 
 type ManeuverLogRow = {
   ARRIVAL_ID: string
@@ -6,7 +7,8 @@ type ManeuverLogRow = {
 }
 
 export async function loadManeuverLog(): Promise<{ vesselId: number, maneuverId: number }[]> {
-  const res = await fetch("/data/Logs/animation_maneuver_log.csv")
+  const file = "/data/Logs/animation_maneuver_log" + SCENARIO + ".csv"
+  const res = await fetch(file)
   const text = await res.text()
 
   const parsed = Papa.parse<ManeuverLogRow>(text, {

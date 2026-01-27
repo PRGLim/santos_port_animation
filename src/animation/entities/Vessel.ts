@@ -20,17 +20,21 @@ export class Vessel {
     if (!active) return null
 
     const pos = active.getInterpolatedPosition(time)
-    if (!pos) return null
 
+    if (!pos){
+      return null
+    }
+  
     const targetHeading = active.getTargetHeadingAt(time)
-    
-    if (targetHeading != null) {
-      this.heading = gradualAngleCalculator(
-        this.heading,
-        targetHeading,
-        1
-      )
-    } 
+    this.heading = targetHeading ?? 0
+
+    // if (targetHeading != null) {
+    //   this.heading = gradualAngleCalculator(
+    //     this.heading,
+    //     targetHeading,
+    //     1
+    //   )
+    // } 
   
     return {
       position: pos,

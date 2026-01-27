@@ -3,6 +3,7 @@ import { VesselRouteExecution } from "../../entities/VesselRouteExecution"
 import { Route } from "../../entities/Route"
 import { loadManeuverLog } from "./loadManeuverLogFromCsv"
 import { loadDefManeuvers } from "../Defs/loadManeuverDefFromCsv"
+import { SCENARIO } from "../../core/constants"
 
 type ShipLogRow = {
   ARRIVAL_ID: string
@@ -16,7 +17,8 @@ export async function loadShipLogsFromCSV(
   routes: Map<number, Route>
 
 ): Promise<VesselRouteExecution[]> {
-  const res = await fetch("/data/Logs/animation_movements.csv")
+  const file = "/data/Logs/animation_movements" + SCENARIO + ".csv"
+  const res = await fetch(file)
   const text = await res.text()
 
   const parsed = Papa.parse<ShipLogRow>(text, {

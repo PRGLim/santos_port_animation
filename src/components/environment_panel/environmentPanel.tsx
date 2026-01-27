@@ -56,7 +56,7 @@ export default function EnvironmentPanel(props: Props) {
 
           <Accordion
             type="multiple"
-            className="w-full max-h-[400px] overflow-y-auto no-scrollbar"
+            className="w-full max-h-400 overflow-y-auto no-scrollbar"
           >
             <AccordionItem value="item-1">
               <AccordionTrigger>Altura da Maré (m):</AccordionTrigger>

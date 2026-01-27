@@ -28,12 +28,6 @@ export class Route {
 
     if (!p1 || !p2) return null
 
-    console.log("P1:", p1)
-    console.log("P2:", p2)
-    
-    console.log("LAT", p1.lat + (p2.lat - p1.lat) * t)
-    console.log("LONG", p1.lng + (p2.lng - p1.lng) * t)
-
     return {
       lat: p1.lat + (p2.lat - p1.lat) * t,
       lng: p1.lng + (p2.lng - p1.lng) * t,
