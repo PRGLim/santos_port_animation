@@ -32,6 +32,14 @@ export class VesselRouteExecution {
     return time >= this.startTime && time <= this.endTime
   }
 
+  getEndPosition(): Point {
+  const pts = this.route.points
+  return this.forward
+    ? pts[pts.length - 1]
+    : pts[0]
+}
+
+
   getPositionAt(time: number) {
 
     if(time > this.endTime) time = this.endTime

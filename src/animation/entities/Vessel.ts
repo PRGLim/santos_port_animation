@@ -15,30 +15,78 @@ export class Vessel {
     this.executions = executions
   }
 
-  getStateAt(time: number): { position: Point; heading: number } | null {
+  // getStateAt(time: number): { position: Point; heading: number } | null {
+  //   const active = this.executions.find(e => e.isActiveAt(time))
+  //   if (!active) return null
+
+  //   const pos = active.getInterpolatedPosition(time)
+
+  //   if (!pos){
+  //     return null
+  //   }
+  
+  //   const targetHeading = active.getTargetHeadingAt(time)
+  //   this.heading = targetHeading ?? 0
+
+  //   // if (targetHeading != null) {
+  //   //   this.heading = gradualAngleCalculator(
+  //   //     this.heading,
+  //   //     targetHeading,
+  //   //     1
+  //   //   )
+  //   // } 
+  
+  //   return {
+  //     position: pos,
+  //     heading: this.heading,
+  //   }
+  // }
+
+  
+
+  getStateAt(
+    time: number
+  ): { position: Point; heading: number } | null {
+
+
+    // for in and out transits
     const active = this.executions.find(e => e.isActiveAt(time))
-    if (!active) return null
 
-    const pos = active.getInterpolatedPosition(time)
+    if (active) {
+      const pos = active.getInterpolatedPosition(time)
+      if (!pos) return null
 
-    if (!pos){
-      return null
+      const targetHeading = active.getTargetHeadingAt(time)
+      this.heading = targetHeading ?? this.heading ?? 0
+
+      return {
+        position: pos,
+        heading: this.heading,
+      }
     }
-  
-    const targetHeading = active.getTargetHeadingAt(time)
-    this.heading = targetHeading ?? 0
 
-    // if (targetHeading != null) {
-    //   this.heading = gradualAngleCalculator(
-    //     this.heading,
-    //     targetHeading,
-    //     1
-    //   )
-    // } 
-  
-    return {
-      position: pos,
-      heading: this.heading,
+    // for berthed vessels
+    for (let i = 0; i < this.executions.length - 1; i++) {
+      const curr = this.executions[i]
+      const next = this.executions[i + 1]
+
+      if (
+        curr.route.berthRoute &&
+        next.route.berthRoute &&
+        time > curr.endTime &&
+        time < next.startTime
+      ) {
+
+        const pos = curr.getEndPosition()
+
+        return {
+          position: pos,
+          heading: this.heading ?? 0, // mantém último heading
+        }
+      }
     }
+
+    return null
   }
+
 }
