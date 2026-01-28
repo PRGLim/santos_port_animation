@@ -5,12 +5,19 @@ import { angleCalculator } from "@/src/utils/navigation"
 import { Console } from "console"
 import { VesselStatus } from "../types/vesselStatus"
 
+export enum ExecutionType {
+  MOVE = "move",
+  QUEUE = "queue",
+  BERTH = "berth",
+}
+
 export class VesselRouteExecution {
   vesselId: number
   route: Route
   startTime: number
   endTime: number
   forward: boolean
+  type: ExecutionType
   maneuver?: [number, number]
   
   constructor(
@@ -19,6 +26,7 @@ export class VesselRouteExecution {
     startTime: number,
     endTime: number,
     forward: boolean,
+    type: ExecutionType,
     maneuver?: [number, number],
 
   ) {
@@ -27,6 +35,7 @@ export class VesselRouteExecution {
     this.startTime = startTime
     this.endTime = endTime
     this.forward = forward
+    this.type = type
   }
 
   
@@ -66,8 +75,8 @@ export class VesselRouteExecution {
     
     if (!this.isActiveAt(time)) return null
 
-    if (this.route.berthRoute && this.maneuver != undefined) {
-
+    if (this.type == ExecutionType.BERTH && this.maneuver != undefined) {
+      
       if (!this.maneuver) return null
        var angle = 0
         if(this.forward)

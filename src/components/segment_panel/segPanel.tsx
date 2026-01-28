@@ -1,3 +1,5 @@
+import { X } from "lucide-react"
+
 type Props = {
   segment: string | null
   onClose?: () => void
@@ -8,6 +10,7 @@ export default function SegPanel({ segment, onClose }: Props) {
 
   return (
     <div
+
       style={{
         position: "absolute",
         bottom: 80,
@@ -19,10 +22,6 @@ export default function SegPanel({ segment, onClose }: Props) {
         boxShadow: "0 2px 8px rgba(0,0,0,0.2)",
       }}
     >
-      <div>
-        <strong>Segmento:</strong> {segment}
-      </div>
-
       {onClose && (
         <button
           onClick={onClose}
@@ -32,9 +31,14 @@ export default function SegPanel({ segment, onClose }: Props) {
             cursor: "pointer",
           }}
         >
-          fechar
+          <X size={20}/>
         </button>
       )}
+      <div>
+        <strong>Segmento:</strong> {segment}
+      </div>
+
+
     </div>
   )
 }

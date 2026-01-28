@@ -19,6 +19,8 @@ import { loadEnvFromCSV } from "../animation/loaders/Envinroment/loadEnvironment
 import { EnvSnapshot } from "../animation/entities/Environments/EnvTeste"
 import { useEnvironment } from "../animation/services/useEnvironment"
 import SegPanel from "../components/segment_panel/segPanel"
+import { Vessel } from "../animation/entities/Vessel"
+import { VesselStatus } from "../animation/types/vesselStatus"
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
 export default function Home() {
@@ -63,28 +65,6 @@ export default function Home() {
     windSpeed: "/data/Env/i_wind_speed_log.csv",
   }
 
-  // ===============================
-  // LOAD ENVIRONMENT DATAS
-  // ===============================
-
-  useEffect(() => {
-    const start = new Date("2025-01-01 00:00:00").getTime()
-    const end = new Date("2025-01-01 01:00:00").getTime()
-
-    async function loadAllEnvs() {
-      const entries = await Promise.all(
-        Object.entries(ENV_CONFIG).map(async ([key, file]) => {
-          const data = await loadEnvFromCSV(file, start, end)
-          return [key, data] as [EnvKey, EnvSnapshot[]]
-        })
-      )
-
-      setEnvs(Object.fromEntries(entries) as EnvState)
-    }
-
-    loadAllEnvs()
-  }, [])
-
 
   const { tideHeight, current, visibility, waveFreq, waveHeight, windSpeed } = useEnvironment(simTime, {
     tideHeight: envs.tideHeight,
@@ -126,6 +106,7 @@ useEffect(() => {
 
       if (!mapRef.current) return
 
+
       updateVessels(
         mapRef.current,
         vessels,
@@ -138,6 +119,31 @@ useEffect(() => {
 
   setup()
 }, [])
+
+  // ===============================
+  // LOAD ENVIRONMENT DATAS
+  // ===============================
+
+  useEffect(() => {
+      
+    if (!simStart || !simEnd) return
+
+    const start = new Date("01/01/2025 06:00:00")
+    const end = new Date("01/06/2025 00:00:00") // dia 06 de janeiro
+
+    async function loadAllEnvs() {
+      const entries = await Promise.all(
+        Object.entries(ENV_CONFIG).map(async ([key, file]) => {
+          const data = await loadEnvFromCSV(file, start.getTime(), end.getTime())
+          return [key, data] as [EnvKey, EnvSnapshot[]]
+        })
+      )
+
+      setEnvs(Object.fromEntries(entries) as EnvState)
+    }
+
+    loadAllEnvs()
+  }, [simStart, simEnd])
 
 
   // ===============================

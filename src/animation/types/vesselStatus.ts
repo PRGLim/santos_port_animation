@@ -1,6 +1,6 @@
 export enum VesselStatus {
-  BEFORE_START = "BEFORE_START",
+  IN_QUEUE = "IN_QUEUE",
   MOVING = "MOVING",
   BERTHED = "BERTHED",
-  FINISHED = "FINISHED",
+  IDLE = "IDLE"
 }

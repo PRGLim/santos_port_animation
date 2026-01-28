@@ -1,5 +1,5 @@
 import Papa from "papaparse"
-import { VesselRouteExecution } from "../../entities/VesselRouteExecution"
+import { ExecutionType, VesselRouteExecution } from "../../entities/VesselRouteExecution"
 import { Route } from "../../entities/Route"
 import { loadManeuverLog } from "./loadManeuverLogFromCsv"
 import { loadDefManeuvers } from "../Defs/loadManeuverDefFromCsv"
@@ -38,6 +38,15 @@ export async function loadShipLogsFromCSV(
     const startTime = Number(row.START_TIME) * 1000
     const endTime = Number(row.END_TIME) * 1000
     const forward = row.FORWARD === "1" // a coluna nova do CSV
+    let type: ExecutionType
+
+    if (routeId === 0) {
+      type = ExecutionType.QUEUE
+    } else if (routeId > 16) {
+      type = ExecutionType.BERTH
+    } else {
+      type = ExecutionType.MOVE
+    }
 
 
     const route = routes.get(routeId)
@@ -52,6 +61,7 @@ export async function loadShipLogsFromCSV(
         startTime,
         endTime,
         forward,
+        type,
       )
     
     if (route.berthRoute) {

@@ -174,9 +174,6 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
     })
 
 
-
-
-
   }, [])
 
 

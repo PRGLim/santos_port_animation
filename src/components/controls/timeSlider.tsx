@@ -28,7 +28,7 @@ export function BottomControl({ time, min, max, onChange, isPlaying, onToggle }:
         />
         <div className="timeline-time">
             <div className="time-line-labels">
-                <span>{formatSimTimeInDate(time)}</span>
+                <span>{formatSimTimeInDate(time, "tick")}</span>
             </div>
 
             <button
@@ -40,7 +40,7 @@ export function BottomControl({ time, min, max, onChange, isPlaying, onToggle }:
             </button>
 
             <div className="time-line-labels">
-                <span>{formatSimTimeInDate(max)}</span>
+                <span>{formatSimTimeInDate(max, "tick")}</span>
             </div>
         </div>
     </div>

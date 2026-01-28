@@ -27,22 +27,26 @@ function getEnvAtTime(
 ): EnvSnapshot | undefined {
   if (!env || env.length === 0) return undefined
 
-  const currentDate = convertSimTime(simTime)
-
+  const currentDate = convertSimTime(simTime, "tick").getTime()
   const startTimestamp = env[0].time.getTime()
-  const stepMs = 5 * 60 * 1000 // 5 minutos
+  
+  const stepMs = 5 * 60 * 1000  // 5 minutos
 
   const index = Math.floor(
     (Number(currentDate) - startTimestamp) / stepMs
   )
-  
+
+
   return env[Math.max(0, Math.min(env.length - 1, index))]
 }
 
 export function useEnvironment(
+
+
   simTime: number,
   envs: EnvironmentInputs
 ): EnvironmentState {
+
 
   return useMemo(() => {
     return {
@@ -62,5 +66,7 @@ export function useEnvironment(
       envs.waveHeight,
       envs.windSpeed
     ])
+
+    
 }
 

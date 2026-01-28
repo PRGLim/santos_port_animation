@@ -26,7 +26,6 @@ export async function loadEnvFromCSV(filename: string, simStartTime: number, sim
 
     if (time < simStartTime || time > simEndTime) return
 
-
     const values: StationValue[] = []
 
 

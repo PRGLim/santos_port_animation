@@ -34,6 +34,7 @@ export function updateVessels(
 
   //Remove navios finalizados
   vesselPositions.forEach((_state, vesselId) => {
+    
     const vessel = vessels.find(v => v.id === vesselId)
     if (!vessel) {
       vesselPositions.delete(vesselId)
@@ -43,6 +44,9 @@ export function updateVessels(
 
     const lastExecEnd = Math.max(...vessel.executions.map(e => e.endTime))
     if (time > lastExecEnd) {
+      if(vessel.id == 360)
+        console.log("LAST EX:", vessel.id)
+
       vesselPositions.delete(vesselId)
       updateNeeded = true
     }
@@ -50,6 +54,12 @@ export function updateVessels(
 
   // Atualiza estados
   vessels.forEach(vessel => {
+
+    if (vessel.isFinished(time)) {
+      vesselPositions.delete(vessel.id)
+      return
+    }
+
     const detail = vesselDetails?.get(vessel.id)
     const state = vessel.getStateAt(time)
 

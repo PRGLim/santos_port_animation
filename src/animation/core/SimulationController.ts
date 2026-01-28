@@ -29,6 +29,7 @@ export class SimulationController {
 
     this.startTime = Math.min(...executions.map(e => e.startTime))
     this.endTime   = Math.max(...executions.map(e => e.endTime))
+    
 
     this.clock = new SimulationClock(this.startTime, this.endTime)
   }

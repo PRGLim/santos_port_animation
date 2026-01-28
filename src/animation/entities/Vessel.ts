@@ -1,4 +1,4 @@
-import { VesselRouteExecution } from "./VesselRouteExecution"
+import { ExecutionType, VesselRouteExecution } from "./VesselRouteExecution"
 import { Point } from "./Point"
 import { angleCalculator, gradualAngleCalculator } from "../../utils/navigation"
 import { VesselStatus } from "../types/vesselStatus"
@@ -15,6 +15,10 @@ export class Vessel {
   ) {
     this.id = id
     this.executions = executions
+  }
+
+  isFinished(time: number) {
+    return time > Math.max(...this.executions.map(e => e.endTime))
   }
 
 
@@ -70,24 +74,92 @@ export class Vessel {
 
 
 
+getStateAt(
+  time: number
+): { position: Point; heading: number; status: VesselStatus } | null {
 
-  getStateAt(
-    time: number
-  ): { position: Point; heading: number, status: VesselStatus} | null {
+  const exec =
+    this.executions.find(
+      e => e.type === ExecutionType.MOVE && time >= e.startTime && time <= e.endTime
+    ) ??
+    this.executions.find(
+      e => e.type === ExecutionType.BERTH && time >= e.startTime && time <= e.endTime
+    ) ??
+    this.executions.find(
+      e => e.type === ExecutionType.QUEUE && time >= e.startTime && time <= e.endTime
+    )
 
-    // for in and out transits OJO its null for berthed vessels
-    const active = this.executions.find(e => e.isActiveAt(time))
 
-    if (active) {
-      let pos = active.getInterpolatedPosition(time)
+    // GAP entre dois BERTH = continua BERTHED
+  for (let i = 0; i < this.executions.length - 1; i++) {
+    const curr = this.executions[i]
+    const next = this.executions[i + 1]
+
+    if (
+      curr.type === ExecutionType.BERTH &&
+      next.type === ExecutionType.BERTH &&
+      time > curr.endTime &&
+      time < next.startTime
+    ) {
+      const pos = curr.getEndPosition() ?? curr.getStartPosition()
+
+      this.lastPosition = pos
+
+      return {
+        position: pos,
+        heading: this.heading ?? 0,
+        status: VesselStatus.BERTHED
+      }
+    }
+  }
+
+  // QUEUE herdado (rota 0 pontual)
+  const lastQueue = [...this.executions]
+    .filter(e => e.type === ExecutionType.QUEUE && e.startTime <= time)
+    .sort((a, b) => b.startTime - a.startTime)[0]
+
+  const nextNonQueue = this.executions.find(
+    e =>
+      e.type !== ExecutionType.QUEUE &&
+      e.startTime > (lastQueue?.startTime ?? Infinity)
+  )
+
+  if (
+    lastQueue &&
+    (!nextNonQueue || time < nextNonQueue.startTime)
+  ) {
+    const pos = lastQueue.getStartPosition()
+
+    this.lastPosition = pos
+
+    return {
+      position: pos,
+      heading: this.heading ?? 0,
+      status: VesselStatus.IN_QUEUE
+    }
+  }
+
+
+  if (!exec) {
+    return this.lastPosition
+      ? {
+          position: this.lastPosition,
+          heading: this.heading ?? 0,
+          status: VesselStatus.IDLE // ou IDLE se quiser criar
+        }
+      : null
+  }
+
+  switch (exec.type) {
+
+    case ExecutionType.MOVE: {
+      let pos = exec.getInterpolatedPosition(time)
 
       if (!pos) {
-        console.log("NO POSITION" )
-        pos = active.getStartPosition()
+        pos = exec.getStartPosition()
       }
 
-      const targetHeading = active.getTargetHeadingAt(time)
-      
+      const targetHeading = exec.getTargetHeadingAt(time)
       this.heading = targetHeading ?? this.heading ?? 0
       this.lastPosition = pos
 
@@ -96,47 +168,122 @@ export class Vessel {
         heading: this.heading,
         status: VesselStatus.MOVING
       }
-      
     }
 
+    case ExecutionType.QUEUE: {
+      const pos = exec.getStartPosition()
 
-    // for berthed vessels
-    for (let i = 0; i < this.executions.length - 1; i++) {
-      const curr = this.executions[i]
-      const next = this.executions[i + 1]
+      this.lastPosition = pos
 
-      if (
-        curr.route.berthRoute &&
-        next.route.berthRoute &&
-        time >= curr.endTime &&
-        time <= next.startTime
-      ) {
-
-        const pos = curr.getEndPosition()
-        if(!pos){
-          console.log("NO POS ON BERTH")
-        }
-
-        return {
-          position: pos,
-          heading: this.heading ?? 0, // mantém último heading
-          status: VesselStatus.BERTHED
-        }
-        this.lastPosition = pos
-
+      return {
+        position: pos,
+        heading: this.heading ?? 0,
+        status: VesselStatus.IN_QUEUE
       }
     }
+
+    case ExecutionType.BERTH: {
+      const pos = exec.getEndPosition() ?? exec.getStartPosition()
+      const targetHeading = exec.getTargetHeadingAt(time)
+      this.heading = targetHeading ?? this.heading ?? 0
+      console.log(this.heading)
+      this.lastPosition = pos
+
+      return {
+        position: pos,
+        heading: this.heading ?? 0,
+        status: VesselStatus.BERTHED
+      }
+    }
+
+    default:
+      return null
+  }
+}
+
+
+  // getStateAt(
+  //   time: number
+  // ): { position: Point; heading: number, status: VesselStatus} | null {
+
+  //   // for in and out transits OJO its null for berthed vessels
+  //   const active = this.executions.find(e => e.isActiveAt(time))
+
+  //   if (active) {
+  //     let pos = active.getInterpolatedPosition(time)
+
+  //     if (!pos) {
+  //       console.log("NO POSITION" )
+  //       pos = active.getStartPosition()
+  //     }
+
+  //     const targetHeading = active.getTargetHeadingAt(time)
+      
+  //     this.heading = targetHeading ?? this.heading ?? 0
+  //     this.lastPosition = pos
+
+  //     return {
+  //       position: pos,
+  //       heading: this.heading,
+  //       status: VesselStatus.MOVING
+  //     }
+      
+  //   }
+
+  //   // for berthed vessels
+  //   for (let i = 0; i < this.executions.length - 1; i++) {
+  //     const curr = this.executions[i]
+  //     const next = this.executions[i + 1]
+
+  //     if (
+  //       curr.route.berthRoute &&
+  //       next.route.berthRoute &&
+  //       time >= curr.endTime &&
+  //       time <= next.startTime
+  //     ) {
+
+  //       const pos = curr.getEndPosition()
+  //       if(!pos){
+  //         console.log("NO POS ON BERTH")
+  //       }
+
+  //       this.lastPosition = pos
+
+  //       return {
+  //         position: pos,
+  //         heading: this.heading ?? 0, // mantém último heading
+  //         status: VesselStatus.BERTHED
+  //       }
+  //     }
+  //   }
+
+  //   // for in queue berths
+  //   const queueExec = this.executions.find(
+  //     e => e.route.id == 0 && time >= e.startTime && time <= e.endTime
+  //   )
+
+  //   if (queueExec) {
+  //     const pos = queueExec.getStartPosition() 
+
+  //     this.lastPosition = pos
+
+  //     return {
+  //       position: pos,
+  //       heading: this.heading ?? 0,
+  //       status: VesselStatus.IN_QUEUE
+  //     }
+  //   }
 
     
-    if (this.lastPosition) {
-      return {
-        position: this.lastPosition,
-        heading: this.heading ?? 0,
-        status: VesselStatus.MOVING
-      }
-    }
+  //   if (this.lastPosition) {
+  //     return {
+  //       position: this.lastPosition,
+  //       heading: this.heading ?? 0,
+  //       status: VesselStatus.MOVING
+  //     }
+  //   }
 
-    return null
-  }
+  //   return null
+  // }
 
 }
