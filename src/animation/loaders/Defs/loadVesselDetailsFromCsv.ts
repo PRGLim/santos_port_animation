@@ -14,7 +14,7 @@ type DetailRow = {
 }
 
 export async function loadVesselDetailFromCSV(): Promise<Map<number, VesselDetail>> {
-  const file = "/data/Defs/vessel_info_log" + SCENARIO + ".csv"
+  const file = "/data/Scenarios/" + SCENARIO + "/vessel_info_log.csv"
   const res = await fetch(file)
   const csvText = await res.text()
 

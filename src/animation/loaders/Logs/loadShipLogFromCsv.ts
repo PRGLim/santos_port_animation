@@ -17,7 +17,7 @@ export async function loadShipLogsFromCSV(
   routes: Map<number, Route>
 
 ): Promise<VesselRouteExecution[]> {
-  const file = "/data/Logs/animation_movements" + SCENARIO + ".csv"
+  const file = "/data/Scenarios/" + SCENARIO + "/animation_movements.csv"
   const res = await fetch(file)
   const text = await res.text()
 
@@ -42,9 +42,7 @@ export async function loadShipLogsFromCSV(
 
     if (routeId === 0) {
       type = ExecutionType.QUEUE
-    } else if (routeId > 16) {
-      type = ExecutionType.BERTH
-    } else {
+    }  else {
       type = ExecutionType.MOVE
     }
 

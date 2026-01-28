@@ -7,7 +7,7 @@ type ManeuverLogRow = {
 }
 
 export async function loadManeuverLog(): Promise<{ vesselId: number, maneuverId: number }[]> {
-  const file = "/data/Logs/animation_maneuver_log" + SCENARIO + ".csv"
+  const file = "/data/Scenarios/" + SCENARIO + "/animation_maneuver_log.csv"
   const res = await fetch(file)
   const text = await res.text()
 

@@ -139,7 +139,6 @@ getStateAt(
     }
   }
 
-
   if (!exec) {
     return this.lastPosition
       ? {
@@ -186,7 +185,6 @@ getStateAt(
       const pos = exec.getEndPosition() ?? exec.getStartPosition()
       const targetHeading = exec.getTargetHeadingAt(time)
       this.heading = targetHeading ?? this.heading ?? 0
-      console.log(this.heading)
       this.lastPosition = pos
 
       return {
@@ -200,7 +198,6 @@ getStateAt(
       return null
   }
 }
-
 
   // getStateAt(
   //   time: number
