@@ -70,6 +70,7 @@ export async function loadShipLogsFromCSV(
       execution.maneuver = [Number(maneuver?.dock_angle), Number(maneuver?.undock_angle)]
     }
 
+  executions.sort((a, b) => a.startTime - b.startTime)
   executions.push(execution)
 
   })

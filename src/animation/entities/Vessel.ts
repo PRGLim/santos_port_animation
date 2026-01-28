@@ -74,130 +74,115 @@ export class Vessel {
 
 
 
-getStateAt(
-  time: number
-): { position: Point; heading: number; status: VesselStatus } | null {
+  getStateAt(
+    time: number
+  ): { position: Point; heading: number; status: VesselStatus } | null {
 
-  const exec =
-    this.executions.find(
-      e => e.type === ExecutionType.MOVE && time >= e.startTime && time <= e.endTime
-    ) ??
-    this.executions.find(
-      e => e.type === ExecutionType.BERTH && time >= e.startTime && time <= e.endTime
-    ) ??
-    this.executions.find(
-      e => e.type === ExecutionType.QUEUE && time >= e.startTime && time <= e.endTime
+    // =========================
+    //  MOVE ativo
+    // =========================
+    const move = this.executions.find(
+      e =>
+        e.type === ExecutionType.MOVE &&
+        time >= e.startTime &&
+        time <= e.endTime
     )
 
+    if (move) {
+      let pos = move.getInterpolatedPosition(time)
+      if (!pos) pos = move.getStartPosition()
 
-    // GAP entre dois BERTH = continua BERTHED
-  for (let i = 0; i < this.executions.length - 1; i++) {
-    const curr = this.executions[i]
-    const next = this.executions[i + 1]
-
-    if (
-      curr.type === ExecutionType.BERTH &&
-      next.type === ExecutionType.BERTH &&
-      time > curr.endTime &&
-      time < next.startTime
-    ) {
-      const pos = curr.getEndPosition() ?? curr.getStartPosition()
-
-      this.lastPosition = pos
-
-      return {
-        position: pos,
-        heading: this.heading ?? 0,
-        status: VesselStatus.BERTHED
-      }
-    }
-  }
-
-  // QUEUE herdado (rota 0 pontual)
-  const lastQueue = [...this.executions]
-    .filter(e => e.type === ExecutionType.QUEUE && e.startTime <= time)
-    .sort((a, b) => b.startTime - a.startTime)[0]
-
-  const nextNonQueue = this.executions.find(
-    e =>
-      e.type !== ExecutionType.QUEUE &&
-      e.startTime > (lastQueue?.startTime ?? Infinity)
-  )
-
-  if (
-    lastQueue &&
-    (!nextNonQueue || time < nextNonQueue.startTime)
-  ) {
-    const pos = lastQueue.getStartPosition()
-
-    this.lastPosition = pos
-
-    return {
-      position: pos,
-      heading: this.heading ?? 0,
-      status: VesselStatus.IN_QUEUE
-    }
-  }
-
-  if (!exec) {
-    return this.lastPosition
-      ? {
-          position: this.lastPosition,
-          heading: this.heading ?? 0,
-          status: VesselStatus.IDLE // ou IDLE se quiser criar
-        }
-      : null
-  }
-
-  switch (exec.type) {
-
-    case ExecutionType.MOVE: {
-      let pos = exec.getInterpolatedPosition(time)
-
-      if (!pos) {
-        pos = exec.getStartPosition()
-      }
-
-      const targetHeading = exec.getTargetHeadingAt(time)
+      const targetHeading = move.getTargetHeadingAt(time)
       this.heading = targetHeading ?? this.heading ?? 0
       this.lastPosition = pos
 
       return {
         position: pos,
         heading: this.heading,
-        status: VesselStatus.MOVING
+        status: VesselStatus.MOVING,
       }
     }
 
-    case ExecutionType.QUEUE: {
-      const pos = exec.getStartPosition()
+    // =========================
+    // QUEUE herdado (rota 0)
+    // =========================
+    const lastQueue = [...this.executions]
+      .filter(
+        e =>
+          e.type === ExecutionType.QUEUE &&
+          e.startTime <= time
+      )
+      .sort((a, b) => b.startTime - a.startTime)[0]
 
+    const nextNonQueue = this.executions.find(
+      e =>
+        e.type !== ExecutionType.QUEUE &&
+        e.startTime > (lastQueue?.startTime ?? Infinity)
+    )
+
+    if (
+      lastQueue &&
+      (!nextNonQueue || time < nextNonQueue.startTime)
+    ) {
+      const pos = lastQueue.getStartPosition()
       this.lastPosition = pos
 
       return {
         position: pos,
         heading: this.heading ?? 0,
-        status: VesselStatus.IN_QUEUE
+        status: VesselStatus.IN_QUEUE,
       }
     }
 
-    case ExecutionType.BERTH: {
-      const pos = exec.getEndPosition() ?? exec.getStartPosition()
-      const targetHeading = exec.getTargetHeadingAt(time)
-      this.heading = targetHeading ?? this.heading ?? 0
-      this.lastPosition = pos
+  // =========================
+  // BERTH VIRTUAL (gap)
+  // =========================
+  const prev = [...this.executions]
+    .filter(e => e.endTime <= time)
+    .at(-1)
 
-      return {
-        position: pos,
-        heading: this.heading ?? 0,
-        status: VesselStatus.BERTHED
-      }
+  const next = this.executions.find(
+    e => e.startTime > time
+  )
+
+  if (
+    prev?.route.berthRoute &&
+    next?.route.berthRoute
+  ) {
+    const pos =
+      prev.getEndPosition() ??
+      prev.getStartPosition()
+
+    // heading FIXO da chegada
+    const heading =
+      prev.getTargetHeadingAt(prev.endTime) ??
+      this.heading ??
+      0
+
+    this.lastPosition = pos
+    this.heading = heading
+
+    return {
+      position: pos,
+      heading,
+      status: VesselStatus.BERTHED,
     }
-
-    default:
-      return null
   }
-}
+
+    // =========================
+    // Fallback
+    // =========================
+    if (this.lastPosition) {
+      return {
+        position: this.lastPosition,
+        heading: this.heading ?? 0,
+        status: VesselStatus.IDLE,
+      }
+    }
+
+    return null
+  }
+
 
   // getStateAt(
   //   time: number

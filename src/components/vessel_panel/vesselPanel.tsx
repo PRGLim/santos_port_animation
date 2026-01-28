@@ -19,7 +19,7 @@ export default function VesselPanel({ vessel, onClose , currentTime}: Props) {
           <Ship />
           <h3>Vessel: {vessel?.vessel_id}</h3>
       </div>
-      <p>DESTINO: {vessel?.vessel_beam}</p>
+      <p>DESTINO: Berço {vessel?.vessel_beam}</p>
       <p>STATUS: {vessel?.vessel_status}</p>
         <table>
         <thead>

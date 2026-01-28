@@ -75,7 +75,7 @@ export class VesselRouteExecution {
     
     if (!this.isActiveAt(time)) return null
 
-    if (this.type == ExecutionType.BERTH && this.maneuver != undefined) {
+    if (this.route.berthRoute && this.maneuver != undefined) {
       
       if (!this.maneuver) return null
        var angle = 0
