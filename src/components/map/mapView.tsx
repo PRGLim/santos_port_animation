@@ -9,10 +9,12 @@ mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 type Props = {
   onMapReady?: (map: mapboxgl.Map) => void
   onVesselSelect?: (id: number) => void
+  onSegSelect?: (id: string) => void
   selectedVesselId?: number | null
+  selectedSegId?: string | null
 }
 
-export default function MapView({ onMapReady, onVesselSelect, selectedVesselId }: Props) {
+export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selectedSegId, selectedVesselId }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const mapRef = useRef<mapboxgl.Map | null>(null)
 
@@ -32,6 +34,12 @@ export default function MapView({ onMapReady, onVesselSelect, selectedVesselId }
     // When loaded
     map.on("load", () => {
       // ===== Sources =====
+
+      map.addSource("canal", {
+        type: "geojson",
+        data: "/data/Polygon/canal.geojson",
+      })
+
       map.addSource("vessel", {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] },
@@ -42,7 +50,6 @@ export default function MapView({ onMapReady, onVesselSelect, selectedVesselId }
         data: { type: "FeatureCollection", features: [] },
       })
 
-      // Image
       map.loadImage("/image/vessel.png", (err, image) => {
         if (err || !image) return
         if (!map.hasImage("vessel-icon")) {
@@ -64,6 +71,7 @@ export default function MapView({ onMapReady, onVesselSelect, selectedVesselId }
         })
       })
 
+      // ===== Layers =====
       map.addLayer({
         id: "vessel-label-layer",
         type: "symbol",
@@ -88,27 +96,53 @@ export default function MapView({ onMapReady, onVesselSelect, selectedVesselId }
         },
       })
 
-      // TO DO: CHANGE COLOR WHEN SELECTED 
-      map.addLayer({
-        id: "vessel-selected",
-        type: "symbol",
-        source: "vessel",
-        filter: ["==", ["get", "id"], -1],
-        layout: {
-          "icon-image": "vessel-icon",
-          "icon-size": 0.02,
-          "icon-rotate": ["get", "heading"],
-          
-        },
+      // segments
+      map.addLayer(
+      {
+        id: "canal-polygon",
+        type: "fill",
+        source: "canal",
         paint: {
-          "icon-color": "#000000",
-          "icon-opacity": 0.3
-        }
+          "fill-color": "#8962B8",
+          "fill-opacity": 0.4,
+        },
+      },
+      "waterway-label" // camada existente
+      )
+
+      // VESSEL CHANGE COLOR WHEN SELECTED 
+      map.addLayer({
+          id: "vessel-selected",
+          type: "symbol",
+          source: "vessel",
+          filter: ["==", ["get", "id"], -1],
+          layout: {
+            "icon-image": "vessel-icon",
+            "icon-size": 0.02,
+            "icon-rotate": ["get", "heading"],
+            
+          },
+          paint: {
+            "icon-color": "#000000",
+            "icon-opacity": 0.3
+          }
 
       })
+      
+      // CHANGE SEGMENT COLOR WHEN SELECTED 
+      map.addLayer({
+        id: "canal-selected",
+        type: "fill",
+        source: "canal",
+        paint: {
+          "fill-color": "#FF5722",
+          "fill-opacity": 0.7,
+        },
+      })
 
-      onMapReady?.(map)
+    onMapReady?.(map)
     })
+
 
     map.on("mouseenter", "vessel-layer", () => {
       map.getCanvas().style.cursor = "pointer"
@@ -118,38 +152,83 @@ export default function MapView({ onMapReady, onVesselSelect, selectedVesselId }
       map.getCanvas().style.cursor = ""
     })
 
+    map.on("mouseenter", "canal-polygon", () => {
+      map.getCanvas().style.cursor = "pointer"
+    })
+
+    map.on("mouseleave", "canal-polygon", () => {
+      map.getCanvas().style.cursor = ""
+    })
+
+    // When segment clicked
+    map.on("click", "canal-polygon", (s) => {
+      const id = s.features?.[0]?.properties?.id
+      onSegSelect?.(id)
+      console.log(id)
+    })
+
     // When vessel clicked
     map.on("click", "vessel-layer", (e) => {
       const id = Number(e.features?.[0]?.properties?.id)
       onVesselSelect?.(id)
-    }  )
+    })
+
+
+
 
 
   }, [])
 
+
+  // VESSEL
   useEffect(() => {
-  const map = mapRef.current
-  if (!map) return
+    const map = mapRef.current
+    if (!map) return
 
-  // função segura
-  const updateSelectedVessel = () => {
-    if (!map.getLayer("vessel-selected")) return
+    // função 
+    const updateSelectedVessel = () => {
+      if (!map.getLayer("vessel-selected")) return
 
-    map.setFilter("vessel-selected", [
-      "==",
-      ["get", "id"],
-      selectedVesselId ?? -1,
-    ])
-  }
+      map.setFilter("vessel-selected", [
+        "==",
+        ["get", "id"],
+        selectedVesselId ?? -1,
+      ])
+    }
 
-  // se o style já carregou
-  if (map.isStyleLoaded()) {
-    updateSelectedVessel()
-  } else {
-    // espera carregar
-    map.once("load", updateSelectedVessel)
-  }
-}, [selectedVesselId])
+    // se o style já carregou
+    if (map.isStyleLoaded()) {
+      updateSelectedVessel()
+    } else {
+      // espera carregar
+      map.once("load", updateSelectedVessel)
+    }
+  }, [selectedVesselId])
+
+  // SEGMENT
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map) return
+
+    const update = () => {
+      if (!map.getLayer("canal-selected")) return
+
+      map.setFilter("canal-selected", [
+        "==",
+        ["get", "id"],
+        selectedSegId ?? -1,
+      ])
+    }
+
+    if (map.isStyleLoaded()) update()
+    map.on("load", update)
+
+    return () => {
+      map.off("load", update)
+    }
+  }, [selectedSegId])
+
+
 
   return <div ref={containerRef} className="map-container" />
 }

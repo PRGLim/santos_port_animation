@@ -18,6 +18,7 @@ import EnvironmentPanel from "../components/environment_panel/environmentPanel"
 import { loadEnvFromCSV } from "../animation/loaders/Envinroment/loadEnvironmentFromCsv"
 import { EnvSnapshot } from "../animation/entities/Environments/EnvTeste"
 import { useEnvironment } from "../animation/services/useEnvironment"
+import SegPanel from "../components/segment_panel/segPanel"
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
 export default function Home() {
@@ -29,19 +30,10 @@ export default function Home() {
   const [simTime, setSimTime] = useState<number>(0)
   const [simStart, setSimStart] = useState(0)
   const [simEnd, setSimEnd] = useState(1)
-  const [speed, setSpeed] = useState(1)
+  const [speed, setSpeed] = useState(10)
   const [isPlaying, setIsPlaying] = useState(false)
   const [selectedVesselId, setSelectedVesselId] = useState<number | null>(null)
-
-  const [tideHeightEnv, setTideHeightEnv] = useState<EnvSnapshot[]>([])
-  const [currentEnv, setCurrentEnv] = useState<EnvSnapshot[]>([])
-  const [sunsetSunriseEnv, setSunsetSunriseEnv] = useState<EnvSnapshot[]>([])
-  const [visibilityEnv, setVisibilityEnv] = useState<EnvSnapshot[]>([])
-  const [waveFreqEnv, setWaveFreqEnv] = useState<EnvSnapshot[]>([])
-  const [waveHeightEnv, setWaveHeightEnv] = useState<EnvSnapshot[]>([])
-  const [windSpeedEnv, setWindSpeedEnv] = useState<EnvSnapshot[]>([])
-
-
+  const [selectedSegId, setSelectedSegId] = useState<string | null>(null)
 
   type EnvKey =
     | "tideHeight"
@@ -154,7 +146,7 @@ useEffect(() => {
 
   const increaseSpeed = () => {
     setSpeed((prev) => {
-      const next = Math.min(prev + 0.5, 10)
+      const next = Math.min(prev + 0.5, 20)
       simRef.current?.setSpeed(next)
       return next
     })
@@ -183,7 +175,13 @@ useEffect(() => {
     }}
     selectedVesselId={selectedVesselId}
     onVesselSelect={setSelectedVesselId}
+    onSegSelect={setSelectedSegId}
+    selectedSegId={selectedSegId}
   />
+
+  {selectedSegId &&
+  <SegPanel segment={selectedSegId} onClose={() => setSelectedSegId(null)}/>
+  }
 
   <EnvironmentPanel 
     tideHeight={tideHeight} 

@@ -3,6 +3,7 @@ import { Point } from "./Point"
 import { VesselDetail } from "./VesselDetail"
 import { angleCalculator } from "@/src/utils/navigation"
 import { Console } from "console"
+import { VesselStatus } from "../types/vesselStatus"
 
 export class VesselRouteExecution {
   vesselId: number
@@ -18,7 +19,7 @@ export class VesselRouteExecution {
     startTime: number,
     endTime: number,
     forward: boolean,
-    maneuver?: [number, number]
+    maneuver?: [number, number],
 
   ) {
     this.vesselId = vesselId
@@ -28,17 +29,24 @@ export class VesselRouteExecution {
     this.forward = forward
   }
 
+  
   isActiveAt(time: number): boolean {
-    return time >= this.startTime && time <= this.endTime
+    return time >= this.startTime && time <= this.endTime 
   }
 
   getEndPosition(): Point {
-  const pts = this.route.points
-  return this.forward
-    ? pts[pts.length - 1]
-    : pts[0]
-}
+    const pts = this.route.points
+    return this.forward
+      ? pts[pts.length - 1]
+      : pts[0]
+  }
 
+  getStartPosition(): Point {
+    const pts = this.route.points
+    return this.forward
+      ? pts[0]
+      : pts[pts.length - 1]
+  }
 
   getPositionAt(time: number) {
 

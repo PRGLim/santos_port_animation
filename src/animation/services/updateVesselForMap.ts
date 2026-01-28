@@ -53,12 +53,17 @@ export function updateVessels(
     const detail = vesselDetails?.get(vessel.id)
     const state = vessel.getStateAt(time)
 
+    if (state) {
+      detail?.setStatus(state.status)
+    }
+
     if (!state){
       vesselPositions.delete(vessel.id)
       return
     } 
 
     const prev = vesselPositions.get(vessel.id)
+
     const next: VesselState = {
       lng: state.position.lng,
       lat: state.position.lat,

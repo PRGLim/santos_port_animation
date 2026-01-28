@@ -1,5 +1,6 @@
 export enum VesselStatus {
-  INBOUND = "inbound",          // trânsito de entrada
-  BERTHED = "berthed",          // operando no berço
-  OUTBOUND = "outbound",        // trânsito de saída
+  BEFORE_START = "BEFORE_START",
+  MOVING = "MOVING",
+  BERTHED = "BERTHED",
+  FINISHED = "FINISHED",
 }

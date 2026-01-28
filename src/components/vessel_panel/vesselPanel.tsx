@@ -20,7 +20,7 @@ export default function VesselPanel({ vessel, onClose , currentTime}: Props) {
           <h3>Vessel: {vessel?.vessel_id}</h3>
       </div>
       <p>DESTINO: {vessel?.vessel_beam}</p>
-
+      <p>STATUS: {vessel?.vessel_status}</p>
         <table>
         <thead>
             <tr>
@@ -37,6 +37,12 @@ export default function VesselPanel({ vessel, onClose , currentTime}: Props) {
             </tr>
         </tbody>
         </table>
+
+      <p>CATEGORIA: {vessel?.vessel_category}</p>
+      {(vessel?.vessel_detail_category != "N/A" && vessel?.vessel_detail_category) && (
+        <p>CATEGORIA DETALHADA: {vessel.vessel_detail_category}</p>
+      )}
+
     </div>
   )
 }
