@@ -32,6 +32,13 @@ export function updateVessels(
 
   let updateNeeded = true 
 
+  const statesForQueue = 
+    vessels.map(v => v.getStateAt(time))
+    .filter(s => s?.status === VesselStatus.IN_QUEUE)
+
+  console.log(statesForQueue)
+
+
   //Remove navios finalizados
   vesselPositions.forEach((_state, vesselId) => {
     
@@ -55,6 +62,7 @@ export function updateVessels(
   // Atualiza estados
   vessels.forEach(vessel => {
 
+
     if (vessel.isFinished(time)) {
       vesselPositions.delete(vessel.id)
       return
@@ -62,6 +70,9 @@ export function updateVessels(
 
     const detail = vesselDetails?.get(vessel.id)
     const state = vessel.getStateAt(time)
+
+
+  
 
     if (state) {
       detail?.setStatus(state.status)

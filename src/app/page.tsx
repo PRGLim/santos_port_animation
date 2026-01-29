@@ -105,7 +105,8 @@ useEffect(() => {
       setSimTime(time)
 
       if (!mapRef.current) return
-
+      
+      
 
       updateVessels(
         mapRef.current,
