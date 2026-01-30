@@ -25,7 +25,14 @@ export class SimulationController {
       vesselsMap.get(e.vesselId)!.executions.push(e)
     })
 
+    
     this.vessels = Array.from(vesselsMap.values())
+
+    this.vessels.forEach(v => {
+      v.resolveQueueTimes()
+      v.resolveThroughput()
+    })
+
 
     this.startTime = Math.min(...executions.map(e => e.startTime))
     this.endTime   = Math.max(...executions.map(e => e.endTime))

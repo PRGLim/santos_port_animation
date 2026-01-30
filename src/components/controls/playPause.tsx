@@ -12,7 +12,7 @@ export function PlayPauseButton({ isPlaying, onToggle }: Props) {
     <button
       onClick={onToggle}
       className={isPlaying ? "btn-pause" : "btn-play"}
-      style={{ marginRight: "8px" }}
+      style={{ marginRight: "8px", color: "white"}}
     >
       {isPlaying ? "⏸ Pause" : "▶ Play"}
     </button>

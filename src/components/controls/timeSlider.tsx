@@ -34,7 +34,7 @@ export function BottomControl({ time, min, max, onChange, isPlaying, onToggle }:
             <button
             onClick={onToggle}
             className={isPlaying ? "btn-pause" : "btn-play"}
-            style={{ marginRight: "8px" }}
+            style={{ marginRight: "8px", color: "white", fontWeight: "bold"}}
             >
             {isPlaying ? "⏸ Pause" : "▶ Play"}
             </button>

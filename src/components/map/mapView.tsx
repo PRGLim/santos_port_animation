@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react"
 import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
+import { MAP_STYLE } from "@/src/animation/core/constants"
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
@@ -24,7 +25,7 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
 
     const map = new mapboxgl.Map({
       container: containerRef.current,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: MAP_STYLE,
       center: [-46.33, -23.95],
       zoom: 12,
     })
@@ -50,28 +51,42 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
         data: { type: "FeatureCollection", features: [] },
       })
 
-      map.loadImage("/image/vessel.png", (err, image) => {
-        if (err || !image) return
-        if (!map.hasImage("vessel-icon")) {
-          map.addImage("vessel-icon", image)
-        }
-
-        map.addLayer({
-          id: "vessel-layer",
-          type: "symbol",
-          source: "vessel",
-          layout: {
-            "icon-image": "vessel-icon",
-            "icon-size": 0.02,
-            "icon-allow-overlap": true,
-            "icon-ignore-placement": true,
-            "icon-rotate": ["get", "heading"],
-            "icon-rotation-alignment": "map",
-          }
-        })
-      })
 
       // ===== Layers =====
+
+      
+      // vessel
+      map.loadImage("/image/vessel6.png", (err, image) => {
+        if (err || !image) return
+
+        if (!map.hasImage("vessel-icon")) {
+          map.addImage("vessel-icon", image, {
+            sdf: true
+          })
+        }
+
+      map.addLayer({
+        id: "vessel-layer",
+        type: "symbol",
+        source: "vessel",
+        layout: {
+          "icon-image": "vessel-icon",
+          "icon-size": 0.12,
+          "icon-rotate": ["get", "heading"],
+          "icon-rotation-alignment": "map",
+          "icon-allow-overlap": true
+        },
+        paint: {
+          "icon-color": "#e74c3c",
+          "icon-opacity": 1,
+          "icon-halo-color": "#e74c3c",
+          "icon-halo-width": 0.4
+        }
+      })
+
+      })
+
+      // label
       map.addLayer({
         id: "vessel-label-layer",
         type: "symbol",
@@ -83,7 +98,7 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
             "\n", {},
             ["get", "subtitle"], { "font-scale": 0.85 },
           ],
-          "text-size": 14,
+          "text-size": 12,
           "text-offset": [0, 1.6],
           "text-anchor": "top",
           "text-allow-overlap": true,
@@ -91,7 +106,7 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
         paint: {
           "text-color": "#000",
           "text-halo-color": "rgba(255,255,255,0.8)",
-          "text-halo-width": 10,
+          "text-halo-width": 20,
           "text-halo-blur": 0.3,
         },
       })
@@ -103,8 +118,8 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
         type: "fill",
         source: "canal",
         paint: {
-          "fill-color": "#8962B8",
-          "fill-opacity": 0.4,
+          "fill-color": "#0095FF",
+          "fill-opacity": 0.2,
         },
       },
       "waterway-label" // camada existente
@@ -175,7 +190,6 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
 
 
   }, [])
-
 
   // VESSEL
   useEffect(() => {

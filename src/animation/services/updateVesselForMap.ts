@@ -11,9 +11,10 @@ type VesselState = {
   heading: number
 }
 
-
 const EPS = 1e-7
 
+
+// not using
 function hasChanges(a: VesselState, b: VesselState) {
   return (
     Math.abs(a.lng - b.lng) > EPS ||
@@ -21,6 +22,8 @@ function hasChanges(a: VesselState, b: VesselState) {
     Math.abs(a.heading - b.heading) > 0.1
   )
 }
+
+
 
 export function updateVessels(
   map: mapboxgl.Map,
@@ -32,13 +35,17 @@ export function updateVessels(
 
   let updateNeeded = true 
 
-  const statesForQueue = 
-    vessels.map(v => v.getStateAt(time))
-    .filter(s => s?.status === VesselStatus.IN_QUEUE)
+  const queue = vessels
+    .map(v => ({
+      vessel: v,
+      state: v.getStateAt(time)
+    }))
+    .filter(e => e.state?.status === VesselStatus.IN_QUEUE)
 
-  console.log(statesForQueue)
-
-
+    queue.sort((a, b) => 
+      a.vessel.executions[0].startTime -
+      b.vessel.executions[0].startTime
+    )
   //Remove navios finalizados
   vesselPositions.forEach((_state, vesselId) => {
     
@@ -71,9 +78,6 @@ export function updateVessels(
     const detail = vesselDetails?.get(vessel.id)
     const state = vessel.getStateAt(time)
 
-
-  
-
     if (state) {
       detail?.setStatus(state.status)
     }
@@ -98,6 +102,29 @@ export function updateVessels(
 
     if (!updateNeeded) return
 
+  })
+
+
+  queue.forEach((entry, index) => {
+    const { vessel, state } = entry
+    if (!state) return
+
+    // projeta a posição base
+    const p = map.project([state.position.lng, state.position.lat])
+
+    // deslocamento simples da fila
+    p.x += index * 30
+
+    // volta pra lng/lat
+    const newPos = map.unproject(p)
+
+    const nextWithOffset: VesselState = {
+      lng: newPos.lng,
+      lat: newPos.lat,
+      heading: state.heading
+    }
+
+    vesselPositions.set(vessel.id, nextWithOffset)
   })
 
   // Vessel Image 

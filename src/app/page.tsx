@@ -13,14 +13,15 @@ import MapView from "../components/map/mapView"
 import { SpeedControl } from "../components/controls/speedControl"
 import { BottomControl } from "../components/controls/timeSlider"
 import { SimulationController } from "../animation/core/SimulationController"
-import VesselPanel from "../components/vessel_panel/vesselPanel"
 import EnvironmentPanel from "../components/environment_panel/environmentPanel"
 import { loadEnvFromCSV } from "../animation/loaders/Envinroment/loadEnvironmentFromCsv"
 import { EnvSnapshot } from "../animation/entities/Environments/EnvTeste"
 import { useEnvironment } from "../animation/services/useEnvironment"
-import SegPanel from "../components/segment_panel/segPanel"
-import { Vessel } from "../animation/entities/Vessel"
 import { VesselStatus } from "../animation/types/vesselStatus"
+import { SidePanelTabs } from "../components/lateralPanel"
+import { useQueueStats } from "../animation/services/useStatQueue"
+import { useThroughputStats } from "../animation/services/useStatMov"
+
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
 export default function Home() {
@@ -28,6 +29,8 @@ export default function Home() {
   const simRef = useRef<SimulationController | null>(null)
   const vesselPositions = useRef<Map<number, VesselState>>(new Map())
   const vesselDetailsRef = useRef<Map<number, VesselDetail> | null>(null)
+  const queueStats = useQueueStats()
+  const throughputStats = useThroughputStats()
 
   const [simTime, setSimTime] = useState<number>(0)
   const [simStart, setSimStart] = useState(0)
@@ -36,6 +39,7 @@ export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [selectedVesselId, setSelectedVesselId] = useState<number | null>(null)
   const [selectedSegId, setSelectedSegId] = useState<string | null>(null)
+
 
   type EnvKey =
     | "tideHeight"
@@ -105,18 +109,20 @@ useEffect(() => {
       setSimTime(time)
 
       if (!mapRef.current) return
-      
-      
 
-      updateVessels(
-        mapRef.current,
-        vessels,
-        time,
-        vesselPositions.current,
-        vesselDetailsRef.current ?? undefined
-      )
-    })
-  }
+        queueStats.update(vessels, time)
+        
+        throughputStats.update(vessels, time)
+
+        updateVessels(
+          mapRef.current,
+          vessels,
+          time,
+          vesselPositions.current,
+          vesselDetailsRef.current ?? undefined
+        )
+      })
+    }
 
   setup()
 }, [])
@@ -176,6 +182,7 @@ useEffect(() => {
   return (
 
 <div className="map-wrapper">
+
   <MapView
     onMapReady={(map) => {
       mapRef.current = map
@@ -186,9 +193,21 @@ useEffect(() => {
     selectedSegId={selectedSegId}
   />
 
-  {selectedSegId &&
-  <SegPanel segment={selectedSegId} onClose={() => setSelectedSegId(null)}/>
-  }
+
+
+
+  <SidePanelTabs 
+    selectedVessel={vesselDetailsRef.current?.get(Number(selectedVesselId)) ?? null}
+    selectedSegment={selectedSegId} 
+    onClosedSegment={() => setSelectedSegId(null)}
+    currentTime={simTime}
+    currentQueue={queueStats.queueSize}
+    avgWaitTime={queueStats.avgWaitTime}
+    maxWaitTime={queueStats.maxWaitTime}
+    history={queueStats.history}
+    />
+
+
 
   <EnvironmentPanel 
     tideHeight={tideHeight} 
@@ -199,12 +218,6 @@ useEffect(() => {
     windSpeed={windSpeed}
     /> 
 
-  { selectedVesselId &&
-    <VesselPanel
-      vessel={vesselDetailsRef.current?.get(Number(selectedVesselId)) ?? null}
-      onClose={() => setSelectedVesselId(null)}
-      currentTime={simTime}/>
-  }
 
   {/* (speed control) */}
   <div className="controls-top">

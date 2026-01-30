@@ -10,11 +10,7 @@ export default function SegPanel({ segment, onClose }: Props) {
 
   return (
     <div
-
       style={{
-        position: "absolute",
-        bottom: 80,
-        right: 20,
         background: "white",
         padding: "8px 12px",
         borderRadius: 6,
@@ -37,8 +33,6 @@ export default function SegPanel({ segment, onClose }: Props) {
       <div>
         <strong>Segmento:</strong> {segment}
       </div>
-
-
     </div>
   )
 }

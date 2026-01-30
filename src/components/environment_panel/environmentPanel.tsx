@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/collapsible"
 
 import { useState } from "react"
-import { CloudCog, SlidersHorizontal, X } from "lucide-react"
+import { CloudCog, X } from "lucide-react"
 
 
 type Props = {
@@ -51,12 +51,12 @@ export default function EnvironmentPanel(props: Props) {
             className="absolute right-2 top-2 z-10 rounded p-1 hover:bg-muted"
             aria-label="Fechar"
           >
-            <X className="h-4 w-4" />
+            <X className="h-4 w-4 mt-1" />
           </button>
 
           <Accordion
             type="multiple"
-            className="w-full max-h-400 overflow-y-auto no-scrollbar"
+            className="w-full mt-5 max-h-400 overflow-y-auto no-scrollbar"
           >
             <AccordionItem value="item-1">
               <AccordionTrigger>Altura da Maré (m):</AccordionTrigger>

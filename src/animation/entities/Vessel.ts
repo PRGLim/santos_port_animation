@@ -9,6 +9,15 @@ export class Vessel {
   heading: number = 0
   lastPosition?: Point
    
+  queueEnterTime?: number
+  queueExitTime?: number
+  
+  enterHour?: number
+  exitHour?: number
+
+  private queueResolved = false
+  private throughputResolved = false
+
   constructor(
     id: number,
     executions: VesselRouteExecution[] = [],
@@ -21,7 +30,48 @@ export class Vessel {
     return time > Math.max(...this.executions.map(e => e.endTime))
   }
 
+  resolveQueueTimes() {
+    if (this.queueResolved) return
 
+    const queueExec = this.executions.find(
+      e => e.type === ExecutionType.QUEUE
+    )
+
+    if (!queueExec) {
+      this.queueResolved = true
+      return
+    }
+
+    this.queueEnterTime = queueExec.startTime
+
+
+    const nextExec = this.executions
+      .filter(e => e.type !== ExecutionType.QUEUE)
+      .sort((a, b) => a.startTime - b.startTime)[0]
+
+    if (nextExec) {
+      this.queueExitTime = nextExec.startTime
+    }
+
+    this.queueResolved = true
+  }
+
+  resolveThroughput() {
+    if (this.throughputResolved) return
+    
+    const firstEx = this.executions.find(
+      e => (e.route.id == 1 && e.forward == true)
+    )
+
+    const lastEx = this.executions.find(
+      e => (e.route.id == 1 && e.forward == false)
+    )
+
+    this.enterHour = (Number(firstEx?.startTime) / 1000) / 60
+    this.exitHour = (Number(lastEx?.endTime) / 1000) / 60
+
+    this.throughputResolved = true
+  }
 
   getStateAt(
     time: number
