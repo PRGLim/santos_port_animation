@@ -11,6 +11,8 @@ import { VesselDetail } from "../animation/entities/VesselDetail"
 import SegPanel from "./segment_panel/segPanel"
 import { QueueAreaChart } from "./charts/queueChart"
 import Image from 'next/image'
+import {KPIS} from "@/src/animation/types/kpis"
+
 
 export type QueuePoint = {
   time: number
@@ -22,10 +24,7 @@ type Props = {
   selectedVessel: VesselDetail | null
   selectedSegment: any | null
   currentTime: number,
-  currentQueue: number,
-  avgWaitTime: number,
-  maxWaitTime: number,
-  history: QueuePoint[]
+  kpis: KPIS,
   onClosedSegment?: () => void
 }
 
@@ -33,10 +32,7 @@ export function SidePanelTabs({
   selectedVessel,
   selectedSegment,
   currentTime,
-  currentQueue,
-  avgWaitTime,
-  maxWaitTime,
-  history,
+  kpis,
 
   onClosedSegment
 }: Props) {
@@ -111,7 +107,7 @@ export function SidePanelTabs({
               <CardTitle>Estatísticas</CardTitle>
             </CardHeader>
             <CardContent className="text-sm space-y-2">
-              <QueueAreaChart currentQueue={currentQueue} avgWaitTime={avgWaitTime} maxWaitTime={maxWaitTime} history={history}/>
+              <QueueAreaChart currentQueue={kpis.queueKPI.queueSize} avgWaitTime={kpis.queueKPI.avgWaitTime} maxWaitTime={kpis.queueKPI.maxWaitTime}/>
             
             <Card>
               <CardHeader>
@@ -125,13 +121,13 @@ export function SidePanelTabs({
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-3 gap-4 text-sm">
                   <div>
-                    <div className="text-muted-foreground">Entradas médias:</div>
-                    <div className="text-xl font-semibold">{7.2}</div>
+                    <div className="text-muted-foreground">Entradas Total:</div>
+                    <div className="text-xl font-semibold">{kpis.throughputKPI.avgEnterByDay}</div>
                   </div>
 
                   <div>
-                    <div className="text-muted-foreground">Saídas médias:</div>
-                    <div className="text-xl font-semibold">{7.2}</div>
+                    <div className="text-muted-foreground">Saídas Total:</div>
+                    <div className="text-xl font-semibold">{kpis.throughputKPI.avgExitsByDay}</div>
                   </div>
                 </div>
             </CardContent>

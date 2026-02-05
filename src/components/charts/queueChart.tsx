@@ -28,7 +28,6 @@ type QueueStats = {
   currentQueue: number
   avgWaitTime: number
   maxWaitTime: number
-  history: QueuePoint[]
 }
 const queueChartConfig = {
   queue: {
@@ -41,7 +40,6 @@ export function QueueAreaChart({
   currentQueue,
   avgWaitTime,
   maxWaitTime,
-  history,
 }: QueueStats) {
   return (
     <Card>

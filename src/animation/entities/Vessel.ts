@@ -2,6 +2,7 @@ import { ExecutionType, VesselRouteExecution } from "./VesselRouteExecution"
 import { Point } from "./Point"
 import { angleCalculator, gradualAngleCalculator } from "../../utils/navigation"
 import { VesselStatus } from "../types/vesselStatus"
+import { globalSimEnd } from "../core/constants"
 
 export class Vessel {
   id: number
@@ -68,8 +69,11 @@ export class Vessel {
     )
 
     this.enterHour = (Number(firstEx?.startTime) / 1000) / 60
-    this.exitHour = (Number(lastEx?.endTime) / 1000) / 60
-
+    if(!lastEx){
+     this.exitHour = (globalSimEnd + 1) / 1000 / 60
+    }else{
+      this.exitHour = (Number(lastEx?.endTime) / 1000) / 60
+    }
     this.throughputResolved = true
   }
 

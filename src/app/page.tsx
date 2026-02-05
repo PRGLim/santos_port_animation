@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useEffect, useRef, useState } from "react"
 import mapboxgl from "mapbox-gl"
@@ -17,10 +17,8 @@ import EnvironmentPanel from "../components/environment_panel/environmentPanel"
 import { loadEnvFromCSV } from "../animation/loaders/Envinroment/loadEnvironmentFromCsv"
 import { EnvSnapshot } from "../animation/entities/Environments/EnvTeste"
 import { useEnvironment } from "../animation/services/useEnvironment"
-import { VesselStatus } from "../animation/types/vesselStatus"
 import { SidePanelTabs } from "../components/lateralPanel"
-import { useQueueStats } from "../animation/services/useStatQueue"
-import { useThroughputStats } from "../animation/services/useStatMov"
+import { useKPIS } from "../animation/services/useKPIS"
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
@@ -29,8 +27,7 @@ export default function Home() {
   const simRef = useRef<SimulationController | null>(null)
   const vesselPositions = useRef<Map<number, VesselState>>(new Map())
   const vesselDetailsRef = useRef<Map<number, VesselDetail> | null>(null)
-  const queueStats = useQueueStats()
-  const throughputStats = useThroughputStats()
+  const kpis = useKPIS()
 
   const [simTime, setSimTime] = useState<number>(0)
   const [simStart, setSimStart] = useState(0)
@@ -110,10 +107,8 @@ useEffect(() => {
 
       if (!mapRef.current) return
 
-        queueStats.update(vessels, time)
+        kpis.update(vessels, time)
         
-        throughputStats.update(vessels, time)
-
         updateVessels(
           mapRef.current,
           vessels,
@@ -180,73 +175,65 @@ useEffect(() => {
 
 
   return (
+    
+  
 
-<div className="map-wrapper">
+    <div className="map-wrapper">
+        <MapView
+          onMapReady={(map) => {
+            mapRef.current = map
+          }}
+          selectedVesselId={selectedVesselId}
+          onVesselSelect={setSelectedVesselId}
+          onSegSelect={setSelectedSegId}
+          selectedSegId={selectedSegId}
+        />
 
-  <MapView
-    onMapReady={(map) => {
-      mapRef.current = map
-    }}
-    selectedVesselId={selectedVesselId}
-    onVesselSelect={setSelectedVesselId}
-    onSegSelect={setSelectedSegId}
-    selectedSegId={selectedSegId}
-  />
+        <SidePanelTabs 
+          selectedVessel={vesselDetailsRef.current?.get(Number(selectedVesselId)) ?? null}
+          selectedSegment={selectedSegId} 
+          onClosedSegment={() => setSelectedSegId(null)}
+          currentTime={simTime}
+          kpis={kpis}
+          />
 
-
-
-
-  <SidePanelTabs 
-    selectedVessel={vesselDetailsRef.current?.get(Number(selectedVesselId)) ?? null}
-    selectedSegment={selectedSegId} 
-    onClosedSegment={() => setSelectedSegId(null)}
-    currentTime={simTime}
-    currentQueue={queueStats.queueSize}
-    avgWaitTime={queueStats.avgWaitTime}
-    maxWaitTime={queueStats.maxWaitTime}
-    history={queueStats.history}
-    />
-
-
-
-  <EnvironmentPanel 
-    tideHeight={tideHeight} 
-    current={current} 
-    visibility={visibility} 
-    waveFreq={waveFreq}
-    waveHeight={waveHeight}
-    windSpeed={windSpeed}
-    /> 
+        <EnvironmentPanel 
+          tideHeight={tideHeight} 
+          current={current} 
+          visibility={visibility} 
+          waveFreq={waveFreq}
+          waveHeight={waveHeight}
+          windSpeed={windSpeed}
+          /> 
 
 
-  {/* (speed control) */}
-  <div className="controls-top">
+        {/* (speed control) */}
+        <div className="controls-top">
 
-    <SpeedControl
-      speed={speed}
-      onIncrease={increaseSpeed}
-      onDecrease={decreaseSpeed}
-    />
-  </div>
+          <SpeedControl
+            speed={speed}
+            onIncrease={increaseSpeed}
+            onDecrease={decreaseSpeed}
+          />
+        </div>
 
-  {/* (bottom controls) */}
-  <BottomControl
-    isPlaying={isPlaying}
-    onToggle={() => {
-      if (isPlaying) simRef.current?.pause()
-      else simRef.current?.play()
-      setIsPlaying(!isPlaying)
-    }}
-    time={simTime}
-    min={simStart}
-    max={simEnd}
-    onChange={(t) => {
-      setSimTime(t)
-      simRef.current?.seek(t)
-    }}
-  />
-</div>
-
+        {/* (bottom controls) */}
+        <BottomControl
+          isPlaying={isPlaying}
+          onToggle={() => {
+            if (isPlaying) simRef.current?.pause()
+            else simRef.current?.play()
+            setIsPlaying(!isPlaying)
+          }}
+          time={simTime}
+          min={simStart}
+          max={simEnd}
+          onChange={(t) => {
+            setSimTime(t)
+            simRef.current?.seek(t)
+          }}
+        />
+      </div>
   )
 }
 
