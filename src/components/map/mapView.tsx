@@ -1,12 +1,30 @@
-"use client"
+'use client'
 
 import { useEffect, useRef } from "react"
 import mapboxgl from "mapbox-gl"
 import "mapbox-gl/dist/mapbox-gl.css"
 import { MAP_STYLE } from "@/src/animation/core/constants"
+import { VESSEL_MARKET_COLORS } from "@/src/animation/types/colorTips"
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
+
+const vesselMarketColorExpression = () => {
+  const entries = Object.entries(VESSEL_MARKET_COLORS)
+    .filter(([market]) => market !== "Unknown")
+
+  // fallback seguro se ainda não houver markets carregados
+  if (entries.length === 0) {
+    return "#95a5a6"
+  }
+
+  return [
+    "match",
+    ["get", "market"],
+    ...entries.flatMap(([market, color]) => [market, color]),
+    VESSEL_MARKET_COLORS.Unknown
+  ] as mapboxgl.Expression
+}
 type Props = {
   onMapReady?: (map: mapboxgl.Map) => void
   onVesselSelect?: (id: number) => void
@@ -54,7 +72,8 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
 
       // ===== Layers =====
 
-      
+    console.log(vesselMarketColorExpression())
+
       // vessel
       map.loadImage("/image/vessel6.png", (err, image) => {
         if (err || !image) return
@@ -71,16 +90,16 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
         source: "vessel",
         layout: {
           "icon-image": "vessel-icon",
-          "icon-size": 0.12,
+          "icon-size": 0.1,
           "icon-rotate": ["get", "heading"],
           "icon-rotation-alignment": "map",
           "icon-allow-overlap": true
         },
         paint: {
-          "icon-color": "#e74c3c",
+          "icon-color": vesselMarketColorExpression(),
           "icon-opacity": 1,
           "icon-halo-color": "#e74c3c",
-          "icon-halo-width": 0.4
+          "icon-halo-width": 0
         }
       })
 
@@ -196,7 +215,7 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
     const map = mapRef.current
     if (!map) return
 
-    // função 
+    // função  
     const updateSelectedVessel = () => {
       if (!map.getLayer("vessel-selected")) return
 

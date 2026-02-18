@@ -19,6 +19,7 @@ import { EnvSnapshot } from "../animation/entities/Environments/EnvTeste"
 import { useEnvironment } from "../animation/services/useEnvironment"
 import { SidePanelTabs } from "../components/lateralPanel"
 import { useKPIS } from "../animation/services/useKPIS"
+import { VesselLegend } from "../components/map/colorTips"
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
@@ -80,6 +81,7 @@ export default function Home() {
   // ===============================
   // LOAD VESSEL INFO
   // ===============================
+
 useEffect(() => {
   async function loadDetails() {
     const details = await loadVesselDetailFromCSV()
@@ -92,6 +94,8 @@ useEffect(() => {
   // ===============================
   // SIMULATION
   // ===============================
+
+
 useEffect(() => {
   async function setup() {
     const sim = new SimulationController()
@@ -127,8 +131,7 @@ useEffect(() => {
   // ===============================
 
   useEffect(() => {
-      
-    if (!simStart || !simEnd) return
+    
 
     const start = new Date("01/01/2025 06:00:00")
     const end = new Date("01/06/2025 00:00:00") // dia 06 de janeiro
@@ -139,8 +142,8 @@ useEffect(() => {
           const data = await loadEnvFromCSV(file, start.getTime(), end.getTime())
           return [key, data] as [EnvKey, EnvSnapshot[]]
         })
+        
       )
-
       setEnvs(Object.fromEntries(entries) as EnvState)
     }
 
@@ -188,6 +191,7 @@ useEffect(() => {
           onSegSelect={setSelectedSegId}
           selectedSegId={selectedSegId}
         />
+        <VesselLegend title="Vessel Market" />
 
         <SidePanelTabs 
           selectedVessel={vesselDetailsRef.current?.get(Number(selectedVesselId)) ?? null}

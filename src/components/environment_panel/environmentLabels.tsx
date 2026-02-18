@@ -1,3 +1,5 @@
+'use client'
+
 import { EnvSnapshot } from "@/src/animation/entities/Environments/EnvTeste"
 
 

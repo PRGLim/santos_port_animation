@@ -1,5 +1,4 @@
 // animation/map/updateVessels.ts
-import mapboxgl from "mapbox-gl"
 import { Feature, Geometry, GeoJsonProperties } from "geojson"
 import { Vessel } from "../entities/Vessel"
 import { VesselDetail } from "../entities/VesselDetail"
@@ -22,7 +21,6 @@ function hasChanges(a: VesselState, b: VesselState) {
     Math.abs(a.heading - b.heading) > 0.1
   )
 }
-
 
 
 export function updateVessels(
@@ -127,13 +125,22 @@ export function updateVessels(
     vesselPositions.set(vessel.id, nextWithOffset)
   })
 
+  const vesselDetailsMap = new Map<number, VesselDetail>()
+
+
   // Vessel Image 
   const vesselFeatures: Feature<Geometry, GeoJsonProperties>[] =
-    Array.from(vesselPositions.entries()).map(([id, pos]) => ({
+    Array.from(vesselPositions.entries()).map(([id, pos]) => (
+      {
       type: "Feature",
       geometry: { type: "Point", coordinates: [pos.lng, pos.lat] },
-      properties: { id, heading: pos.heading },
-    }))
+      properties: { 
+        id, 
+        heading: pos.heading,
+        market: vesselDetails?.get(id)?.vessel_market_category
+      },
+    }
+  ))
 
   const vesselSource = map.getSource("vessel") as mapboxgl.GeoJSONSource
   vesselSource?.setData({

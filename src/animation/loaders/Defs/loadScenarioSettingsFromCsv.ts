@@ -1,4 +1,5 @@
 import Papa from "papaparse"
+import { SCENARIO } from "../../core/constants"
 
 
 type SettingsRow = {
@@ -7,6 +8,7 @@ type SettingsRow = {
 }
 
 export async function loadSettingsLog(): Promise<{ scenario_id: string, startDay: string }[]> {
+  const file = "/data/Scenarios/" + SCENARIO + "/scenario_settings.csv"
   const res = await fetch("/data/Defs/scenario_settings.csv")
   const text = await res.text()
 

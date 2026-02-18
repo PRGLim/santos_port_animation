@@ -1,3 +1,5 @@
+'use client'
+
 import { useRef, useState } from "react"
 import { Vessel } from "@/src/animation/entities/Vessel"
 import { VesselStatus } from "@/src/animation/types/vesselStatus"

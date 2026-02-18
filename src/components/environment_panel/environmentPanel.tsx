@@ -1,3 +1,5 @@
+'use client'
+
 import EnvironmentLabel from "./environmentLabels"
 import { EnvSnapshot } from "@/src/animation/entities/Environments/EnvTeste"
 
