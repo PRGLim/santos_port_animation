@@ -51,7 +51,11 @@
 .speed-control {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px 5px;
+  border-radius: 20px;
 }
 
 .speed-control button {
@@ -61,11 +65,159 @@
   border: none;
   font-size: 18px;
   cursor: pointer;
-  background: white;
+  background: black;
 }
 
 .speed-value {
   font-weight: bold;
   min-width: 40px;
   text-align: center;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* CONTROLES SUPERIORES */
+.controls-top {
+  position: absolute;
+  bottom: 86px;
+  left: 16px;
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+/* TIMELINE */
+.timeline-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 16px 10px;
+  z-index: 10;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1),
+    transparent
+  );
+}
+
+.timeline-overlay input{
+  width: 100%;
+
+}
+
+.timeline-time {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  opacity: 0.85;
+}
+
+.time-line-labels{
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: white;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+/*VESSEL PANEL*/
+
+/* .vessel-panel {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 280px;
+  background: rgba(255,255,255,0.95);
+  padding: 10px;
+  z-index: 10;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+  border-radius: 15px;
+} */
+
+table {
+  border-collapse: collapse; 
+  width: 100%; 
+  max-width: 400px; 
+  margin: 20px 0; 
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  border: 1px solid #ccc; 
+  padding: 2px 5px;      
+  text-align: center;      
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa; 
+}
+
+tr:hover {
+  background-color: #e6f7ff; 
+}
+
+
+h3 {
+  font-weight: bold;
+}
+
+.Row1{
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  font-size: 1.3em;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.timeline {
+  width: 100%;
+  max-width: 400px;
+}
+
+.bar {
+  position: relative;
+  height: 10px;
+  background: #eee;
+  border-radius: 6px;
+}
+
+.expected {
+  position: absolute;
+  height: 100%;
+  background: #4caf50;
+  border-radius: 6px;
+}
+
+.actual {
+  position: absolute;
+  height: 100%;
+  background: #f44336;
+  opacity: 0.7;
+  border-radius: 6px;
+}
+
+
+.environment-panel{
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(255,255,255,0.95);
+  padding: 10px 20px;
+  z-index: 10;
+  width: max-content;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+  border-radius: 15px;
 }

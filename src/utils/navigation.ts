@@ -38,6 +38,7 @@ export function angleCalculator(
   lng2: number,
   lat2: number
 ): number {
+
   const toRad = (deg: number) => deg * Math.PI / 180
   const toDeg = (rad: number) => rad * 180 / Math.PI
 
@@ -53,4 +54,39 @@ export function angleCalculator(
   const θ = Math.atan2(y, x)
 
   return (toDeg(θ) + 360) % 360
+}
+
+
+export function angleCalculator2(
+  lng1: number,
+  lat1: number,
+  lng2: number,
+  lat2: number
+): number {
+  
+  const toRad = (deg: number) => deg * Math.PI / 180
+
+  const long1Rad = toRad(lng1)
+  const long2Rad = toRad(lng2)
+
+  const lat1Rad = toRad(lat1)
+  const lat2Rad = toRad(lat2)
+
+  // Compute the difference in longitudes
+  const deltaLon = long1Rad - long2Rad;
+
+  // Calculate the bearing using the formula
+  const x = Math.sin(deltaLon) * Math.cos(lat2Rad);
+  const y =
+    Math.cos(lat1Rad) * Math.sin(lat2Rad) -
+    Math.sin(lat1Rad) * Math.cos(lat2Rad) * Math.cos(deltaLon);
+  let bearing = Math.atan2(x, y);
+
+  // Convert bearing from radians to degrees
+  bearing = (bearing * 180) / Math.PI;
+
+  // Normalize the bearing to a range of 0 to 360 degrees
+  bearing = (bearing + 360) % 360;
+
+  return bearing;
 }

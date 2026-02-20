@@ -15,7 +15,6 @@ export class Route {
     if (this.points.length === 0) return null
     if (this.points.length === 1) return this.points[0]
 
-    // Clamp progress [0,1)
     progress = Math.max(0, Math.min(progress, 0.999999))
 
     const totalSegments = this.points.length - 1

@@ -2,6 +2,14 @@ import { Route } from "./Route"
 import { Point } from "./Point"
 import { VesselDetail } from "./VesselDetail"
 import { angleCalculator } from "@/src/utils/navigation"
+import { Console } from "console"
+import { VesselStatus } from "../types/vesselStatus"
+
+export enum ExecutionType {
+  MOVE = "move",
+  QUEUE = "queue",
+  BERTH = "berth",
+}
 
 export class VesselRouteExecution {
   vesselId: number
@@ -9,6 +17,7 @@ export class VesselRouteExecution {
   startTime: number
   endTime: number
   forward: boolean
+  type: ExecutionType
   maneuver?: [number, number]
   
   constructor(
@@ -17,7 +26,8 @@ export class VesselRouteExecution {
     startTime: number,
     endTime: number,
     forward: boolean,
-    maneuver?: [number, number]
+    type: ExecutionType,
+    maneuver?: [number, number],
 
   ) {
     this.vesselId = vesselId
@@ -25,13 +35,32 @@ export class VesselRouteExecution {
     this.startTime = startTime
     this.endTime = endTime
     this.forward = forward
+    this.type = type
   }
 
+  
   isActiveAt(time: number): boolean {
-    return time >= this.startTime && time <= this.endTime
+    return time >= this.startTime && time <= this.endTime 
+  }
+
+  getEndPosition(): Point {
+    const pts = this.route.points
+    return this.forward
+      ? pts[pts.length - 1]
+      : pts[0]
+  }
+
+  getStartPosition(): Point {
+    const pts = this.route.points
+    return this.forward
+      ? pts[0]
+      : pts[pts.length - 1]
   }
 
   getPositionAt(time: number) {
+
+    if(time > this.endTime) time = this.endTime
+
     if (time < this.startTime || time > this.endTime) return null
 
     const progress = (time - this.startTime) / (this.endTime - this.startTime)
@@ -47,7 +76,7 @@ export class VesselRouteExecution {
     if (!this.isActiveAt(time)) return null
 
     if (this.route.berthRoute && this.maneuver != undefined) {
-      console.log("Berth Logic")
+      
       if (!this.maneuver) return null
        var angle = 0
         if(this.forward)
@@ -57,8 +86,19 @@ export class VesselRouteExecution {
       return angle
     }
 
-    const p1 = this.getPositionAt(time)
-    const p2 = this.getPositionAt(time + 1000)
+    const points = this.forward
+      ? this.route.points
+      : [...this.route.points].reverse()
+
+    const progress = (time - this.startTime) / (this.endTime - this.startTime)
+    const segmentCount = points.length - 1
+    const segmentIndex = Math.floor(progress * segmentCount)
+
+    const p1 = points[segmentIndex]
+    const p2 = points[segmentIndex + 1]
+
+    // const p1 = this.route.points[0]
+    // const p2 = this.route.points[1]
 
     if (!p1 || !p2) return null
 
@@ -82,7 +122,7 @@ export class VesselRouteExecution {
     return {
       lat: p0.lat + (p1.lat - p0.lat) * localProgress,
       lng: p0.lng + (p1.lng - p0.lng) * localProgress,
-    }}
+  }}
 
 }
 
