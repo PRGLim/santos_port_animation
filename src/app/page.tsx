@@ -20,6 +20,7 @@ import { useEnvironment } from "../animation/services/useEnvironment"
 import { SidePanelTabs } from "../components/lateralPanel"
 import { useKPIS } from "../animation/services/useKPIS"
 import { VesselLegend } from "../components/map/colorTips"
+import ScenarioPanel from "../components/scenario_panel"
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
 
@@ -192,7 +193,7 @@ useEffect(() => {
           selectedSegId={selectedSegId}
         />
         <VesselLegend title="Vessel Market" />
-
+        <ScenarioPanel/>
         <SidePanelTabs 
           selectedVessel={vesselDetailsRef.current?.get(Number(selectedVesselId)) ?? null}
           selectedSegment={selectedSegId} 
