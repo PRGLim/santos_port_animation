@@ -3,6 +3,7 @@ import { SimulationClock } from "../core/SimulationClock"
 import { Vessel } from "../entities/Vessel"
 import { loadRoutesFromCSV } from "../loaders/Defs/loadRouteFromCsv"
 import { loadShipLogsFromCSV } from "../loaders/Logs/loadShipLogFromCsv"
+import { END_MINUTES, START_MINUTES } from "./constants"
 
 type TickCallback = (time: number, vessels: Vessel[]) => void
 
@@ -22,6 +23,7 @@ export class SimulationController {
       if (!vesselsMap.has(e.vesselId)) {
         vesselsMap.set(e.vesselId, new Vessel(e.vesselId, []))
       }
+
       vesselsMap.get(e.vesselId)!.executions.push(e)
     })
 
@@ -32,7 +34,6 @@ export class SimulationController {
       v.resolveQueueTimes()
       v.resolveThroughput()
     })
-
 
     this.startTime = Math.min(...executions.map(e => e.startTime))
     this.endTime   = Math.max(...executions.map(e => e.endTime))

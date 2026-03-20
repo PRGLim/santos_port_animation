@@ -4,6 +4,7 @@ import { angleCalculator, gradualAngleCalculator } from "../../utils/navigation"
 import { VesselStatus } from "../types/vesselStatus"
 import { globalSimEnd } from "../core/constants"
 
+
 export class Vessel {
   id: number
   executions: VesselRouteExecution[]

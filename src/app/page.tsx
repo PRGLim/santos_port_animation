@@ -23,6 +23,7 @@ import { VesselLegend } from "../components/map/colorTips";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!;
 
+
 export default function Home() {
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const simRef = useRef<SimulationController | null>(null);

@@ -3,7 +3,8 @@ import { ExecutionType, VesselRouteExecution } from "../../entities/VesselRouteE
 import { Route } from "../../entities/Route"
 import { loadManeuverLog } from "./loadManeuverLogFromCsv"
 import { loadDefManeuvers } from "../Defs/loadManeuverDefFromCsv"
-import { SCENARIO } from "../../core/constants"
+import { END_MINUTES, SCENARIO, START_MINUTES } from "../../core/constants"
+import { Console } from "console"
 
 type ShipLogRow = {
   ARRIVAL_ID: string
@@ -31,29 +32,72 @@ export async function loadShipLogsFromCSV(
   const maneuverLog = await loadManeuverLog()
   const maneuverDef = await loadDefManeuvers()
 
-  parsed.data.forEach(async (row) => {
+const vesselMap = new Map<number, ShipLogRow[]>()
 
+  // 1️⃣ Agrupa linhas por vessel
+  parsed.data.forEach((row) => {
     const vesselId = Number(row.ARRIVAL_ID)
-    const routeId = Number(row.ROUTE_ID)
-    const startTime = Number(row.START_TIME) * 1000
-    const endTime = Number(row.END_TIME) * 1000
-    const forward = row.FORWARD === "1" // a coluna nova do CSV
-    let type: ExecutionType
 
-    if (routeId === 0) {
-      type = ExecutionType.QUEUE
-    }  else {
-      type = ExecutionType.MOVE
+    if (!vesselMap.has(vesselId)) {
+      vesselMap.set(vesselId, [])
     }
 
+    vesselMap.get(vesselId)!.push(row)
+  })
 
-    const route = routes.get(routeId)
-    if (!route) {
-      console.warn("Route not found:", routeId)
+  const startLimit = START_MINUTES
+  const endLimit = END_MINUTES
+
+
+  // 2️⃣ Processa vessel por vessel
+  vesselMap.forEach((rows, vesselId) => {
+
+    // encontra firstEx e lastEx só olhando o CSV
+    const firstRow = rows.find(r =>
+      Number(r.ROUTE_ID) === 1 && r.FORWARD === "1"
+    )
+
+    const lastRow = rows.find(r =>
+      Number(r.ROUTE_ID) === 1 && r.FORWARD === "0"
+    )
+
+    if (!firstRow) return
+
+    const enterMinute = Number(firstRow.START_TIME)
+    const exitMinute = lastRow
+      ? Number(lastRow.END_TIME)
+      : Number.MAX_SAFE_INTEGER
+
+    // 🔥 FILTRO AQUI (antes de criar objetos pesados)
+    const intersects =
+      exitMinute >= startLimit &&
+      enterMinute <= endLimit
+
+    if(intersects)
+      console.log(startLimit, endLimit, enterMinute, exitMinute)
+
+    if (!intersects) {
+      // console.log("!intersects")
       return
     }
 
-    const execution = new VesselRouteExecution(
+    // 3️⃣ Só agora cria executions
+    rows.forEach((row) => {
+
+      const routeId = Number(row.ROUTE_ID)
+      const route = routes.get(routeId)
+      if (!route) return
+
+      const startTime = Number(row.START_TIME) * 1000
+      const endTime = Number(row.END_TIME) * 1000
+      const forward = row.FORWARD === "1"
+
+      const type =
+        routeId === 0
+          ? ExecutionType.QUEUE
+          : ExecutionType.MOVE
+
+      const execution = new VesselRouteExecution(
         vesselId,
         route,
         startTime,
@@ -61,19 +105,22 @@ export async function loadShipLogsFromCSV(
         forward,
         type,
       )
-    
-    if (route.berthRoute) {
 
-      const maneuver_id = maneuverLog.find(m => m.vesselId === vesselId)
+      if (route.berthRoute) {
+        const maneuver_id = maneuverLog.find(m => m.vesselId === vesselId)
+        const maneuver = maneuverDef.get(Number(maneuver_id?.maneuverId))
+        execution.maneuver = [
+          Number(maneuver?.dock_angle),
+          Number(maneuver?.undock_angle)
+        ]
+      }
 
-      const maneuver = maneuverDef.get(Number(maneuver_id?.maneuverId))
-      execution.maneuver = [Number(maneuver?.dock_angle), Number(maneuver?.undock_angle)]
-    }
-
-  executions.sort((a, b) => a.startTime - b.startTime)
-  executions.push(execution)
-
+      executions.push(execution)
+    })
   })
 
+  executions.sort((a, b) => a.startTime - b.startTime)
+
+  console.log(executions)
   return executions
 }
