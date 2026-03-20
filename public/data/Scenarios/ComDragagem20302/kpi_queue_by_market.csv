@@ -1,0 +1,829 @@
+Day;MARKET_CATEGORY;arrivals;attended;saldo_dia;queue;SCENARIO_ID
+1;CGC;10,0;10,0;0,0;0,0;ComDragagem20302
+2;CGC;6,0;6,0;0,0;0,0;ComDragagem20302
+3;CGC;12,0;6,0;6,0;6,0;ComDragagem20302
+4;CGC;6,0;9,0;-3,0;3,0;ComDragagem20302
+5;CGC;9,0;7,0;2,0;5,0;ComDragagem20302
+6;CGC;9,0;8,0;1,0;6,0;ComDragagem20302
+7;CGC;12,0;9,0;3,0;9,0;ComDragagem20302
+8;CGC;9,0;8,0;1,0;10,0;ComDragagem20302
+9;CGC;7,0;9,0;-2,0;8,0;ComDragagem20302
+10;CGC;9,0;5,0;4,0;12,0;ComDragagem20302
+11;CGC;7,0;8,0;-1,0;11,0;ComDragagem20302
+12;CGC;8,0;11,0;-3,0;8,0;ComDragagem20302
+13;CGC;9,0;7,0;2,0;10,0;ComDragagem20302
+14;CGC;11,0;9,0;2,0;12,0;ComDragagem20302
+15;CGC;11,0;9,0;2,0;14,0;ComDragagem20302
+16;CGC;9,0;8,0;1,0;15,0;ComDragagem20302
+17;CGC;10,0;10,0;0,0;15,0;ComDragagem20302
+18;CGC;6,0;8,0;-2,0;13,0;ComDragagem20302
+19;CGC;10,0;11,0;-1,0;12,0;ComDragagem20302
+20;CGC;9,0;8,0;1,0;13,0;ComDragagem20302
+21;CGC;10,0;9,0;1,0;14,0;ComDragagem20302
+22;CGC;11,0;10,0;1,0;15,0;ComDragagem20302
+23;CGC;5,0;9,0;-4,0;11,0;ComDragagem20302
+24;CGC;11,0;6,0;5,0;16,0;ComDragagem20302
+25;CGC;7,0;12,0;-5,0;11,0;ComDragagem20302
+26;CGC;9,0;9,0;0,0;11,0;ComDragagem20302
+27;CGC;11,0;10,0;1,0;12,0;ComDragagem20302
+28;CGC;12,0;8,0;4,0;16,0;ComDragagem20302
+29;CGC;9,0;8,0;1,0;17,0;ComDragagem20302
+30;CGC;6,0;7,0;-1,0;16,0;ComDragagem20302
+31;CGC;10,0;7,0;3,0;19,0;ComDragagem20302
+32;CGC;8,0;11,0;-3,0;16,0;ComDragagem20302
+33;CGC;4,0;7,0;-3,0;13,0;ComDragagem20302
+34;CGC;8,0;8,0;0,0;13,0;ComDragagem20302
+35;CGC;14,0;9,0;5,0;18,0;ComDragagem20302
+36;CGC;7,0;10,0;-3,0;15,0;ComDragagem20302
+37;CGC;10,0;8,0;2,0;17,0;ComDragagem20302
+38;CGC;7,0;8,0;-1,0;16,0;ComDragagem20302
+39;CGC;8,0;10,0;-2,0;14,0;ComDragagem20302
+40;CGC;6,0;9,0;-3,0;11,0;ComDragagem20302
+41;CGC;9,0;8,0;1,0;12,0;ComDragagem20302
+42;CGC;13,0;9,0;4,0;16,0;ComDragagem20302
+43;CGC;11,0;10,0;1,0;17,0;ComDragagem20302
+44;CGC;8,0;8,0;0,0;17,0;ComDragagem20302
+45;CGC;7,0;7,0;0,0;17,0;ComDragagem20302
+46;CGC;8,0;8,0;0,0;17,0;ComDragagem20302
+47;CGC;4,0;4,0;0,0;17,0;ComDragagem20302
+48;CGC;8,0;1,0;7,0;24,0;ComDragagem20302
+49;CGC;12,0;0,0;12,0;36,0;ComDragagem20302
+50;CGC;7,0;11,0;-4,0;32,0;ComDragagem20302
+51;CGC;9,0;11,0;-2,0;30,0;ComDragagem20302
+52;CGC;7,0;8,0;-1,0;29,0;ComDragagem20302
+53;CGC;6,0;11,0;-5,0;24,0;ComDragagem20302
+54;CGC;4,0;8,0;-4,0;20,0;ComDragagem20302
+55;CGC;9,0;11,0;-2,0;18,0;ComDragagem20302
+56;CGC;15,0;9,0;6,0;24,0;ComDragagem20302
+57;CGC;10,0;8,0;2,0;26,0;ComDragagem20302
+58;CGC;9,0;9,0;0,0;26,0;ComDragagem20302
+59;CGC;6,0;11,0;-5,0;21,0;ComDragagem20302
+60;CGC;7,0;7,0;0,0;21,0;ComDragagem20302
+61;CGC;4,0;9,0;-5,0;16,0;ComDragagem20302
+62;CGC;6,0;9,0;-3,0;13,0;ComDragagem20302
+63;CGC;7,0;6,0;1,0;14,0;ComDragagem20302
+64;CGC;9,0;9,0;0,0;14,0;ComDragagem20302
+65;CGC;11,0;6,0;5,0;19,0;ComDragagem20302
+66;CGC;13,0;9,0;4,0;23,0;ComDragagem20302
+67;CGC;11,0;12,0;-1,0;22,0;ComDragagem20302
+68;CGC;6,0;8,0;-2,0;20,0;ComDragagem20302
+69;CGC;6,0;9,0;-3,0;17,0;ComDragagem20302
+70;CGC;5,0;9,0;-4,0;13,0;ComDragagem20302
+71;CGC;11,0;8,0;3,0;16,0;ComDragagem20302
+72;CGC;12,0;8,0;4,0;20,0;ComDragagem20302
+73;CGC;11,0;5,0;6,0;26,0;ComDragagem20302
+74;CGC;11,0;11,0;0,0;26,0;ComDragagem20302
+75;CGC;5,0;11,0;-6,0;20,0;ComDragagem20302
+76;CGC;4,0;7,0;-3,0;17,0;ComDragagem20302
+77;CGC;6,0;9,0;-3,0;14,0;ComDragagem20302
+78;CGC;10,0;10,0;0,0;14,0;ComDragagem20302
+79;CGC;13,0;9,0;4,0;18,0;ComDragagem20302
+80;CGC;12,0;6,0;6,0;24,0;ComDragagem20302
+81;CGC;11,0;10,0;1,0;25,0;ComDragagem20302
+82;CGC;5,0;9,0;-4,0;21,0;ComDragagem20302
+83;CGC;6,0;7,0;-1,0;20,0;ComDragagem20302
+84;CGC;6,0;7,0;-1,0;19,0;ComDragagem20302
+85;CGC;9,0;11,0;-2,0;17,0;ComDragagem20302
+86;CGC;12,0;9,0;3,0;20,0;ComDragagem20302
+87;CGC;10,0;8,0;2,0;22,0;ComDragagem20302
+88;CGC;10,0;11,0;-1,0;21,0;ComDragagem20302
+89;CGC;5,0;10,0;-5,0;16,0;ComDragagem20302
+90;CGC;6,0;9,0;-3,0;13,0;ComDragagem20302
+91;CGC;4,0;0,0;4,0;17,0;ComDragagem20302
+92;CGC;8,0;0,0;8,0;25,0;ComDragagem20302
+1;CGNC;1,0;1,0;0,0;0,0;ComDragagem20302
+2;CGNC;3,0;3,0;0,0;0,0;ComDragagem20302
+3;CGNC;1,0;0,0;1,0;1,0;ComDragagem20302
+4;CGNC;5,0;5,0;0,0;1,0;ComDragagem20302
+5;CGNC;2,0;2,0;0,0;1,0;ComDragagem20302
+6;CGNC;5,0;4,0;1,0;2,0;ComDragagem20302
+7;CGNC;1,0;1,0;0,0;2,0;ComDragagem20302
+8;CGNC;1,0;2,0;-1,0;1,0;ComDragagem20302
+9;CGNC;5,0;5,0;0,0;1,0;ComDragagem20302
+10;CGNC;2,0;1,0;1,0;2,0;ComDragagem20302
+11;CGNC;1,0;0,0;1,0;3,0;ComDragagem20302
+12;CGNC;6,0;4,0;2,0;5,0;ComDragagem20302
+13;CGNC;4,0;2,0;2,0;7,0;ComDragagem20302
+14;CGNC;1,0;3,0;-2,0;5,0;ComDragagem20302
+15;CGNC;1,0;2,0;-1,0;4,0;ComDragagem20302
+16;CGNC;0,0;1,0;-1,0;3,0;ComDragagem20302
+17;CGNC;4,0;3,0;1,0;4,0;ComDragagem20302
+18;CGNC;3,0;5,0;-2,0;2,0;ComDragagem20302
+19;CGNC;2,0;1,0;1,0;3,0;ComDragagem20302
+20;CGNC;5,0;1,0;4,0;7,0;ComDragagem20302
+21;CGNC;4,0;4,0;0,0;7,0;ComDragagem20302
+22;CGNC;0,0;2,0;-2,0;5,0;ComDragagem20302
+23;CGNC;2,0;3,0;-1,0;4,0;ComDragagem20302
+24;CGNC;1,0;1,0;0,0;4,0;ComDragagem20302
+25;CGNC;4,0;1,0;3,0;7,0;ComDragagem20302
+26;CGNC;3,0;3,0;0,0;7,0;ComDragagem20302
+27;CGNC;2,0;1,0;1,0;8,0;ComDragagem20302
+28;CGNC;2,0;1,0;1,0;9,0;ComDragagem20302
+29;CGNC;0,0;1,0;-1,0;8,0;ComDragagem20302
+30;CGNC;2,0;2,0;0,0;8,0;ComDragagem20302
+31;CGNC;1,0;1,0;0,0;8,0;ComDragagem20302
+32;CGNC;1,0;1,0;0,0;8,0;ComDragagem20302
+33;CGNC;1,0;0,0;1,0;9,0;ComDragagem20302
+34;CGNC;4,0;5,0;-1,0;8,0;ComDragagem20302
+35;CGNC;2,0;2,0;0,0;8,0;ComDragagem20302
+36;CGNC;1,0;1,0;0,0;8,0;ComDragagem20302
+37;CGNC;3,0;2,0;1,0;9,0;ComDragagem20302
+38;CGNC;1,0;1,0;0,0;9,0;ComDragagem20302
+39;CGNC;1,0;2,0;-1,0;8,0;ComDragagem20302
+40;CGNC;0,0;0,0;0,0;8,0;ComDragagem20302
+41;CGNC;0,0;0,0;0,0;8,0;ComDragagem20302
+42;CGNC;4,0;2,0;2,0;10,0;ComDragagem20302
+43;CGNC;1,0;0,0;1,0;11,0;ComDragagem20302
+44;CGNC;1,0;0,0;1,0;12,0;ComDragagem20302
+45;CGNC;1,0;3,0;-2,0;10,0;ComDragagem20302
+46;CGNC;0,0;0,0;0,0;10,0;ComDragagem20302
+47;CGNC;0,0;1,0;-1,0;9,0;ComDragagem20302
+48;CGNC;1,0;0,0;1,0;10,0;ComDragagem20302
+49;CGNC;4,0;0,0;4,0;14,0;ComDragagem20302
+50;CGNC;1,0;2,0;-1,0;13,0;ComDragagem20302
+51;CGNC;2,0;0,0;2,0;15,0;ComDragagem20302
+52;CGNC;0,0;1,0;-1,0;14,0;ComDragagem20302
+53;CGNC;3,0;1,0;2,0;16,0;ComDragagem20302
+54;CGNC;1,0;2,0;-1,0;15,0;ComDragagem20302
+55;CGNC;2,0;2,0;0,0;15,0;ComDragagem20302
+56;CGNC;0,0;1,0;-1,0;14,0;ComDragagem20302
+57;CGNC;1,0;1,0;0,0;14,0;ComDragagem20302
+58;CGNC;2,0;2,0;0,0;14,0;ComDragagem20302
+59;CGNC;1,0;1,0;0,0;14,0;ComDragagem20302
+60;CGNC;1,0;1,0;0,0;14,0;ComDragagem20302
+61;CGNC;1,0;1,0;0,0;14,0;ComDragagem20302
+62;CGNC;0,0;0,0;0,0;14,0;ComDragagem20302
+63;CGNC;1,0;0,0;1,0;15,0;ComDragagem20302
+64;CGNC;1,0;1,0;0,0;15,0;ComDragagem20302
+65;CGNC;1,0;0,0;1,0;16,0;ComDragagem20302
+66;CGNC;2,0;2,0;0,0;16,0;ComDragagem20302
+67;CGNC;2,0;2,0;0,0;16,0;ComDragagem20302
+68;CGNC;1,0;0,0;1,0;17,0;ComDragagem20302
+69;CGNC;0,0;0,0;0,0;17,0;ComDragagem20302
+70;CGNC;1,0;2,0;-1,0;16,0;ComDragagem20302
+71;CGNC;0,0;0,0;0,0;16,0;ComDragagem20302
+72;CGNC;1,0;2,0;-1,0;15,0;ComDragagem20302
+73;CGNC;1,0;1,0;0,0;15,0;ComDragagem20302
+74;CGNC;2,0;2,0;0,0;15,0;ComDragagem20302
+75;CGNC;5,0;2,0;3,0;18,0;ComDragagem20302
+76;CGNC;1,0;0,0;1,0;19,0;ComDragagem20302
+77;CGNC;0,0;2,0;-2,0;17,0;ComDragagem20302
+78;CGNC;0,0;0,0;0,0;17,0;ComDragagem20302
+79;CGNC;1,0;0,0;1,0;18,0;ComDragagem20302
+80;CGNC;2,0;2,0;0,0;18,0;ComDragagem20302
+81;CGNC;2,0;3,0;-1,0;17,0;ComDragagem20302
+82;CGNC;2,0;0,0;2,0;19,0;ComDragagem20302
+83;CGNC;0,0;1,0;-1,0;18,0;ComDragagem20302
+84;CGNC;1,0;0,0;1,0;19,0;ComDragagem20302
+85;CGNC;0,0;1,0;-1,0;18,0;ComDragagem20302
+86;CGNC;1,0;2,0;-1,0;17,0;ComDragagem20302
+87;CGNC;2,0;2,0;0,0;17,0;ComDragagem20302
+88;CGNC;4,0;2,0;2,0;19,0;ComDragagem20302
+89;CGNC;3,0;3,0;0,0;19,0;ComDragagem20302
+90;CGNC;0,0;0,0;0,0;19,0;ComDragagem20302
+91;CGNC;2,0;0,0;2,0;21,0;ComDragagem20302
+92;CGNC;1,0;0,0;1,0;22,0;ComDragagem20302
+1;GL;5,0;5,0;0,0;0,0;ComDragagem20302
+2;GL;1,0;0,0;1,0;1,0;ComDragagem20302
+3;GL;2,0;2,0;0,0;1,0;ComDragagem20302
+4;GL;8,0;7,0;1,0;2,0;ComDragagem20302
+5;GL;2,0;1,0;1,0;3,0;ComDragagem20302
+6;GL;5,0;5,0;0,0;3,0;ComDragagem20302
+7;GL;2,0;3,0;-1,0;2,0;ComDragagem20302
+8;GL;6,0;3,0;3,0;5,0;ComDragagem20302
+9;GL;1,0;1,0;0,0;5,0;ComDragagem20302
+10;GL;1,0;2,0;-1,0;4,0;ComDragagem20302
+11;GL;6,0;6,0;0,0;4,0;ComDragagem20302
+12;GL;1,0;1,0;0,0;4,0;ComDragagem20302
+13;GL;3,0;3,0;0,0;4,0;ComDragagem20302
+14;GL;4,0;6,0;-2,0;2,0;ComDragagem20302
+15;GL;7,0;3,0;4,0;6,0;ComDragagem20302
+16;GL;2,0;1,0;1,0;7,0;ComDragagem20302
+17;GL;2,0;4,0;-2,0;5,0;ComDragagem20302
+18;GL;4,0;4,0;0,0;5,0;ComDragagem20302
+19;GL;4,0;4,0;0,0;5,0;ComDragagem20302
+20;GL;2,0;3,0;-1,0;4,0;ComDragagem20302
+21;GL;5,0;3,0;2,0;6,0;ComDragagem20302
+22;GL;3,0;3,0;0,0;6,0;ComDragagem20302
+23;GL;4,0;4,0;0,0;6,0;ComDragagem20302
+24;GL;4,0;1,0;3,0;9,0;ComDragagem20302
+25;GL;2,0;1,0;1,0;10,0;ComDragagem20302
+26;GL;2,0;4,0;-2,0;8,0;ComDragagem20302
+27;GL;4,0;4,0;0,0;8,0;ComDragagem20302
+28;GL;5,0;3,0;2,0;10,0;ComDragagem20302
+29;GL;6,0;5,0;1,0;11,0;ComDragagem20302
+30;GL;4,0;1,0;3,0;14,0;ComDragagem20302
+31;GL;2,0;3,0;-1,0;13,0;ComDragagem20302
+32;GL;3,0;4,0;-1,0;12,0;ComDragagem20302
+33;GL;4,0;4,0;0,0;12,0;ComDragagem20302
+34;GL;3,0;2,0;1,0;13,0;ComDragagem20302
+35;GL;1,0;1,0;0,0;13,0;ComDragagem20302
+36;GL;5,0;3,0;2,0;15,0;ComDragagem20302
+37;GL;1,0;2,0;-1,0;14,0;ComDragagem20302
+38;GL;1,0;3,0;-2,0;12,0;ComDragagem20302
+39;GL;3,0;0,0;3,0;15,0;ComDragagem20302
+40;GL;2,0;5,0;-3,0;12,0;ComDragagem20302
+41;GL;2,0;4,0;-2,0;10,0;ComDragagem20302
+42;GL;3,0;4,0;-1,0;9,0;ComDragagem20302
+43;GL;3,0;2,0;1,0;10,0;ComDragagem20302
+44;GL;4,0;2,0;2,0;12,0;ComDragagem20302
+45;GL;4,0;2,0;2,0;14,0;ComDragagem20302
+46;GL;5,0;1,0;4,0;18,0;ComDragagem20302
+47;GL;4,0;2,0;2,0;20,0;ComDragagem20302
+48;GL;3,0;1,0;2,0;22,0;ComDragagem20302
+49;GL;2,0;0,0;2,0;24,0;ComDragagem20302
+50;GL;5,0;8,0;-3,0;21,0;ComDragagem20302
+51;GL;2,0;0,0;2,0;23,0;ComDragagem20302
+52;GL;2,0;1,0;1,0;24,0;ComDragagem20302
+53;GL;2,0;3,0;-1,0;23,0;ComDragagem20302
+54;GL;2,0;2,0;0,0;23,0;ComDragagem20302
+55;GL;3,0;3,0;0,0;23,0;ComDragagem20302
+56;GL;1,0;2,0;-1,0;22,0;ComDragagem20302
+57;GL;3,0;5,0;-2,0;20,0;ComDragagem20302
+58;GL;4,0;3,0;1,0;21,0;ComDragagem20302
+59;GL;2,0;1,0;1,0;22,0;ComDragagem20302
+60;GL;3,0;1,0;2,0;24,0;ComDragagem20302
+61;GL;2,0;3,0;-1,0;23,0;ComDragagem20302
+62;GL;2,0;4,0;-2,0;21,0;ComDragagem20302
+63;GL;3,0;3,0;0,0;21,0;ComDragagem20302
+64;GL;1,0;2,0;-1,0;20,0;ComDragagem20302
+65;GL;3,0;3,0;0,0;20,0;ComDragagem20302
+66;GL;2,0;1,0;1,0;21,0;ComDragagem20302
+67;GL;4,0;4,0;0,0;21,0;ComDragagem20302
+68;GL;3,0;3,0;0,0;21,0;ComDragagem20302
+69;GL;3,0;2,0;1,0;22,0;ComDragagem20302
+70;GL;3,0;4,0;-1,0;21,0;ComDragagem20302
+71;GL;1,0;1,0;0,0;21,0;ComDragagem20302
+72;GL;3,0;3,0;0,0;21,0;ComDragagem20302
+73;GL;4,0;3,0;1,0;22,0;ComDragagem20302
+74;GL;4,0;4,0;0,0;22,0;ComDragagem20302
+75;GL;2,0;4,0;-2,0;20,0;ComDragagem20302
+76;GL;4,0;1,0;3,0;23,0;ComDragagem20302
+77;GL;4,0;4,0;0,0;23,0;ComDragagem20302
+78;GL;2,0;2,0;0,0;23,0;ComDragagem20302
+79;GL;5,0;3,0;2,0;25,0;ComDragagem20302
+80;GL;2,0;3,0;-1,0;24,0;ComDragagem20302
+81;GL;6,0;5,0;1,0;25,0;ComDragagem20302
+82;GL;1,0;4,0;-3,0;22,0;ComDragagem20302
+83;GL;0,0;2,0;-2,0;20,0;ComDragagem20302
+84;GL;2,0;3,0;-1,0;19,0;ComDragagem20302
+85;GL;1,0;1,0;0,0;19,0;ComDragagem20302
+86;GL;5,0;7,0;-2,0;17,0;ComDragagem20302
+87;GL;2,0;2,0;0,0;17,0;ComDragagem20302
+88;GL;4,0;3,0;1,0;18,0;ComDragagem20302
+89;GL;1,0;2,0;-1,0;17,0;ComDragagem20302
+90;GL;2,0;3,0;-1,0;16,0;ComDragagem20302
+91;GL;3,0;0,0;3,0;19,0;ComDragagem20302
+92;GL;3,0;0,0;3,0;22,0;ComDragagem20302
+1;GSA - E;9,0;9,0;0,0;0,0;ComDragagem20302
+2;GSA - E;11,0;3,0;8,0;8,0;ComDragagem20302
+3;GSA - E;4,0;3,0;1,0;9,0;ComDragagem20302
+4;GSA - E;9,0;4,0;5,0;14,0;ComDragagem20302
+5;GSA - E;15,0;7,0;8,0;22,0;ComDragagem20302
+6;GSA - E;11,0;5,0;6,0;28,0;ComDragagem20302
+7;GSA - E;10,0;5,0;5,0;33,0;ComDragagem20302
+8;GSA - E;10,0;4,0;6,0;39,0;ComDragagem20302
+9;GSA - E;8,0;3,0;5,0;44,0;ComDragagem20302
+10;GSA - E;8,0;5,0;3,0;47,0;ComDragagem20302
+11;GSA - E;13,0;7,0;6,0;53,0;ComDragagem20302
+12;GSA - E;13,0;4,0;9,0;62,0;ComDragagem20302
+13;GSA - E;10,0;5,0;5,0;67,0;ComDragagem20302
+14;GSA - E;12,0;6,0;6,0;73,0;ComDragagem20302
+15;GSA - E;6,0;3,0;3,0;76,0;ComDragagem20302
+16;GSA - E;9,0;6,0;3,0;79,0;ComDragagem20302
+17;GSA - E;8,0;4,0;4,0;83,0;ComDragagem20302
+18;GSA - E;13,0;8,0;5,0;88,0;ComDragagem20302
+19;GSA - E;12,0;2,0;10,0;98,0;ComDragagem20302
+20;GSA - E;10,0;8,0;2,0;100,0;ComDragagem20302
+21;GSA - E;8,0;4,0;4,0;104,0;ComDragagem20302
+22;GSA - E;13,0;5,0;8,0;112,0;ComDragagem20302
+23;GSA - E;11,0;4,0;7,0;119,0;ComDragagem20302
+24;GSA - E;5,0;5,0;0,0;119,0;ComDragagem20302
+25;GSA - E;11,0;5,0;6,0;125,0;ComDragagem20302
+26;GSA - E;14,0;4,0;10,0;135,0;ComDragagem20302
+27;GSA - E;11,0;5,0;6,0;141,0;ComDragagem20302
+28;GSA - E;8,0;6,0;2,0;143,0;ComDragagem20302
+29;GSA - E;10,0;4,0;6,0;149,0;ComDragagem20302
+30;GSA - E;11,0;3,0;8,0;157,0;ComDragagem20302
+31;GSA - E;5,0;6,0;-1,0;156,0;ComDragagem20302
+32;GSA - E;7,0;3,0;4,0;160,0;ComDragagem20302
+33;GSA - E;5,0;6,0;-1,0;159,0;ComDragagem20302
+34;GSA - E;4,0;2,0;2,0;161,0;ComDragagem20302
+35;GSA - E;3,0;6,0;-3,0;158,0;ComDragagem20302
+36;GSA - E;7,0;5,0;2,0;160,0;ComDragagem20302
+37;GSA - E;6,0;4,0;2,0;162,0;ComDragagem20302
+38;GSA - E;8,0;7,0;1,0;163,0;ComDragagem20302
+39;GSA - E;7,0;4,0;3,0;166,0;ComDragagem20302
+40;GSA - E;4,0;3,0;1,0;167,0;ComDragagem20302
+41;GSA - E;4,0;4,0;0,0;167,0;ComDragagem20302
+42;GSA - E;3,0;6,0;-3,0;164,0;ComDragagem20302
+43;GSA - E;5,0;4,0;1,0;165,0;ComDragagem20302
+44;GSA - E;7,0;3,0;4,0;169,0;ComDragagem20302
+45;GSA - E;4,0;4,0;0,0;169,0;ComDragagem20302
+46;GSA - E;5,0;5,0;0,0;169,0;ComDragagem20302
+47;GSA - E;5,0;3,0;2,0;171,0;ComDragagem20302
+48;GSA - E;5,0;0,0;5,0;176,0;ComDragagem20302
+49;GSA - E;5,0;0,0;5,0;181,0;ComDragagem20302
+50;GSA - E;8,0;12,0;-4,0;177,0;ComDragagem20302
+51;GSA - E;7,0;4,0;3,0;180,0;ComDragagem20302
+52;GSA - E;8,0;6,0;2,0;182,0;ComDragagem20302
+53;GSA - E;8,0;5,0;3,0;185,0;ComDragagem20302
+54;GSA - E;6,0;3,0;3,0;188,0;ComDragagem20302
+55;GSA - E;6,0;6,0;0,0;188,0;ComDragagem20302
+56;GSA - E;6,0;5,0;1,0;189,0;ComDragagem20302
+57;GSA - E;7,0;7,0;0,0;189,0;ComDragagem20302
+58;GSA - E;5,0;2,0;3,0;192,0;ComDragagem20302
+59;GSA - E;7,0;5,0;2,0;194,0;ComDragagem20302
+60;GSA - E;7,0;7,0;0,0;194,0;ComDragagem20302
+61;GSA - E;6,0;3,0;3,0;197,0;ComDragagem20302
+62;GSA - E;4,0;5,0;-1,0;196,0;ComDragagem20302
+63;GSA - E;2,0;4,0;-2,0;194,0;ComDragagem20302
+64;GSA - E;10,0;5,0;5,0;199,0;ComDragagem20302
+65;GSA - E;7,0;4,0;3,0;202,0;ComDragagem20302
+66;GSA - E;4,0;4,0;0,0;202,0;ComDragagem20302
+67;GSA - E;7,0;7,0;0,0;202,0;ComDragagem20302
+68;GSA - E;8,0;5,0;3,0;205,0;ComDragagem20302
+69;GSA - E;2,0;2,0;0,0;205,0;ComDragagem20302
+70;GSA - E;5,0;5,0;0,0;205,0;ComDragagem20302
+71;GSA - E;7,0;6,0;1,0;206,0;ComDragagem20302
+72;GSA - E;5,0;4,0;1,0;207,0;ComDragagem20302
+73;GSA - E;6,0;4,0;2,0;209,0;ComDragagem20302
+74;GSA - E;7,0;5,0;2,0;211,0;ComDragagem20302
+75;GSA - E;7,0;4,0;3,0;214,0;ComDragagem20302
+76;GSA - E;4,0;4,0;0,0;214,0;ComDragagem20302
+77;GSA - E;4,0;4,0;0,0;214,0;ComDragagem20302
+78;GSA - E;8,0;5,0;3,0;217,0;ComDragagem20302
+79;GSA - E;2,0;3,0;-1,0;216,0;ComDragagem20302
+80;GSA - E;6,0;7,0;-1,0;215,0;ComDragagem20302
+81;GSA - E;5,0;4,0;1,0;216,0;ComDragagem20302
+82;GSA - E;10,0;4,0;6,0;222,0;ComDragagem20302
+83;GSA - E;5,0;5,0;0,0;222,0;ComDragagem20302
+84;GSA - E;6,0;7,0;-1,0;221,0;ComDragagem20302
+85;GSA - E;10,0;3,0;7,0;228,0;ComDragagem20302
+86;GSA - E;3,0;3,0;0,0;228,0;ComDragagem20302
+87;GSA - E;8,0;5,0;3,0;231,0;ComDragagem20302
+88;GSA - E;7,0;7,0;0,0;231,0;ComDragagem20302
+89;GSA - E;11,0;5,0;6,0;237,0;ComDragagem20302
+90;GSA - E;5,0;4,0;1,0;238,0;ComDragagem20302
+91;GSA - E;5,0;0,0;5,0;243,0;ComDragagem20302
+92;GSA - E;8,0;0,0;8,0;251,0;ComDragagem20302
+1;GSA - I;1,0;1,0;0,0;0,0;ComDragagem20302
+2;GSA - I;0,0;0,0;0,0;0,0;ComDragagem20302
+3;GSA - I;0,0;0,0;0,0;0,0;ComDragagem20302
+4;GSA - I;0,0;0,0;0,0;0,0;ComDragagem20302
+5;GSA - I;0,0;0,0;0,0;0,0;ComDragagem20302
+6;GSA - I;0,0;0,0;0,0;0,0;ComDragagem20302
+7;GSA - I;1,0;1,0;0,0;0,0;ComDragagem20302
+8;GSA - I;0,0;0,0;0,0;0,0;ComDragagem20302
+9;GSA - I;1,0;0,0;1,0;1,0;ComDragagem20302
+10;GSA - I;0,0;0,0;0,0;1,0;ComDragagem20302
+11;GSA - I;2,0;0,0;2,0;3,0;ComDragagem20302
+12;GSA - I;1,0;0,0;1,0;4,0;ComDragagem20302
+13;GSA - I;0,0;1,0;-1,0;3,0;ComDragagem20302
+14;GSA - I;0,0;0,0;0,0;3,0;ComDragagem20302
+15;GSA - I;1,0;0,0;1,0;4,0;ComDragagem20302
+16;GSA - I;0,0;0,0;0,0;4,0;ComDragagem20302
+17;GSA - I;0,0;0,0;0,0;4,0;ComDragagem20302
+18;GSA - I;1,0;0,0;1,0;5,0;ComDragagem20302
+19;GSA - I;0,0;1,0;-1,0;4,0;ComDragagem20302
+20;GSA - I;0,0;0,0;0,0;4,0;ComDragagem20302
+21;GSA - I;1,0;0,0;1,0;5,0;ComDragagem20302
+22;GSA - I;0,0;0,0;0,0;5,0;ComDragagem20302
+23;GSA - I;0,0;0,0;0,0;5,0;ComDragagem20302
+24;GSA - I;1,0;0,0;1,0;6,0;ComDragagem20302
+25;GSA - I;1,0;2,0;-1,0;5,0;ComDragagem20302
+26;GSA - I;0,0;0,0;0,0;5,0;ComDragagem20302
+27;GSA - I;0,0;0,0;0,0;5,0;ComDragagem20302
+28;GSA - I;1,0;0,0;1,0;6,0;ComDragagem20302
+29;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+30;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+31;GSA - I;1,0;1,0;0,0;6,0;ComDragagem20302
+32;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+33;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+34;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+35;GSA - I;2,0;0,0;2,0;8,0;ComDragagem20302
+36;GSA - I;0,0;0,0;0,0;8,0;ComDragagem20302
+37;GSA - I;0,0;2,0;-2,0;6,0;ComDragagem20302
+38;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+39;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+40;GSA - I;1,0;0,0;1,0;7,0;ComDragagem20302
+41;GSA - I;1,0;0,0;1,0;8,0;ComDragagem20302
+42;GSA - I;0,0;0,0;0,0;8,0;ComDragagem20302
+43;GSA - I;0,0;1,0;-1,0;7,0;ComDragagem20302
+44;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+45;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+46;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+47;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+48;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+49;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+50;GSA - I;0,0;1,0;-1,0;6,0;ComDragagem20302
+51;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+52;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+53;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+54;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+55;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+56;GSA - I;1,0;1,0;0,0;6,0;ComDragagem20302
+57;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+58;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+59;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+60;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+61;GSA - I;1,0;0,0;1,0;7,0;ComDragagem20302
+62;GSA - I;0,0;1,0;-1,0;6,0;ComDragagem20302
+63;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+64;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+65;GSA - I;1,0;0,0;1,0;7,0;ComDragagem20302
+66;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+67;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+68;GSA - I;0,0;1,0;-1,0;6,0;ComDragagem20302
+69;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+70;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+71;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+72;GSA - I;1,0;0,0;1,0;7,0;ComDragagem20302
+73;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+74;GSA - I;0,0;1,0;-1,0;6,0;ComDragagem20302
+75;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+76;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+77;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+78;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+79;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+80;GSA - I;0,0;1,0;-1,0;5,0;ComDragagem20302
+81;GSA - I;1,0;0,0;1,0;6,0;ComDragagem20302
+82;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+83;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+84;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+85;GSA - I;0,0;0,0;0,0;6,0;ComDragagem20302
+86;GSA - I;1,0;0,0;1,0;7,0;ComDragagem20302
+87;GSA - I;0,0;0,0;0,0;7,0;ComDragagem20302
+88;GSA - I;1,0;0,0;1,0;8,0;ComDragagem20302
+89;GSA - I;0,0;0,0;0,0;8,0;ComDragagem20302
+90;GSA - I;0,0;0,0;0,0;8,0;ComDragagem20302
+91;GSA - I;0,0;0,0;0,0;8,0;ComDragagem20302
+92;GSA - I;0,0;0,0;0,0;8,0;ComDragagem20302
+1;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+2;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+3;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+4;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+5;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+6;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+7;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+8;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+9;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+10;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+11;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+12;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+13;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+14;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+15;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+16;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+17;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+18;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+19;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+20;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+21;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+22;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+23;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+24;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+25;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+26;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+27;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+28;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+29;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+30;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+31;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+32;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+33;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+34;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+35;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+36;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+37;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+38;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+39;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+40;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+41;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+42;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+43;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+44;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+45;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+46;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+47;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+48;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+49;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+50;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+51;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+52;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+53;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+54;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+55;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+56;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+57;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+58;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+59;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+60;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+61;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+62;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+63;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+64;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+65;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+66;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+67;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+68;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+69;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+70;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+71;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+72;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+73;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+74;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+75;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+76;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+77;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+78;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+79;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+80;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+81;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+82;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+83;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+84;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+85;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+86;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+87;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+88;GSM - E;0,0;1,0;-1,0;0,0;ComDragagem20302
+89;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+90;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+91;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+92;GSM - E;0,0;0,0;0,0;0,0;ComDragagem20302
+1;GSM - I;0,0;0,0;0,0;0,0;ComDragagem20302
+2;GSM - I;1,0;1,0;0,0;0,0;ComDragagem20302
+3;GSM - I;3,0;1,0;2,0;2,0;ComDragagem20302
+4;GSM - I;2,0;2,0;0,0;2,0;ComDragagem20302
+5;GSM - I;1,0;1,0;0,0;2,0;ComDragagem20302
+6;GSM - I;3,0;2,0;1,0;3,0;ComDragagem20302
+7;GSM - I;3,0;1,0;2,0;5,0;ComDragagem20302
+8;GSM - I;1,0;1,0;0,0;5,0;ComDragagem20302
+9;GSM - I;2,0;1,0;1,0;6,0;ComDragagem20302
+10;GSM - I;1,0;2,0;-1,0;5,0;ComDragagem20302
+11;GSM - I;0,0;3,0;-3,0;2,0;ComDragagem20302
+12;GSM - I;1,0;1,0;0,0;2,0;ComDragagem20302
+13;GSM - I;3,0;1,0;2,0;4,0;ComDragagem20302
+14;GSM - I;2,0;1,0;1,0;5,0;ComDragagem20302
+15;GSM - I;1,0;0,0;1,0;6,0;ComDragagem20302
+16;GSM - I;2,0;2,0;0,0;6,0;ComDragagem20302
+17;GSM - I;0,0;2,0;-2,0;4,0;ComDragagem20302
+18;GSM - I;3,0;2,0;1,0;5,0;ComDragagem20302
+19;GSM - I;0,0;0,0;0,0;5,0;ComDragagem20302
+20;GSM - I;3,0;3,0;0,0;5,0;ComDragagem20302
+21;GSM - I;4,0;2,0;2,0;7,0;ComDragagem20302
+22;GSM - I;0,0;0,0;0,0;7,0;ComDragagem20302
+23;GSM - I;1,0;1,0;0,0;7,0;ComDragagem20302
+24;GSM - I;0,0;2,0;-2,0;5,0;ComDragagem20302
+25;GSM - I;4,0;3,0;1,0;6,0;ComDragagem20302
+26;GSM - I;1,0;0,0;1,0;7,0;ComDragagem20302
+27;GSM - I;1,0;0,0;1,0;8,0;ComDragagem20302
+28;GSM - I;2,0;0,0;2,0;10,0;ComDragagem20302
+29;GSM - I;1,0;5,0;-4,0;6,0;ComDragagem20302
+30;GSM - I;1,0;1,0;0,0;6,0;ComDragagem20302
+31;GSM - I;2,0;0,0;2,0;8,0;ComDragagem20302
+32;GSM - I;1,0;0,0;1,0;9,0;ComDragagem20302
+33;GSM - I;0,0;3,0;-3,0;6,0;ComDragagem20302
+34;GSM - I;1,0;2,0;-1,0;5,0;ComDragagem20302
+35;GSM - I;1,0;1,0;0,0;5,0;ComDragagem20302
+36;GSM - I;1,0;0,0;1,0;6,0;ComDragagem20302
+37;GSM - I;2,0;2,0;0,0;6,0;ComDragagem20302
+38;GSM - I;0,0;2,0;-2,0;4,0;ComDragagem20302
+39;GSM - I;2,0;1,0;1,0;5,0;ComDragagem20302
+40;GSM - I;0,0;0,0;0,0;5,0;ComDragagem20302
+41;GSM - I;2,0;2,0;0,0;5,0;ComDragagem20302
+42;GSM - I;0,0;2,0;-2,0;3,0;ComDragagem20302
+43;GSM - I;1,0;0,0;1,0;4,0;ComDragagem20302
+44;GSM - I;2,0;1,0;1,0;5,0;ComDragagem20302
+45;GSM - I;0,0;1,0;-1,0;4,0;ComDragagem20302
+46;GSM - I;2,0;2,0;0,0;4,0;ComDragagem20302
+47;GSM - I;0,0;1,0;-1,0;3,0;ComDragagem20302
+48;GSM - I;1,0;0,0;1,0;4,0;ComDragagem20302
+49;GSM - I;2,0;0,0;2,0;6,0;ComDragagem20302
+50;GSM - I;0,0;4,0;-4,0;2,0;ComDragagem20302
+51;GSM - I;2,0;0,0;2,0;4,0;ComDragagem20302
+52;GSM - I;0,0;2,0;-2,0;2,0;ComDragagem20302
+53;GSM - I;1,0;0,0;1,0;3,0;ComDragagem20302
+54;GSM - I;0,0;1,0;-1,0;2,0;ComDragagem20302
+55;GSM - I;1,0;2,0;-1,0;1,0;ComDragagem20302
+56;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+57;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+58;GSM - I;1,0;1,0;0,0;1,0;ComDragagem20302
+59;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+60;GSM - I;1,0;1,0;0,0;1,0;ComDragagem20302
+61;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+62;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+63;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+64;GSM - I;0,0;1,0;-1,0;0,0;ComDragagem20302
+65;GSM - I;0,0;0,0;0,0;0,0;ComDragagem20302
+66;GSM - I;3,0;2,0;1,0;1,0;ComDragagem20302
+67;GSM - I;2,0;2,0;0,0;1,0;ComDragagem20302
+68;GSM - I;1,0;2,0;-1,0;0,0;ComDragagem20302
+69;GSM - I;1,0;0,0;1,0;1,0;ComDragagem20302
+70;GSM - I;1,0;1,0;0,0;1,0;ComDragagem20302
+71;GSM - I;1,0;1,0;0,0;1,0;ComDragagem20302
+72;GSM - I;1,0;2,0;-1,0;0,0;ComDragagem20302
+73;GSM - I;3,0;1,0;2,0;2,0;ComDragagem20302
+74;GSM - I;2,0;2,0;0,0;2,0;ComDragagem20302
+75;GSM - I;0,0;1,0;-1,0;1,0;ComDragagem20302
+76;GSM - I;1,0;1,0;0,0;1,0;ComDragagem20302
+77;GSM - I;1,0;2,0;-1,0;0,0;ComDragagem20302
+78;GSM - I;0,0;0,0;0,0;0,0;ComDragagem20302
+79;GSM - I;2,0;2,0;0,0;0,0;ComDragagem20302
+80;GSM - I;3,0;0,0;3,0;3,0;ComDragagem20302
+81;GSM - I;1,0;2,0;-1,0;2,0;ComDragagem20302
+82;GSM - I;0,0;1,0;-1,0;1,0;ComDragagem20302
+83;GSM - I;1,0;1,0;0,0;1,0;ComDragagem20302
+84;GSM - I;0,0;1,0;-1,0;0,0;ComDragagem20302
+85;GSM - I;1,0;0,0;1,0;1,0;ComDragagem20302
+86;GSM - I;2,0;1,0;1,0;2,0;ComDragagem20302
+87;GSM - I;2,0;0,0;2,0;4,0;ComDragagem20302
+88;GSM - I;1,0;3,0;-2,0;2,0;ComDragagem20302
+89;GSM - I;0,0;1,0;-1,0;1,0;ComDragagem20302
+90;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+91;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+92;GSM - I;0,0;0,0;0,0;1,0;ComDragagem20302
+1;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+2;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+3;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+4;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+5;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+6;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+7;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+8;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+9;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+10;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+11;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+12;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+13;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+14;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+15;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+16;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+17;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+18;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+19;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+20;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+21;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+22;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+23;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+24;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+25;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+26;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+27;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+28;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+29;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+30;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+31;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+32;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+33;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+34;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+35;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+36;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+37;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+38;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+39;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+40;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+41;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+42;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+43;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+44;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+45;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+46;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+47;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+48;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+49;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+50;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+51;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+52;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+53;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+54;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+55;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+56;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+57;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+58;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+59;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+60;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+61;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+62;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+63;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+64;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+65;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+66;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+67;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+68;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+69;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+70;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+71;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+72;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+73;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+74;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+75;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+76;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+77;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+78;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+79;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+80;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+81;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+82;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+83;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+84;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+85;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+86;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+87;PASSAGEIROS;1,0;1,0;0,0;0,0;ComDragagem20302
+88;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+89;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+90;PASSAGEIROS;1,0;1,0;0,0;0,0;ComDragagem20302
+91;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+92;PASSAGEIROS;0,0;0,0;0,0;0,0;ComDragagem20302
+1;RORO;2,0;1,0;1,0;1,0;ComDragagem20302
+2;RORO;0,0;1,0;-1,0;0,0;ComDragagem20302
+3;RORO;0,0;0,0;0,0;0,0;ComDragagem20302
+4;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+5;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+6;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+7;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+8;RORO;0,0;0,0;0,0;0,0;ComDragagem20302
+9;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+10;RORO;1,0;0,0;1,0;1,0;ComDragagem20302
+11;RORO;0,0;1,0;-1,0;0,0;ComDragagem20302
+12;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+13;RORO;2,0;1,0;1,0;1,0;ComDragagem20302
+14;RORO;2,0;1,0;1,0;2,0;ComDragagem20302
+15;RORO;2,0;0,0;2,0;4,0;ComDragagem20302
+16;RORO;1,0;1,0;0,0;4,0;ComDragagem20302
+17;RORO;0,0;1,0;-1,0;3,0;ComDragagem20302
+18;RORO;0,0;1,0;-1,0;2,0;ComDragagem20302
+19;RORO;1,0;0,0;1,0;3,0;ComDragagem20302
+20;RORO;2,0;1,0;1,0;4,0;ComDragagem20302
+21;RORO;1,0;1,0;0,0;4,0;ComDragagem20302
+22;RORO;0,0;1,0;-1,0;3,0;ComDragagem20302
+23;RORO;0,0;1,0;-1,0;2,0;ComDragagem20302
+24;RORO;0,0;1,0;-1,0;1,0;ComDragagem20302
+25;RORO;1,0;0,0;1,0;2,0;ComDragagem20302
+26;RORO;0,0;1,0;-1,0;1,0;ComDragagem20302
+27;RORO;2,0;1,0;1,0;2,0;ComDragagem20302
+28;RORO;1,0;1,0;0,0;2,0;ComDragagem20302
+29;RORO;1,0;1,0;0,0;2,0;ComDragagem20302
+30;RORO;0,0;0,0;0,0;2,0;ComDragagem20302
+31;RORO;0,0;1,0;-1,0;1,0;ComDragagem20302
+32;RORO;1,0;1,0;0,0;1,0;ComDragagem20302
+33;RORO;0,0;0,0;0,0;1,0;ComDragagem20302
+34;RORO;1,0;1,0;0,0;1,0;ComDragagem20302
+35;RORO;1,0;1,0;0,0;1,0;ComDragagem20302
+36;RORO;1,0;1,0;0,0;1,0;ComDragagem20302
+37;RORO;1,0;1,0;0,0;1,0;ComDragagem20302
+38;RORO;0,0;0,0;0,0;1,0;ComDragagem20302
+39;RORO;2,0;1,0;1,0;2,0;ComDragagem20302
+40;RORO;0,0;1,0;-1,0;1,0;ComDragagem20302
+41;RORO;1,0;1,0;0,0;1,0;ComDragagem20302
+42;RORO;1,0;0,0;1,0;2,0;ComDragagem20302
+43;RORO;0,0;1,0;-1,0;1,0;ComDragagem20302
+44;RORO;1,0;1,0;0,0;1,0;ComDragagem20302
+45;RORO;1,0;0,0;1,0;2,0;ComDragagem20302
+46;RORO;2,0;1,0;1,0;3,0;ComDragagem20302
+47;RORO;0,0;0,0;0,0;3,0;ComDragagem20302
+48;RORO;1,0;0,0;1,0;4,0;ComDragagem20302
+49;RORO;0,0;0,0;0,0;4,0;ComDragagem20302
+50;RORO;0,0;1,0;-1,0;3,0;ComDragagem20302
+51;RORO;1,0;1,0;0,0;3,0;ComDragagem20302
+52;RORO;0,0;1,0;-1,0;2,0;ComDragagem20302
+53;RORO;2,0;0,0;2,0;4,0;ComDragagem20302
+54;RORO;0,0;1,0;-1,0;3,0;ComDragagem20302
+55;RORO;0,0;1,0;-1,0;2,0;ComDragagem20302
+56;RORO;0,0;1,0;-1,0;1,0;ComDragagem20302
+57;RORO;0,0;1,0;-1,0;0,0;ComDragagem20302
+58;RORO;1,0;0,0;1,0;1,0;ComDragagem20302
+59;RORO;1,0;1,0;0,0;1,0;ComDragagem20302
+60;RORO;2,0;1,0;1,0;2,0;ComDragagem20302
+61;RORO;0,0;0,0;0,0;2,0;ComDragagem20302
+62;RORO;1,0;1,0;0,0;2,0;ComDragagem20302
+63;RORO;1,0;1,0;0,0;2,0;ComDragagem20302
+64;RORO;2,0;0,0;2,0;4,0;ComDragagem20302
+65;RORO;0,0;1,0;-1,0;3,0;ComDragagem20302
+66;RORO;1,0;1,0;0,0;3,0;ComDragagem20302
+67;RORO;1,0;0,0;1,0;4,0;ComDragagem20302
+68;RORO;0,0;1,0;-1,0;3,0;ComDragagem20302
+69;RORO;1,0;1,0;0,0;3,0;ComDragagem20302
+70;RORO;0,0;1,0;-1,0;2,0;ComDragagem20302
+71;RORO;2,0;0,0;2,0;4,0;ComDragagem20302
+72;RORO;1,0;1,0;0,0;4,0;ComDragagem20302
+73;RORO;0,0;1,0;-1,0;3,0;ComDragagem20302
+74;RORO;1,0;1,0;0,0;3,0;ComDragagem20302
+75;RORO;1,0;1,0;0,0;3,0;ComDragagem20302
+76;RORO;0,0;0,0;0,0;3,0;ComDragagem20302
+77;RORO;0,0;1,0;-1,0;2,0;ComDragagem20302
+78;RORO;2,0;1,0;1,0;3,0;ComDragagem20302
+79;RORO;0,0;1,0;-1,0;2,0;ComDragagem20302
+80;RORO;0,0;1,0;-1,0;1,0;ComDragagem20302
+81;RORO;0,0;1,0;-1,0;0,0;ComDragagem20302
+82;RORO;1,0;0,0;1,0;1,0;ComDragagem20302
+83;RORO;0,0;1,0;-1,0;0,0;ComDragagem20302
+84;RORO;0,0;0,0;0,0;0,0;ComDragagem20302
+85;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+86;RORO;0,0;0,0;0,0;0,0;ComDragagem20302
+87;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+88;RORO;0,0;0,0;0,0;0,0;ComDragagem20302
+89;RORO;1,0;1,0;0,0;0,0;ComDragagem20302
+90;RORO;1,0;0,0;1,0;1,0;ComDragagem20302
+91;RORO;0,0;0,0;0,0;1,0;ComDragagem20302
+92;RORO;1,0;0,0;1,0;2,0;ComDragagem20302

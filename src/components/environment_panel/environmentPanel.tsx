@@ -30,7 +30,7 @@ type Props = {
 }
 
 export default function EnvironmentPanel(props: Props) {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
 
  return (
     <Collapsible open={open} onOpenChange={setOpen}>

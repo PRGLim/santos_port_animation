@@ -1,22 +1,27 @@
 // animation/simulation/SimulationController.ts
 import { SimulationClock } from "../core/SimulationClock"
+import { ScenarioConfig } from "../entities/scenario_infos"
 import { Vessel } from "../entities/Vessel"
 import { loadRoutesFromCSV } from "../loaders/Defs/loadRouteFromCsv"
 import { loadShipLogsFromCSV } from "../loaders/Logs/loadShipLogFromCsv"
-import { END_MINUTES, START_MINUTES } from "./constants"
 
 type TickCallback = (time: number, vessels: Vessel[]) => void
 
 export class SimulationController {
   private clock: SimulationClock | null = null
   private vessels: Vessel[] = []
+  private scenario: ScenarioConfig;
 
   public startTime = 0
   public endTime = 0
 
+  constructor(scenario: ScenarioConfig) {
+  this.scenario = scenario;
+  }
+
   async init() {
     const routes = await loadRoutesFromCSV()
-    const executions = await loadShipLogsFromCSV(routes)
+    const executions = await loadShipLogsFromCSV(this.scenario, routes)
     const vesselsMap = new Map<number, Vessel>()
 
     executions.forEach((e) => {

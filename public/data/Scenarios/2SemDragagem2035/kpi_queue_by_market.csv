@@ -1,0 +1,737 @@
+Day;MARKET_CATEGORY;arrivals;attended;saldo_dia;queue;SCENARIO_ID
+1;CGC;9,0;8,0;1,0;1,0;2SemDragagem2035
+2;CGC;6,0;3,0;3,0;4,0;2SemDragagem2035
+3;CGC;15,0;3,0;12,0;16,0;2SemDragagem2035
+4;CGC;7,0;15,0;-8,0;8,0;2SemDragagem2035
+5;CGC;14,0;11,0;3,0;11,0;2SemDragagem2035
+6;CGC;11,0;11,0;0,0;11,0;2SemDragagem2035
+7;CGC;12,0;11,0;1,0;12,0;2SemDragagem2035
+8;CGC;9,0;11,0;-2,0;10,0;2SemDragagem2035
+9;CGC;8,0;7,0;1,0;11,0;2SemDragagem2035
+10;CGC;12,0;6,0;6,0;17,0;2SemDragagem2035
+11;CGC;8,0;12,0;-4,0;13,0;2SemDragagem2035
+12;CGC;13,0;12,0;1,0;14,0;2SemDragagem2035
+13;CGC;11,0;11,0;0,0;14,0;2SemDragagem2035
+14;CGC;12,0;10,0;2,0;16,0;2SemDragagem2035
+15;CGC;13,0;12,0;1,0;17,0;2SemDragagem2035
+16;CGC;7,0;7,0;0,0;17,0;2SemDragagem2035
+17;CGC;12,0;8,0;4,0;21,0;2SemDragagem2035
+18;CGC;5,0;11,0;-6,0;15,0;2SemDragagem2035
+19;CGC;14,0;7,0;7,0;22,0;2SemDragagem2035
+20;CGC;13,0;11,0;2,0;24,0;2SemDragagem2035
+21;CGC;11,0;9,0;2,0;26,0;2SemDragagem2035
+22;CGC;11,0;11,0;0,0;26,0;2SemDragagem2035
+23;CGC;8,0;11,0;-3,0;23,0;2SemDragagem2035
+24;CGC;14,0;8,0;6,0;29,0;2SemDragagem2035
+25;CGC;7,0;11,0;-4,0;25,0;2SemDragagem2035
+26;CGC;11,0;13,0;-2,0;23,0;2SemDragagem2035
+27;CGC;10,0;10,0;0,0;23,0;2SemDragagem2035
+28;CGC;13,0;12,0;1,0;24,0;2SemDragagem2035
+29;CGC;9,0;11,0;-2,0;22,0;2SemDragagem2035
+30;CGC;7,0;9,0;-2,0;20,0;2SemDragagem2035
+31;CGC;10,0;4,0;6,0;26,0;2SemDragagem2035
+32;CGC;8,0;7,0;1,0;27,0;2SemDragagem2035
+33;CGC;4,0;6,0;-2,0;25,0;2SemDragagem2035
+34;CGC;11,0;8,0;3,0;28,0;2SemDragagem2035
+35;CGC;15,0;12,0;3,0;31,0;2SemDragagem2035
+36;CGC;15,0;11,0;4,0;35,0;2SemDragagem2035
+37;CGC;7,0;11,0;-4,0;31,0;2SemDragagem2035
+38;CGC;7,0;8,0;-1,0;30,0;2SemDragagem2035
+39;CGC;8,0;12,0;-4,0;26,0;2SemDragagem2035
+40;CGC;6,0;10,0;-4,0;22,0;2SemDragagem2035
+41;CGC;13,0;11,0;2,0;24,0;2SemDragagem2035
+42;CGC;15,0;9,0;6,0;30,0;2SemDragagem2035
+43;CGC;13,0;11,0;2,0;32,0;2SemDragagem2035
+44;CGC;7,0;13,0;-6,0;26,0;2SemDragagem2035
+45;CGC;7,0;7,0;0,0;26,0;2SemDragagem2035
+46;CGC;9,0;6,0;3,0;29,0;2SemDragagem2035
+47;CGC;5,0;3,0;2,0;31,0;2SemDragagem2035
+48;CGC;11,0;1,0;10,0;41,0;2SemDragagem2035
+49;CGC;14,0;1,0;13,0;54,0;2SemDragagem2035
+50;CGC;13,0;14,0;-1,0;53,0;2SemDragagem2035
+51;CGC;6,0;14,0;-8,0;45,0;2SemDragagem2035
+52;CGC;6,0;10,0;-4,0;41,0;2SemDragagem2035
+53;CGC;9,0;11,0;-2,0;39,0;2SemDragagem2035
+54;CGC;5,0;12,0;-7,0;32,0;2SemDragagem2035
+55;CGC;12,0;11,0;1,0;33,0;2SemDragagem2035
+56;CGC;16,0;12,0;4,0;37,0;2SemDragagem2035
+57;CGC;12,0;12,0;0,0;37,0;2SemDragagem2035
+58;CGC;8,0;12,0;-4,0;33,0;2SemDragagem2035
+59;CGC;8,0;7,0;1,0;34,0;2SemDragagem2035
+60;CGC;7,0;5,0;2,0;36,0;2SemDragagem2035
+61;CGC;3,0;12,0;-9,0;27,0;2SemDragagem2035
+62;CGC;9,0;6,0;3,0;30,0;2SemDragagem2035
+63;CGC;7,0;11,0;-4,0;26,0;2SemDragagem2035
+64;CGC;10,0;10,0;0,0;26,0;2SemDragagem2035
+65;CGC;12,0;9,0;3,0;29,0;2SemDragagem2035
+66;CGC;14,0;8,0;6,0;35,0;2SemDragagem2035
+67;CGC;15,0;12,0;3,0;38,0;2SemDragagem2035
+68;CGC;5,0;11,0;-6,0;32,0;2SemDragagem2035
+69;CGC;7,0;11,0;-4,0;28,0;2SemDragagem2035
+70;CGC;7,0;10,0;-3,0;25,0;2SemDragagem2035
+71;CGC;12,0;13,0;-1,0;24,0;2SemDragagem2035
+72;CGC;10,0;9,0;1,0;25,0;2SemDragagem2035
+73;CGC;12,0;7,0;5,0;30,0;2SemDragagem2035
+74;CGC;15,0;11,0;4,0;34,0;2SemDragagem2035
+75;CGC;8,0;11,0;-3,0;31,0;2SemDragagem2035
+76;CGC;7,0;9,0;-2,0;29,0;2SemDragagem2035
+77;CGC;7,0;10,0;-3,0;26,0;2SemDragagem2035
+78;CGC;10,0;9,0;1,0;27,0;2SemDragagem2035
+79;CGC;11,0;8,0;3,0;30,0;2SemDragagem2035
+80;CGC;12,0;7,0;5,0;35,0;2SemDragagem2035
+81;CGC;13,0;9,0;4,0;39,0;2SemDragagem2035
+82;CGC;6,0;12,0;-6,0;33,0;2SemDragagem2035
+83;CGC;8,0;7,0;1,0;34,0;2SemDragagem2035
+84;CGC;7,0;10,0;-3,0;31,0;2SemDragagem2035
+85;CGC;9,0;8,0;1,0;32,0;2SemDragagem2035
+86;CGC;10,0;6,0;4,0;36,0;2SemDragagem2035
+87;CGC;12,0;8,0;4,0;40,0;2SemDragagem2035
+88;CGC;14,0;13,0;1,0;41,0;2SemDragagem2035
+89;CGC;6,0;11,0;-5,0;36,0;2SemDragagem2035
+90;CGC;8,0;9,0;-1,0;35,0;2SemDragagem2035
+91;CGC;5,0;0,0;5,0;40,0;2SemDragagem2035
+92;CGC;9,0;0,0;9,0;49,0;2SemDragagem2035
+1;CGNC;1,0;1,0;0,0;0,0;2SemDragagem2035
+2;CGNC;3,0;3,0;0,0;0,0;2SemDragagem2035
+3;CGNC;0,0;0,0;0,0;0,0;2SemDragagem2035
+4;CGNC;5,0;4,0;1,0;1,0;2SemDragagem2035
+5;CGNC;2,0;1,0;1,0;2,0;2SemDragagem2035
+6;CGNC;6,0;4,0;2,0;4,0;2SemDragagem2035
+7;CGNC;1,0;3,0;-2,0;2,0;2SemDragagem2035
+8;CGNC;0,0;0,0;0,0;2,0;2SemDragagem2035
+9;CGNC;3,0;3,0;0,0;2,0;2SemDragagem2035
+10;CGNC;3,0;2,0;1,0;3,0;2SemDragagem2035
+11;CGNC;1,0;1,0;0,0;3,0;2SemDragagem2035
+12;CGNC;4,0;3,0;1,0;4,0;2SemDragagem2035
+13;CGNC;3,0;3,0;0,0;4,0;2SemDragagem2035
+14;CGNC;2,0;1,0;1,0;5,0;2SemDragagem2035
+15;CGNC;1,0;2,0;-1,0;4,0;2SemDragagem2035
+16;CGNC;1,0;2,0;-1,0;3,0;2SemDragagem2035
+17;CGNC;4,0;3,0;1,0;4,0;2SemDragagem2035
+18;CGNC;3,0;3,0;0,0;4,0;2SemDragagem2035
+19;CGNC;1,0;1,0;0,0;4,0;2SemDragagem2035
+20;CGNC;4,0;3,0;1,0;5,0;2SemDragagem2035
+21;CGNC;4,0;4,0;0,0;5,0;2SemDragagem2035
+22;CGNC;0,0;2,0;-2,0;3,0;2SemDragagem2035
+23;CGNC;1,0;2,0;-1,0;2,0;2SemDragagem2035
+24;CGNC;1,0;2,0;-1,0;1,0;2SemDragagem2035
+25;CGNC;4,0;4,0;0,0;1,0;2SemDragagem2035
+26;CGNC;6,0;4,0;2,0;3,0;2SemDragagem2035
+27;CGNC;3,0;2,0;1,0;4,0;2SemDragagem2035
+28;CGNC;1,0;0,0;1,0;5,0;2SemDragagem2035
+29;CGNC;1,0;2,0;-1,0;4,0;2SemDragagem2035
+30;CGNC;4,0;4,0;0,0;4,0;2SemDragagem2035
+31;CGNC;1,0;0,0;1,0;5,0;2SemDragagem2035
+32;CGNC;1,0;1,0;0,0;5,0;2SemDragagem2035
+33;CGNC;1,0;0,0;1,0;6,0;2SemDragagem2035
+34;CGNC;3,0;3,0;0,0;6,0;2SemDragagem2035
+35;CGNC;2,0;4,0;-2,0;4,0;2SemDragagem2035
+36;CGNC;2,0;2,0;0,0;4,0;2SemDragagem2035
+37;CGNC;2,0;1,0;1,0;5,0;2SemDragagem2035
+38;CGNC;0,0;0,0;0,0;5,0;2SemDragagem2035
+39;CGNC;1,0;2,0;-1,0;4,0;2SemDragagem2035
+40;CGNC;0,0;0,0;0,0;4,0;2SemDragagem2035
+41;CGNC;1,0;0,0;1,0;5,0;2SemDragagem2035
+42;CGNC;3,0;2,0;1,0;6,0;2SemDragagem2035
+43;CGNC;1,0;0,0;1,0;7,0;2SemDragagem2035
+44;CGNC;1,0;1,0;0,0;7,0;2SemDragagem2035
+45;CGNC;1,0;2,0;-1,0;6,0;2SemDragagem2035
+46;CGNC;1,0;2,0;-1,0;5,0;2SemDragagem2035
+47;CGNC;0,0;0,0;0,0;5,0;2SemDragagem2035
+48;CGNC;1,0;0,0;1,0;6,0;2SemDragagem2035
+49;CGNC;3,0;1,0;2,0;8,0;2SemDragagem2035
+50;CGNC;0,0;2,0;-2,0;6,0;2SemDragagem2035
+51;CGNC;4,0;3,0;1,0;7,0;2SemDragagem2035
+52;CGNC;1,0;1,0;0,0;7,0;2SemDragagem2035
+53;CGNC;2,0;3,0;-1,0;6,0;2SemDragagem2035
+54;CGNC;0,0;0,0;0,0;6,0;2SemDragagem2035
+55;CGNC;2,0;2,0;0,0;6,0;2SemDragagem2035
+56;CGNC;2,0;3,0;-1,0;5,0;2SemDragagem2035
+57;CGNC;1,0;0,0;1,0;6,0;2SemDragagem2035
+58;CGNC;1,0;1,0;0,0;6,0;2SemDragagem2035
+59;CGNC;1,0;0,0;1,0;7,0;2SemDragagem2035
+60;CGNC;1,0;2,0;-1,0;6,0;2SemDragagem2035
+61;CGNC;2,0;2,0;0,0;6,0;2SemDragagem2035
+62;CGNC;0,0;0,0;0,0;6,0;2SemDragagem2035
+63;CGNC;0,0;0,0;0,0;6,0;2SemDragagem2035
+64;CGNC;1,0;1,0;0,0;6,0;2SemDragagem2035
+65;CGNC;2,0;1,0;1,0;7,0;2SemDragagem2035
+66;CGNC;0,0;0,0;0,0;7,0;2SemDragagem2035
+67;CGNC;3,0;4,0;-1,0;6,0;2SemDragagem2035
+68;CGNC;3,0;2,0;1,0;7,0;2SemDragagem2035
+69;CGNC;1,0;1,0;0,0;7,0;2SemDragagem2035
+70;CGNC;1,0;1,0;0,0;7,0;2SemDragagem2035
+71;CGNC;1,0;0,0;1,0;8,0;2SemDragagem2035
+72;CGNC;1,0;1,0;0,0;8,0;2SemDragagem2035
+73;CGNC;3,0;3,0;0,0;8,0;2SemDragagem2035
+74;CGNC;2,0;2,0;0,0;8,0;2SemDragagem2035
+75;CGNC;3,0;2,0;1,0;9,0;2SemDragagem2035
+76;CGNC;0,0;1,0;-1,0;8,0;2SemDragagem2035
+77;CGNC;1,0;0,0;1,0;9,0;2SemDragagem2035
+78;CGNC;0,0;3,0;-3,0;6,0;2SemDragagem2035
+79;CGNC;0,0;0,0;0,0;6,0;2SemDragagem2035
+80;CGNC;2,0;3,0;-1,0;5,0;2SemDragagem2035
+81;CGNC;4,0;2,0;2,0;7,0;2SemDragagem2035
+82;CGNC;2,0;1,0;1,0;8,0;2SemDragagem2035
+83;CGNC;0,0;0,0;0,0;8,0;2SemDragagem2035
+84;CGNC;1,0;0,0;1,0;9,0;2SemDragagem2035
+85;CGNC;0,0;0,0;0,0;9,0;2SemDragagem2035
+86;CGNC;1,0;1,0;0,0;9,0;2SemDragagem2035
+87;CGNC;2,0;1,0;1,0;10,0;2SemDragagem2035
+88;CGNC;1,0;2,0;-1,0;9,0;2SemDragagem2035
+89;CGNC;3,0;3,0;0,0;9,0;2SemDragagem2035
+90;CGNC;0,0;0,0;0,0;9,0;2SemDragagem2035
+91;CGNC;2,0;0,0;2,0;11,0;2SemDragagem2035
+92;CGNC;0,0;0,0;0,0;11,0;2SemDragagem2035
+1;GL;6,0;5,0;1,0;1,0;2SemDragagem2035
+2;GL;1,0;0,0;1,0;2,0;2SemDragagem2035
+3;GL;2,0;2,0;0,0;2,0;2SemDragagem2035
+4;GL;5,0;6,0;-1,0;1,0;2SemDragagem2035
+5;GL;2,0;2,0;0,0;1,0;2SemDragagem2035
+6;GL;3,0;2,0;1,0;2,0;2SemDragagem2035
+7;GL;2,0;2,0;0,0;2,0;2SemDragagem2035
+8;GL;7,0;5,0;2,0;4,0;2SemDragagem2035
+9;GL;2,0;2,0;0,0;4,0;2SemDragagem2035
+10;GL;1,0;0,0;1,0;5,0;2SemDragagem2035
+11;GL;6,0;7,0;-1,0;4,0;2SemDragagem2035
+12;GL;2,0;3,0;-1,0;3,0;2SemDragagem2035
+13;GL;5,0;3,0;2,0;5,0;2SemDragagem2035
+14;GL;5,0;7,0;-2,0;3,0;2SemDragagem2035
+15;GL;5,0;4,0;1,0;4,0;2SemDragagem2035
+16;GL;4,0;2,0;2,0;6,0;2SemDragagem2035
+17;GL;2,0;2,0;0,0;6,0;2SemDragagem2035
+18;GL;5,0;5,0;0,0;6,0;2SemDragagem2035
+19;GL;4,0;3,0;1,0;7,0;2SemDragagem2035
+20;GL;2,0;4,0;-2,0;5,0;2SemDragagem2035
+21;GL;6,0;4,0;2,0;7,0;2SemDragagem2035
+22;GL;3,0;0,0;3,0;10,0;2SemDragagem2035
+23;GL;3,0;2,0;1,0;11,0;2SemDragagem2035
+24;GL;2,0;3,0;-1,0;10,0;2SemDragagem2035
+25;GL;4,0;3,0;1,0;11,0;2SemDragagem2035
+26;GL;1,0;2,0;-1,0;10,0;2SemDragagem2035
+27;GL;4,0;7,0;-3,0;7,0;2SemDragagem2035
+28;GL;3,0;2,0;1,0;8,0;2SemDragagem2035
+29;GL;6,0;2,0;4,0;12,0;2SemDragagem2035
+30;GL;2,0;1,0;1,0;13,0;2SemDragagem2035
+31;GL;4,0;1,0;3,0;16,0;2SemDragagem2035
+32;GL;4,0;5,0;-1,0;15,0;2SemDragagem2035
+33;GL;4,0;3,0;1,0;16,0;2SemDragagem2035
+34;GL;4,0;4,0;0,0;16,0;2SemDragagem2035
+35;GL;1,0;3,0;-2,0;14,0;2SemDragagem2035
+36;GL;1,0;1,0;0,0;14,0;2SemDragagem2035
+37;GL;1,0;4,0;-3,0;11,0;2SemDragagem2035
+38;GL;3,0;1,0;2,0;13,0;2SemDragagem2035
+39;GL;3,0;2,0;1,0;14,0;2SemDragagem2035
+40;GL;2,0;3,0;-1,0;13,0;2SemDragagem2035
+41;GL;2,0;1,0;1,0;14,0;2SemDragagem2035
+42;GL;2,0;2,0;0,0;14,0;2SemDragagem2035
+43;GL;3,0;3,0;0,0;14,0;2SemDragagem2035
+44;GL;4,0;2,0;2,0;16,0;2SemDragagem2035
+45;GL;2,0;2,0;0,0;16,0;2SemDragagem2035
+46;GL;1,0;3,0;-2,0;14,0;2SemDragagem2035
+47;GL;4,0;1,0;3,0;17,0;2SemDragagem2035
+48;GL;3,0;1,0;2,0;19,0;2SemDragagem2035
+49;GL;3,0;2,0;1,0;20,0;2SemDragagem2035
+50;GL;6,0;7,0;-1,0;19,0;2SemDragagem2035
+51;GL;3,0;2,0;1,0;20,0;2SemDragagem2035
+52;GL;3,0;2,0;1,0;21,0;2SemDragagem2035
+53;GL;3,0;2,0;1,0;22,0;2SemDragagem2035
+54;GL;3,0;5,0;-2,0;20,0;2SemDragagem2035
+55;GL;2,0;3,0;-1,0;19,0;2SemDragagem2035
+56;GL;1,0;2,0;-1,0;18,0;2SemDragagem2035
+57;GL;6,0;4,0;2,0;20,0;2SemDragagem2035
+58;GL;3,0;2,0;1,0;21,0;2SemDragagem2035
+59;GL;1,0;3,0;-2,0;19,0;2SemDragagem2035
+60;GL;5,0;1,0;4,0;23,0;2SemDragagem2035
+61;GL;1,0;4,0;-3,0;20,0;2SemDragagem2035
+62;GL;2,0;5,0;-3,0;17,0;2SemDragagem2035
+63;GL;3,0;2,0;1,0;18,0;2SemDragagem2035
+64;GL;2,0;2,0;0,0;18,0;2SemDragagem2035
+65;GL;2,0;2,0;0,0;18,0;2SemDragagem2035
+66;GL;2,0;1,0;1,0;19,0;2SemDragagem2035
+67;GL;3,0;6,0;-3,0;16,0;2SemDragagem2035
+68;GL;2,0;2,0;0,0;16,0;2SemDragagem2035
+69;GL;2,0;2,0;0,0;16,0;2SemDragagem2035
+70;GL;2,0;1,0;1,0;17,0;2SemDragagem2035
+71;GL;2,0;2,0;0,0;17,0;2SemDragagem2035
+72;GL;5,0;5,0;0,0;17,0;2SemDragagem2035
+73;GL;2,0;2,0;0,0;17,0;2SemDragagem2035
+74;GL;5,0;5,0;0,0;17,0;2SemDragagem2035
+75;GL;2,0;1,0;1,0;18,0;2SemDragagem2035
+76;GL;3,0;2,0;1,0;19,0;2SemDragagem2035
+77;GL;1,0;3,0;-2,0;17,0;2SemDragagem2035
+78;GL;1,0;2,0;-1,0;16,0;2SemDragagem2035
+79;GL;4,0;3,0;1,0;17,0;2SemDragagem2035
+80;GL;3,0;2,0;1,0;18,0;2SemDragagem2035
+81;GL;4,0;5,0;-1,0;17,0;2SemDragagem2035
+82;GL;1,0;2,0;-1,0;16,0;2SemDragagem2035
+83;GL;2,0;2,0;0,0;16,0;2SemDragagem2035
+84;GL;4,0;2,0;2,0;18,0;2SemDragagem2035
+85;GL;1,0;1,0;0,0;18,0;2SemDragagem2035
+86;GL;5,0;5,0;0,0;18,0;2SemDragagem2035
+87;GL;3,0;3,0;0,0;18,0;2SemDragagem2035
+88;GL;6,0;4,0;2,0;20,0;2SemDragagem2035
+89;GL;2,0;3,0;-1,0;19,0;2SemDragagem2035
+90;GL;2,0;3,0;-1,0;18,0;2SemDragagem2035
+91;GL;5,0;0,0;5,0;23,0;2SemDragagem2035
+92;GL;2,0;0,0;2,0;25,0;2SemDragagem2035
+1;GSA - E;8,0;7,0;1,0;1,0;2SemDragagem2035
+2;GSA - E;12,0;4,0;8,0;9,0;2SemDragagem2035
+3;GSA - E;4,0;3,0;1,0;10,0;2SemDragagem2035
+4;GSA - E;11,0;4,0;7,0;17,0;2SemDragagem2035
+5;GSA - E;14,0;6,0;8,0;25,0;2SemDragagem2035
+6;GSA - E;10,0;7,0;3,0;28,0;2SemDragagem2035
+7;GSA - E;10,0;5,0;5,0;33,0;2SemDragagem2035
+8;GSA - E;8,0;3,0;5,0;38,0;2SemDragagem2035
+9;GSA - E;10,0;5,0;5,0;43,0;2SemDragagem2035
+10;GSA - E;6,0;6,0;0,0;43,0;2SemDragagem2035
+11;GSA - E;12,0;3,0;9,0;52,0;2SemDragagem2035
+12;GSA - E;13,0;5,0;8,0;60,0;2SemDragagem2035
+13;GSA - E;13,0;6,0;7,0;67,0;2SemDragagem2035
+14;GSA - E;8,0;6,0;2,0;69,0;2SemDragagem2035
+15;GSA - E;7,0;4,0;3,0;72,0;2SemDragagem2035
+16;GSA - E;11,0;5,0;6,0;78,0;2SemDragagem2035
+17;GSA - E;5,0;4,0;1,0;79,0;2SemDragagem2035
+18;GSA - E;12,0;6,0;6,0;85,0;2SemDragagem2035
+19;GSA - E;13,0;1,0;12,0;97,0;2SemDragagem2035
+20;GSA - E;10,0;7,0;3,0;100,0;2SemDragagem2035
+21;GSA - E;9,0;3,0;6,0;106,0;2SemDragagem2035
+22;GSA - E;11,0;6,0;5,0;111,0;2SemDragagem2035
+23;GSA - E;10,0;4,0;6,0;117,0;2SemDragagem2035
+24;GSA - E;6,0;3,0;3,0;120,0;2SemDragagem2035
+25;GSA - E;12,0;4,0;8,0;128,0;2SemDragagem2035
+26;GSA - E;15,0;6,0;9,0;137,0;2SemDragagem2035
+27;GSA - E;11,0;4,0;7,0;144,0;2SemDragagem2035
+28;GSA - E;10,0;5,0;5,0;149,0;2SemDragagem2035
+29;GSA - E;10,0;3,0;7,0;156,0;2SemDragagem2035
+30;GSA - E;9,0;6,0;3,0;159,0;2SemDragagem2035
+31;GSA - E;6,0;3,0;3,0;162,0;2SemDragagem2035
+32;GSA - E;7,0;2,0;5,0;167,0;2SemDragagem2035
+33;GSA - E;5,0;4,0;1,0;168,0;2SemDragagem2035
+34;GSA - E;5,0;4,0;1,0;169,0;2SemDragagem2035
+35;GSA - E;5,0;5,0;0,0;169,0;2SemDragagem2035
+36;GSA - E;6,0;3,0;3,0;172,0;2SemDragagem2035
+37;GSA - E;7,0;5,0;2,0;174,0;2SemDragagem2035
+38;GSA - E;5,0;5,0;0,0;174,0;2SemDragagem2035
+39;GSA - E;7,0;7,0;0,0;174,0;2SemDragagem2035
+40;GSA - E;4,0;3,0;1,0;175,0;2SemDragagem2035
+41;GSA - E;4,0;5,0;-1,0;174,0;2SemDragagem2035
+42;GSA - E;6,0;6,0;0,0;174,0;2SemDragagem2035
+43;GSA - E;8,0;6,0;2,0;176,0;2SemDragagem2035
+44;GSA - E;7,0;3,0;4,0;180,0;2SemDragagem2035
+45;GSA - E;6,0;6,0;0,0;180,0;2SemDragagem2035
+46;GSA - E;6,0;2,0;4,0;184,0;2SemDragagem2035
+47;GSA - E;4,0;4,0;0,0;184,0;2SemDragagem2035
+48;GSA - E;4,0;0,0;4,0;188,0;2SemDragagem2035
+49;GSA - E;3,0;2,0;1,0;189,0;2SemDragagem2035
+50;GSA - E;7,0;9,0;-2,0;187,0;2SemDragagem2035
+51;GSA - E;5,0;2,0;3,0;190,0;2SemDragagem2035
+52;GSA - E;8,0;2,0;6,0;196,0;2SemDragagem2035
+53;GSA - E;5,0;6,0;-1,0;195,0;2SemDragagem2035
+54;GSA - E;6,0;5,0;1,0;196,0;2SemDragagem2035
+55;GSA - E;6,0;4,0;2,0;198,0;2SemDragagem2035
+56;GSA - E;6,0;3,0;3,0;201,0;2SemDragagem2035
+57;GSA - E;6,0;5,0;1,0;202,0;2SemDragagem2035
+58;GSA - E;5,0;3,0;2,0;204,0;2SemDragagem2035
+59;GSA - E;6,0;3,0;3,0;207,0;2SemDragagem2035
+60;GSA - E;6,0;8,0;-2,0;205,0;2SemDragagem2035
+61;GSA - E;7,0;5,0;2,0;207,0;2SemDragagem2035
+62;GSA - E;4,0;3,0;1,0;208,0;2SemDragagem2035
+63;GSA - E;5,0;4,0;1,0;209,0;2SemDragagem2035
+64;GSA - E;6,0;4,0;2,0;211,0;2SemDragagem2035
+65;GSA - E;6,0;7,0;-1,0;210,0;2SemDragagem2035
+66;GSA - E;3,0;3,0;0,0;210,0;2SemDragagem2035
+67;GSA - E;8,0;3,0;5,0;215,0;2SemDragagem2035
+68;GSA - E;10,0;2,0;8,0;223,0;2SemDragagem2035
+69;GSA - E;3,0;3,0;0,0;223,0;2SemDragagem2035
+70;GSA - E;4,0;6,0;-2,0;221,0;2SemDragagem2035
+71;GSA - E;6,0;5,0;1,0;222,0;2SemDragagem2035
+72;GSA - E;4,0;3,0;1,0;223,0;2SemDragagem2035
+73;GSA - E;6,0;8,0;-2,0;221,0;2SemDragagem2035
+74;GSA - E;5,0;6,0;-1,0;220,0;2SemDragagem2035
+75;GSA - E;8,0;1,0;7,0;227,0;2SemDragagem2035
+76;GSA - E;3,0;7,0;-4,0;223,0;2SemDragagem2035
+77;GSA - E;6,0;3,0;3,0;226,0;2SemDragagem2035
+78;GSA - E;10,0;7,0;3,0;229,0;2SemDragagem2035
+79;GSA - E;3,0;1,0;2,0;231,0;2SemDragagem2035
+80;GSA - E;7,0;6,0;1,0;232,0;2SemDragagem2035
+81;GSA - E;5,0;5,0;0,0;232,0;2SemDragagem2035
+82;GSA - E;10,0;3,0;7,0;239,0;2SemDragagem2035
+83;GSA - E;4,0;4,0;0,0;239,0;2SemDragagem2035
+84;GSA - E;4,0;5,0;-1,0;238,0;2SemDragagem2035
+85;GSA - E;12,0;5,0;7,0;245,0;2SemDragagem2035
+86;GSA - E;4,0;4,0;0,0;245,0;2SemDragagem2035
+87;GSA - E;6,0;7,0;-1,0;244,0;2SemDragagem2035
+88;GSA - E;7,0;4,0;3,0;247,0;2SemDragagem2035
+89;GSA - E;11,0;5,0;6,0;253,0;2SemDragagem2035
+90;GSA - E;5,0;2,0;3,0;256,0;2SemDragagem2035
+91;GSA - E;4,0;0,0;4,0;260,0;2SemDragagem2035
+92;GSA - E;9,0;0,0;9,0;269,0;2SemDragagem2035
+1;GSA - I;0,0;0,0;0,0;0,0;2SemDragagem2035
+2;GSA - I;0,0;0,0;0,0;0,0;2SemDragagem2035
+3;GSA - I;0,0;0,0;0,0;0,0;2SemDragagem2035
+4;GSA - I;0,0;0,0;0,0;0,0;2SemDragagem2035
+5;GSA - I;0,0;0,0;0,0;0,0;2SemDragagem2035
+6;GSA - I;0,0;0,0;0,0;0,0;2SemDragagem2035
+7;GSA - I;1,0;1,0;0,0;0,0;2SemDragagem2035
+8;GSA - I;1,0;0,0;1,0;1,0;2SemDragagem2035
+9;GSA - I;0,0;0,0;0,0;1,0;2SemDragagem2035
+10;GSA - I;0,0;0,0;0,0;1,0;2SemDragagem2035
+11;GSA - I;1,0;0,0;1,0;2,0;2SemDragagem2035
+12;GSA - I;1,0;0,0;1,0;3,0;2SemDragagem2035
+13;GSA - I;0,0;1,0;-1,0;2,0;2SemDragagem2035
+14;GSA - I;1,0;0,0;1,0;3,0;2SemDragagem2035
+15;GSA - I;0,0;0,0;0,0;3,0;2SemDragagem2035
+16;GSA - I;0,0;0,0;0,0;3,0;2SemDragagem2035
+17;GSA - I;1,0;0,0;1,0;4,0;2SemDragagem2035
+18;GSA - I;2,0;0,0;2,0;6,0;2SemDragagem2035
+19;GSA - I;0,0;1,0;-1,0;5,0;2SemDragagem2035
+20;GSA - I;0,0;1,0;-1,0;4,0;2SemDragagem2035
+21;GSA - I;1,0;0,0;1,0;5,0;2SemDragagem2035
+22;GSA - I;1,0;0,0;1,0;6,0;2SemDragagem2035
+23;GSA - I;1,0;0,0;1,0;7,0;2SemDragagem2035
+24;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+25;GSA - I;1,0;0,0;1,0;8,0;2SemDragagem2035
+26;GSA - I;0,0;1,0;-1,0;7,0;2SemDragagem2035
+27;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+28;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+29;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+30;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+31;GSA - I;1,0;1,0;0,0;7,0;2SemDragagem2035
+32;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+33;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+34;GSA - I;1,0;0,0;1,0;8,0;2SemDragagem2035
+35;GSA - I;1,0;0,0;1,0;9,0;2SemDragagem2035
+36;GSA - I;0,0;0,0;0,0;9,0;2SemDragagem2035
+37;GSA - I;0,0;0,0;0,0;9,0;2SemDragagem2035
+38;GSA - I;0,0;1,0;-1,0;8,0;2SemDragagem2035
+39;GSA - I;0,0;0,0;0,0;8,0;2SemDragagem2035
+40;GSA - I;1,0;0,0;1,0;9,0;2SemDragagem2035
+41;GSA - I;0,0;0,0;0,0;9,0;2SemDragagem2035
+42;GSA - I;0,0;0,0;0,0;9,0;2SemDragagem2035
+43;GSA - I;0,0;0,0;0,0;9,0;2SemDragagem2035
+44;GSA - I;0,0;1,0;-1,0;8,0;2SemDragagem2035
+45;GSA - I;0,0;0,0;0,0;8,0;2SemDragagem2035
+46;GSA - I;0,0;0,0;0,0;8,0;2SemDragagem2035
+47;GSA - I;0,0;0,0;0,0;8,0;2SemDragagem2035
+48;GSA - I;0,0;0,0;0,0;8,0;2SemDragagem2035
+49;GSA - I;1,0;0,0;1,0;9,0;2SemDragagem2035
+50;GSA - I;0,0;2,0;-2,0;7,0;2SemDragagem2035
+51;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+52;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+53;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+54;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+55;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+56;GSA - I;1,0;1,0;0,0;7,0;2SemDragagem2035
+57;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+58;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+59;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+60;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+61;GSA - I;1,0;0,0;1,0;8,0;2SemDragagem2035
+62;GSA - I;0,0;1,0;-1,0;7,0;2SemDragagem2035
+63;GSA - I;0,0;1,0;-1,0;6,0;2SemDragagem2035
+64;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+65;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+66;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+67;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+68;GSA - I;0,0;1,0;-1,0;5,0;2SemDragagem2035
+69;GSA - I;0,0;0,0;0,0;5,0;2SemDragagem2035
+70;GSA - I;0,0;0,0;0,0;5,0;2SemDragagem2035
+71;GSA - I;0,0;0,0;0,0;5,0;2SemDragagem2035
+72;GSA - I;1,0;0,0;1,0;6,0;2SemDragagem2035
+73;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+74;GSA - I;1,0;1,0;0,0;6,0;2SemDragagem2035
+75;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+76;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+77;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+78;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+79;GSA - I;1,0;0,0;1,0;7,0;2SemDragagem2035
+80;GSA - I;0,0;1,0;-1,0;6,0;2SemDragagem2035
+81;GSA - I;1,0;0,0;1,0;7,0;2SemDragagem2035
+82;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+83;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+84;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+85;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+86;GSA - I;1,0;1,0;0,0;7,0;2SemDragagem2035
+87;GSA - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+88;GSA - I;0,0;1,0;-1,0;6,0;2SemDragagem2035
+89;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+90;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+91;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+92;GSA - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+1;GSM - I;0,0;0,0;0,0;0,0;2SemDragagem2035
+2;GSM - I;2,0;2,0;0,0;0,0;2SemDragagem2035
+3;GSM - I;2,0;0,0;2,0;2,0;2SemDragagem2035
+4;GSM - I;3,0;3,0;0,0;2,0;2SemDragagem2035
+5;GSM - I;1,0;1,0;0,0;2,0;2SemDragagem2035
+6;GSM - I;3,0;0,0;3,0;5,0;2SemDragagem2035
+7;GSM - I;3,0;1,0;2,0;7,0;2SemDragagem2035
+8;GSM - I;2,0;1,0;1,0;8,0;2SemDragagem2035
+9;GSM - I;2,0;3,0;-1,0;7,0;2SemDragagem2035
+10;GSM - I;1,0;0,0;1,0;8,0;2SemDragagem2035
+11;GSM - I;1,0;2,0;-1,0;7,0;2SemDragagem2035
+12;GSM - I;1,0;2,0;-1,0;6,0;2SemDragagem2035
+13;GSM - I;1,0;0,0;1,0;7,0;2SemDragagem2035
+14;GSM - I;3,0;2,0;1,0;8,0;2SemDragagem2035
+15;GSM - I;1,0;0,0;1,0;9,0;2SemDragagem2035
+16;GSM - I;0,0;2,0;-2,0;7,0;2SemDragagem2035
+17;GSM - I;1,0;2,0;-1,0;6,0;2SemDragagem2035
+18;GSM - I;3,0;0,0;3,0;9,0;2SemDragagem2035
+19;GSM - I;0,0;1,0;-1,0;8,0;2SemDragagem2035
+20;GSM - I;3,0;2,0;1,0;9,0;2SemDragagem2035
+21;GSM - I;1,0;1,0;0,0;9,0;2SemDragagem2035
+22;GSM - I;0,0;1,0;-1,0;8,0;2SemDragagem2035
+23;GSM - I;1,0;2,0;-1,0;7,0;2SemDragagem2035
+24;GSM - I;1,0;0,0;1,0;8,0;2SemDragagem2035
+25;GSM - I;2,0;3,0;-1,0;7,0;2SemDragagem2035
+26;GSM - I;1,0;0,0;1,0;8,0;2SemDragagem2035
+27;GSM - I;3,0;1,0;2,0;10,0;2SemDragagem2035
+28;GSM - I;4,0;1,0;3,0;13,0;2SemDragagem2035
+29;GSM - I;0,0;2,0;-2,0;11,0;2SemDragagem2035
+30;GSM - I;2,0;2,0;0,0;11,0;2SemDragagem2035
+31;GSM - I;1,0;0,0;1,0;12,0;2SemDragagem2035
+32;GSM - I;1,0;1,0;0,0;12,0;2SemDragagem2035
+33;GSM - I;0,0;2,0;-2,0;10,0;2SemDragagem2035
+34;GSM - I;1,0;1,0;0,0;10,0;2SemDragagem2035
+35;GSM - I;1,0;2,0;-1,0;9,0;2SemDragagem2035
+36;GSM - I;0,0;0,0;0,0;9,0;2SemDragagem2035
+37;GSM - I;2,0;1,0;1,0;10,0;2SemDragagem2035
+38;GSM - I;0,0;2,0;-2,0;8,0;2SemDragagem2035
+39;GSM - I;2,0;2,0;0,0;8,0;2SemDragagem2035
+40;GSM - I;0,0;0,0;0,0;8,0;2SemDragagem2035
+41;GSM - I;1,0;0,0;1,0;9,0;2SemDragagem2035
+42;GSM - I;0,0;1,0;-1,0;8,0;2SemDragagem2035
+43;GSM - I;1,0;2,0;-1,0;7,0;2SemDragagem2035
+44;GSM - I;2,0;2,0;0,0;7,0;2SemDragagem2035
+45;GSM - I;0,0;1,0;-1,0;6,0;2SemDragagem2035
+46;GSM - I;2,0;0,0;2,0;8,0;2SemDragagem2035
+47;GSM - I;0,0;0,0;0,0;8,0;2SemDragagem2035
+48;GSM - I;2,0;0,0;2,0;10,0;2SemDragagem2035
+49;GSM - I;2,0;2,0;0,0;10,0;2SemDragagem2035
+50;GSM - I;0,0;2,0;-2,0;8,0;2SemDragagem2035
+51;GSM - I;1,0;0,0;1,0;9,0;2SemDragagem2035
+52;GSM - I;0,0;1,0;-1,0;8,0;2SemDragagem2035
+53;GSM - I;1,0;1,0;0,0;8,0;2SemDragagem2035
+54;GSM - I;0,0;0,0;0,0;8,0;2SemDragagem2035
+55;GSM - I;1,0;2,0;-1,0;7,0;2SemDragagem2035
+56;GSM - I;0,0;2,0;-2,0;5,0;2SemDragagem2035
+57;GSM - I;1,0;1,0;0,0;5,0;2SemDragagem2035
+58;GSM - I;2,0;0,0;2,0;7,0;2SemDragagem2035
+59;GSM - I;0,0;1,0;-1,0;6,0;2SemDragagem2035
+60;GSM - I;1,0;1,0;0,0;6,0;2SemDragagem2035
+61;GSM - I;0,0;3,0;-3,0;3,0;2SemDragagem2035
+62;GSM - I;0,0;0,0;0,0;3,0;2SemDragagem2035
+63;GSM - I;0,0;0,0;0,0;3,0;2SemDragagem2035
+64;GSM - I;2,0;1,0;1,0;4,0;2SemDragagem2035
+65;GSM - I;0,0;1,0;-1,0;3,0;2SemDragagem2035
+66;GSM - I;5,0;0,0;5,0;8,0;2SemDragagem2035
+67;GSM - I;1,0;3,0;-2,0;6,0;2SemDragagem2035
+68;GSM - I;1,0;1,0;0,0;6,0;2SemDragagem2035
+69;GSM - I;1,0;1,0;0,0;6,0;2SemDragagem2035
+70;GSM - I;1,0;1,0;0,0;6,0;2SemDragagem2035
+71;GSM - I;0,0;1,0;-1,0;5,0;2SemDragagem2035
+72;GSM - I;1,0;1,0;0,0;5,0;2SemDragagem2035
+73;GSM - I;2,0;0,0;2,0;7,0;2SemDragagem2035
+74;GSM - I;1,0;3,0;-2,0;5,0;2SemDragagem2035
+75;GSM - I;0,0;0,0;0,0;5,0;2SemDragagem2035
+76;GSM - I;1,0;0,0;1,0;6,0;2SemDragagem2035
+77;GSM - I;1,0;2,0;-1,0;5,0;2SemDragagem2035
+78;GSM - I;0,0;1,0;-1,0;4,0;2SemDragagem2035
+79;GSM - I;2,0;1,0;1,0;5,0;2SemDragagem2035
+80;GSM - I;2,0;1,0;1,0;6,0;2SemDragagem2035
+81;GSM - I;2,0;1,0;1,0;7,0;2SemDragagem2035
+82;GSM - I;0,0;0,0;0,0;7,0;2SemDragagem2035
+83;GSM - I;1,0;3,0;-2,0;5,0;2SemDragagem2035
+84;GSM - I;0,0;1,0;-1,0;4,0;2SemDragagem2035
+85;GSM - I;0,0;0,0;0,0;4,0;2SemDragagem2035
+86;GSM - I;2,0;0,0;2,0;6,0;2SemDragagem2035
+87;GSM - I;2,0;2,0;0,0;6,0;2SemDragagem2035
+88;GSM - I;2,0;2,0;0,0;6,0;2SemDragagem2035
+89;GSM - I;0,0;0,0;0,0;6,0;2SemDragagem2035
+90;GSM - I;0,0;1,0;-1,0;5,0;2SemDragagem2035
+91;GSM - I;0,0;0,0;0,0;5,0;2SemDragagem2035
+92;GSM - I;0,0;0,0;0,0;5,0;2SemDragagem2035
+1;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+2;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+3;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+4;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+5;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+6;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+7;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+8;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+9;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+10;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+11;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+12;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+13;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+14;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+15;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+16;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+17;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+18;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+19;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+20;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+21;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+22;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+23;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+24;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+25;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+26;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+27;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+28;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+29;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+30;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+31;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+32;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+33;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+34;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+35;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+36;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+37;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+38;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+39;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+40;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+41;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+42;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+43;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+44;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+45;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+46;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+47;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+48;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+49;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+50;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+51;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+52;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+53;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+54;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+55;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+56;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+57;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+58;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+59;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+60;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+61;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+62;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+63;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+64;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+65;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+66;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+67;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+68;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+69;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+70;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+71;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+72;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+73;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+74;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+75;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+76;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+77;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+78;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+79;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+80;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+81;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+82;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+83;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+84;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+85;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+86;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+87;PASSAGEIROS;1,0;1,0;0,0;0,0;2SemDragagem2035
+88;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+89;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+90;PASSAGEIROS;1,0;1,0;0,0;0,0;2SemDragagem2035
+91;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+92;PASSAGEIROS;0,0;0,0;0,0;0,0;2SemDragagem2035
+1;RORO;2,0;1,0;1,0;1,0;2SemDragagem2035
+2;RORO;0,0;1,0;-1,0;0,0;2SemDragagem2035
+3;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+4;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+5;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+6;RORO;2,0;1,0;1,0;1,0;2SemDragagem2035
+7;RORO;2,0;1,0;1,0;2,0;2SemDragagem2035
+8;RORO;0,0;0,0;0,0;2,0;2SemDragagem2035
+9;RORO;1,0;1,0;0,0;2,0;2SemDragagem2035
+10;RORO;1,0;1,0;0,0;2,0;2SemDragagem2035
+11;RORO;1,0;1,0;0,0;2,0;2SemDragagem2035
+12;RORO;1,0;1,0;0,0;2,0;2SemDragagem2035
+13;RORO;1,0;1,0;0,0;2,0;2SemDragagem2035
+14;RORO;1,0;1,0;0,0;2,0;2SemDragagem2035
+15;RORO;1,0;0,0;1,0;3,0;2SemDragagem2035
+16;RORO;0,0;1,0;-1,0;2,0;2SemDragagem2035
+17;RORO;0,0;1,0;-1,0;1,0;2SemDragagem2035
+18;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+19;RORO;1,0;0,0;1,0;2,0;2SemDragagem2035
+20;RORO;2,0;1,0;1,0;3,0;2SemDragagem2035
+21;RORO;1,0;1,0;0,0;3,0;2SemDragagem2035
+22;RORO;1,0;1,0;0,0;3,0;2SemDragagem2035
+23;RORO;0,0;1,0;-1,0;2,0;2SemDragagem2035
+24;RORO;0,0;0,0;0,0;2,0;2SemDragagem2035
+25;RORO;0,0;1,0;-1,0;1,0;2SemDragagem2035
+26;RORO;0,0;1,0;-1,0;0,0;2SemDragagem2035
+27;RORO;2,0;1,0;1,0;1,0;2SemDragagem2035
+28;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+29;RORO;1,0;0,0;1,0;2,0;2SemDragagem2035
+30;RORO;1,0;1,0;0,0;2,0;2SemDragagem2035
+31;RORO;0,0;1,0;-1,0;1,0;2SemDragagem2035
+32;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+33;RORO;0,0;0,0;0,0;1,0;2SemDragagem2035
+34;RORO;0,0;1,0;-1,0;0,0;2SemDragagem2035
+35;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+36;RORO;1,0;0,0;1,0;1,0;2SemDragagem2035
+37;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+38;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+39;RORO;2,0;0,0;2,0;3,0;2SemDragagem2035
+40;RORO;0,0;1,0;-1,0;2,0;2SemDragagem2035
+41;RORO;1,0;1,0;0,0;2,0;2SemDragagem2035
+42;RORO;0,0;1,0;-1,0;1,0;2SemDragagem2035
+43;RORO;0,0;0,0;0,0;1,0;2SemDragagem2035
+44;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+45;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+46;RORO;2,0;1,0;1,0;2,0;2SemDragagem2035
+47;RORO;0,0;0,0;0,0;2,0;2SemDragagem2035
+48;RORO;1,0;0,0;1,0;3,0;2SemDragagem2035
+49;RORO;1,0;1,0;0,0;3,0;2SemDragagem2035
+50;RORO;0,0;1,0;-1,0;2,0;2SemDragagem2035
+51;RORO;1,0;0,0;1,0;3,0;2SemDragagem2035
+52;RORO;0,0;1,0;-1,0;2,0;2SemDragagem2035
+53;RORO;2,0;1,0;1,0;3,0;2SemDragagem2035
+54;RORO;0,0;1,0;-1,0;2,0;2SemDragagem2035
+55;RORO;1,0;0,0;1,0;3,0;2SemDragagem2035
+56;RORO;0,0;1,0;-1,0;2,0;2SemDragagem2035
+57;RORO;0,0;1,0;-1,0;1,0;2SemDragagem2035
+58;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+59;RORO;0,0;0,0;0,0;1,0;2SemDragagem2035
+60;RORO;2,0;1,0;1,0;2,0;2SemDragagem2035
+61;RORO;0,0;1,0;-1,0;1,0;2SemDragagem2035
+62;RORO;0,0;1,0;-1,0;0,0;2SemDragagem2035
+63;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+64;RORO;2,0;1,0;1,0;1,0;2SemDragagem2035
+65;RORO;0,0;0,0;0,0;1,0;2SemDragagem2035
+66;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+67;RORO;0,0;1,0;-1,0;0,0;2SemDragagem2035
+68;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+69;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+70;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+71;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+72;RORO;1,0;0,0;1,0;1,0;2SemDragagem2035
+73;RORO;0,0;1,0;-1,0;0,0;2SemDragagem2035
+74;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+75;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+76;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+77;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+78;RORO;2,0;1,0;1,0;1,0;2SemDragagem2035
+79;RORO;0,0;0,0;0,0;1,0;2SemDragagem2035
+80;RORO;0,0;1,0;-1,0;0,0;2SemDragagem2035
+81;RORO;1,0;0,0;1,0;1,0;2SemDragagem2035
+82;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+83;RORO;1,0;1,0;0,0;1,0;2SemDragagem2035
+84;RORO;0,0;1,0;-1,0;0,0;2SemDragagem2035
+85;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+86;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+87;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+88;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+89;RORO;1,0;1,0;0,0;0,0;2SemDragagem2035
+90;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+91;RORO;0,0;0,0;0,0;0,0;2SemDragagem2035
+92;RORO;2,0;0,0;2,0;2,0;2SemDragagem2035

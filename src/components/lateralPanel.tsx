@@ -27,6 +27,8 @@ type Props = {
   labelMode: "on" | "off" | "simplified";
   onLabelModeChange: (mode: "on" | "off" | "simplified") => void;
   onClosedSegment?: () => void;
+
+  onChangeScenario: () => void; 
 };
 
 export function SidePanelTabs({
@@ -36,7 +38,7 @@ export function SidePanelTabs({
   kpis,
   labelMode,
   onLabelModeChange,
-
+  onChangeScenario,
   onClosedSegment,
 }: Props) {
   return (

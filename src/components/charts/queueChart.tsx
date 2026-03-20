@@ -58,19 +58,19 @@ export function QueueAreaChart({
             <div className="text-xl font-semibold">{currentQueue}</div>
           </div>
 
-          <div>
+          {/* <div>
             <div className="text-muted-foreground">Tempo médio</div>
             <div className="text-xl font-semibold">
               {avgWaitTime.toFixed(1)} h
             </div>
-          </div>
-
+          </div> */}
+{/* 
           <div>
             <div className="text-muted-foreground">Tempo máximo</div>
             <div className="text-xl font-semibold">
               {maxWaitTime.toFixed(1)} h
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* ==== CHART ====

@@ -20,11 +20,17 @@ import { useEnvironment } from "../animation/services/useEnvironment";
 import { SidePanelTabs } from "../components/lateralPanel";
 import { useKPIS } from "../animation/services/useKPIS";
 import { VesselLegend } from "../components/map/colorTips";
+import ScenarioPanel from "../components/scenario_panel";
+import InicialConfig from "../components/inicial_panel";
+import { ScenarioConfig } from "../animation/entities/scenario_infos";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!;
 
 
 export default function Home() {
+
+  const [scenario, setScenario] = useState<ScenarioConfig | null>(null);
+
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const simRef = useRef<SimulationController | null>(null);
   const vesselPositions = useRef<Map<number, VesselState>>(new Map());
@@ -41,6 +47,8 @@ export default function Home() {
   const [labelMode, setLabelMode] = useState<"on" | "off" | "simplified">("on");
   const labelModeRef = useRef<"on" | "off" | "simplified">("on");
 
+
+  
   type EnvKey =
     | "tideHeight"
     | "current"
@@ -85,12 +93,16 @@ export default function Home() {
 
   useEffect(() => {
     async function loadDetails() {
-      const details = await loadVesselDetailFromCSV();
+      if(!scenario)
+        return
+      const current_scenario = scenario;
+
+      const details = await loadVesselDetailFromCSV(current_scenario.id);
       vesselDetailsRef.current = details;
     }
 
     loadDetails();
-  }, []);
+  }, [scenario]);
 
   // ===============================
   // SIMULATION
@@ -181,8 +193,17 @@ export default function Home() {
   }, [labelMode]);
 
   useEffect(() => {
+    
+    if (!scenario) return; // BLOQUEIA tudo
+    const currentScenario = scenario;
+
+    simRef.current?.pause();
+    vesselPositions.current.clear();
+    
     async function setup() {
-      const sim = new SimulationController();
+      console.log("Cenário:", currentScenario.name);
+
+      const sim = new SimulationController(currentScenario);
       await sim.init();
       simRef.current = sim;
 
@@ -209,7 +230,7 @@ export default function Home() {
     }
 
     setup();
-  }, []);
+  }, [scenario]);
 
   // ===============================
   // LOAD ENVIRONMENT DATAS
@@ -236,31 +257,19 @@ export default function Home() {
     loadAllEnvs();
   }, [simStart, simEnd]);
 
-  // ===============================
-  // BUTTONS CONTROL FUNCTIONS
-  // ===============================
-
-  const increaseSpeed = () => {
-    setSpeed((prev) => {
-      const next = Math.min(prev + 0.5, 20);
-      simRef.current?.setSpeed(next);
-      return next;
-    });
-  };
-
-  const decreaseSpeed = () => {
-    setSpeed((prev) => {
-      const next = Math.max(prev - 0.5, 0.5);
-      simRef.current?.setSpeed(next);
-      return next;
-    });
-  };
 
   // ===============================
   // UI
   // ===============================
 
   return (
+
+    <>
+    
+    {!scenario && (
+    <InicialConfig onSelectScenario={setScenario} />
+    )}
+
     <div className="map-wrapper">
       <MapView
         onMapReady={(map) => {
@@ -273,6 +282,10 @@ export default function Home() {
       />
       <VesselLegend title="Vessel Market" />
 
+      {scenario && (
+        <ScenarioPanel name={scenario.name} />
+      )}      
+
       <SidePanelTabs
         selectedVessel={
           vesselDetailsRef.current?.get(Number(selectedVesselId)) ?? null
@@ -283,6 +296,11 @@ export default function Home() {
         kpis={kpis}
         labelMode={labelMode}
         onLabelModeChange={setLabelMode}
+        onChangeScenario={() => {
+          simRef.current?.pause();
+          simRef.current = null;
+          setScenario(null);  
+        }}
       />
 
       <EnvironmentPanel
@@ -298,8 +316,10 @@ export default function Home() {
       <div className="controls-top">
         <SpeedControl
           speed={speed}
-          onIncrease={increaseSpeed}
-          onDecrease={decreaseSpeed}
+          onChange={(value) => {
+            setSpeed(value);
+            simRef.current?.setSpeed(value);
+          }}
         />
       </div>
 
@@ -320,5 +340,6 @@ export default function Home() {
         }}
       />
     </div>
+    </>
   );
 }

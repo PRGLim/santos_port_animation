@@ -3,8 +3,8 @@ import { ExecutionType, VesselRouteExecution } from "../../entities/VesselRouteE
 import { Route } from "../../entities/Route"
 import { loadManeuverLog } from "./loadManeuverLogFromCsv"
 import { loadDefManeuvers } from "../Defs/loadManeuverDefFromCsv"
-import { END_MINUTES, SCENARIO, START_MINUTES } from "../../core/constants"
 import { Console } from "console"
+import { ScenarioConfig } from "../../entities/scenario_infos"
 
 type ShipLogRow = {
   ARRIVAL_ID: string
@@ -15,10 +15,11 @@ type ShipLogRow = {
 }
 
 export async function loadShipLogsFromCSV(
+  scenario: ScenarioConfig,
   routes: Map<number, Route>
 
 ): Promise<VesselRouteExecution[]> {
-  const file = "/data/Scenarios/" + SCENARIO + "/animation_movements.csv"
+  const file = "/data/Scenarios/" + scenario.id + "/animation_movements.csv"
   const res = await fetch(file)
   const text = await res.text()
 
@@ -29,7 +30,7 @@ export async function loadShipLogsFromCSV(
   })
 
   const executions: VesselRouteExecution[] = []
-  const maneuverLog = await loadManeuverLog()
+  const maneuverLog = await loadManeuverLog(scenario.id)
   const maneuverDef = await loadDefManeuvers()
 
 const vesselMap = new Map<number, ShipLogRow[]>()
@@ -44,6 +45,12 @@ const vesselMap = new Map<number, ShipLogRow[]>()
 
     vesselMap.get(vesselId)!.push(row)
   })
+
+  const START_MINUTES =
+    (scenario.startFilterDate.getTime() - scenario.endFilterDate.getTime()) / 60000
+  
+  const END_MINUTES =
+    (scenario.endFilterDate.getTime() - scenario.startFilterDate.getTime()) / 60000
 
   const startLimit = START_MINUTES
   const endLimit = END_MINUTES
@@ -74,7 +81,7 @@ const vesselMap = new Map<number, ShipLogRow[]>()
       enterMinute <= endLimit
 
     if(intersects)
-      console.log(startLimit, endLimit, enterMinute, exitMinute)
+      // console.log(startLimit, endLimit, enterMinute, exitMinute)
 
     if (!intersects) {
       // console.log("!intersects")
@@ -121,6 +128,5 @@ const vesselMap = new Map<number, ShipLogRow[]>()
 
   executions.sort((a, b) => a.startTime - b.startTime)
 
-  console.log(executions)
   return executions
 }
