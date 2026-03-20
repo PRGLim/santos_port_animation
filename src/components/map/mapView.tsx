@@ -1,54 +1,59 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from "react"
-import mapboxgl from "mapbox-gl"
-import "mapbox-gl/dist/mapbox-gl.css"
-import { MAP_STYLE } from "@/src/animation/core/constants"
-import { VESSEL_MARKET_COLORS } from "@/src/animation/types/colorTips"
+import { useEffect, useRef } from "react";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import { MAP_STYLE } from "@/src/animation/core/constants";
+import { VESSEL_MARKET_COLORS } from "@/src/animation/types/colorTips";
 
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!
-
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!;
 
 const vesselMarketColorExpression = () => {
-  const entries = Object.entries(VESSEL_MARKET_COLORS)
-    .filter(([market]) => market !== "Unknown")
+  const entries = Object.entries(VESSEL_MARKET_COLORS).filter(
+    ([market]) => market !== "Unknown",
+  );
 
   // fallback seguro se ainda não houver markets carregados
   if (entries.length === 0) {
-    return "#95a5a6"
+    return "#95a5a6";
   }
 
   return [
     "match",
     ["get", "market"],
     ...entries.flatMap(([market, color]) => [market, color]),
-    VESSEL_MARKET_COLORS.Unknown
-  ] as mapboxgl.Expression
-}
+    VESSEL_MARKET_COLORS.Unknown,
+  ] as mapboxgl.Expression;
+};
 type Props = {
-  onMapReady?: (map: mapboxgl.Map) => void
-  onVesselSelect?: (id: number) => void
-  onSegSelect?: (id: string) => void
-  selectedVesselId?: number | null
-  selectedSegId?: string | null
-}
+  onMapReady?: (map: mapboxgl.Map) => void;
+  onVesselSelect?: (id: number) => void;
+  onSegSelect?: (id: string) => void;
+  selectedVesselId?: number | null;
+  selectedSegId?: string | null;
+};
 
-export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selectedSegId, selectedVesselId }: Props) {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-  const mapRef = useRef<mapboxgl.Map | null>(null)
+export default function MapView({
+  onMapReady,
+  onVesselSelect,
+  onSegSelect,
+  selectedSegId,
+  selectedVesselId,
+}: Props) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const mapRef = useRef<mapboxgl.Map | null>(null);
 
-  
   useEffect(() => {
-    if (!containerRef.current || mapRef.current) return
+    if (!containerRef.current || mapRef.current) return;
 
     const map = new mapboxgl.Map({
       container: containerRef.current,
       style: MAP_STYLE,
       center: [-46.33, -23.95],
       zoom: 12,
-    })
+    });
 
-    mapRef.current = map
+    mapRef.current = map;
 
     // When loaded
     map.on("load", () => {
@@ -57,53 +62,51 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
       map.addSource("canal", {
         type: "geojson",
         data: "/data/Polygon/canal.geojson",
-      })
+      });
 
       map.addSource("vessel", {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] },
-      })
+      });
 
       map.addSource("vessel-label", {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] },
-      })
-
+      });
 
       // ===== Layers =====
 
-    console.log(vesselMarketColorExpression())
+      console.log(vesselMarketColorExpression());
 
       // vessel
       map.loadImage("/image/vessel6.png", (err, image) => {
-        if (err || !image) return
+        if (err || !image) return;
 
         if (!map.hasImage("vessel-icon")) {
           map.addImage("vessel-icon", image, {
-            sdf: true
-          })
+            sdf: true,
+          });
         }
 
-      map.addLayer({
-        id: "vessel-layer",
-        type: "symbol",
-        source: "vessel",
-        layout: {
-          "icon-image": "vessel-icon",
-          "icon-size": 0.1,
-          "icon-rotate": ["get", "heading"],
-          "icon-rotation-alignment": "map",
-          "icon-allow-overlap": true
-        },
-        paint: {
-          "icon-color": vesselMarketColorExpression(),
-          "icon-opacity": 1,
-          "icon-halo-color": "#e74c3c",
-          "icon-halo-width": 0
-        }
-      })
-
-      })
+        map.addLayer({
+          id: "vessel-layer",
+          type: "symbol",
+          source: "vessel",
+          layout: {
+            "icon-image": "vessel-icon",
+            "icon-size": 0.1,
+            "icon-rotate": ["get", "heading"],
+            "icon-rotation-alignment": "map",
+            "icon-allow-overlap": true,
+          },
+          paint: {
+            "icon-color": vesselMarketColorExpression(),
+            "icon-opacity": 1,
+            "icon-halo-color": "#e74c3c",
+            "icon-halo-width": 0,
+          },
+        });
+      });
 
       // label
       map.addLayer({
@@ -112,10 +115,18 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
         source: "vessel-label",
         layout: {
           "text-field": [
-            "format",
-            ["get", "title"], { "font-scale": 1 },
-            "\n", {},
-            ["get", "subtitle"], { "font-scale": 0.85 },
+            "case",
+            ["==", ["coalesce", ["get", "subtitle"], ""], ""],
+            ["get", "title"],
+            [
+              "format",
+              ["get", "title"],
+              { "font-scale": 1 },
+              "\n",
+              {},
+              ["get", "subtitle"],
+              { "font-scale": 0.85 },
+            ],
           ],
           "text-size": 12,
           "text-offset": [0, 1.6],
@@ -128,42 +139,40 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
           "text-halo-width": 20,
           "text-halo-blur": 0.3,
         },
-      })
+      });
 
       // segments
       map.addLayer(
-      {
-        id: "canal-polygon",
-        type: "fill",
-        source: "canal",
-        paint: {
-          "fill-color": "#0095FF",
-          "fill-opacity": 0.2,
-        },
-      },
-      "waterway-label" // camada existente
-      )
-
-      // VESSEL CHANGE COLOR WHEN SELECTED 
-      map.addLayer({
-          id: "vessel-selected",
-          type: "symbol",
-          source: "vessel",
-          filter: ["==", ["get", "id"], -1],
-          layout: {
-            "icon-image": "vessel-icon",
-            "icon-size": 0.02,
-            "icon-rotate": ["get", "heading"],
-            
-          },
+        {
+          id: "canal-polygon",
+          type: "fill",
+          source: "canal",
           paint: {
-            "icon-color": "#000000",
-            "icon-opacity": 0.3
-          }
+            "fill-color": "#0095FF",
+            "fill-opacity": 0.2,
+          },
+        },
+        "waterway-label", // camada existente
+      );
 
-      })
-      
-      // CHANGE SEGMENT COLOR WHEN SELECTED 
+      // VESSEL CHANGE COLOR WHEN SELECTED
+      map.addLayer({
+        id: "vessel-selected",
+        type: "symbol",
+        source: "vessel",
+        filter: ["==", ["get", "id"], -1],
+        layout: {
+          "icon-image": "vessel-icon",
+          "icon-size": 0.02,
+          "icon-rotate": ["get", "heading"],
+        },
+        paint: {
+          "icon-color": "#000000",
+          "icon-opacity": 0.3,
+        },
+      });
+
+      // CHANGE SEGMENT COLOR WHEN SELECTED
       map.addLayer({
         id: "canal-selected",
         type: "fill",
@@ -172,93 +181,88 @@ export default function MapView({ onMapReady, onVesselSelect, onSegSelect, selec
           "fill-color": "#FF5722",
           "fill-opacity": 0.7,
         },
-      })
+      });
 
-    onMapReady?.(map)
-    })
-
+      onMapReady?.(map);
+    });
 
     map.on("mouseenter", "vessel-layer", () => {
-      map.getCanvas().style.cursor = "pointer"
-    })
+      map.getCanvas().style.cursor = "pointer";
+    });
 
     map.on("mouseleave", "vessel-layer", () => {
-      map.getCanvas().style.cursor = ""
-    })
+      map.getCanvas().style.cursor = "";
+    });
 
     map.on("mouseenter", "canal-polygon", () => {
-      map.getCanvas().style.cursor = "pointer"
-    })
+      map.getCanvas().style.cursor = "pointer";
+    });
 
     map.on("mouseleave", "canal-polygon", () => {
-      map.getCanvas().style.cursor = ""
-    })
+      map.getCanvas().style.cursor = "";
+    });
 
     // When segment clicked
     map.on("click", "canal-polygon", (s) => {
-      const id = s.features?.[0]?.properties?.id
-      onSegSelect?.(id)
-      console.log(id)
-    })
+      const id = s.features?.[0]?.properties?.id;
+      onSegSelect?.(id);
+      console.log(id);
+    });
 
     // When vessel clicked
     map.on("click", "vessel-layer", (e) => {
-      const id = Number(e.features?.[0]?.properties?.id)
-      onVesselSelect?.(id)
-    })
-
-
-  }, [])
+      const id = Number(e.features?.[0]?.properties?.id);
+      onVesselSelect?.(id);
+    });
+  }, []);
 
   // VESSEL
   useEffect(() => {
-    const map = mapRef.current
-    if (!map) return
+    const map = mapRef.current;
+    if (!map) return;
 
-    // função  
+    // função
     const updateSelectedVessel = () => {
-      if (!map.getLayer("vessel-selected")) return
+      if (!map.getLayer("vessel-selected")) return;
 
       map.setFilter("vessel-selected", [
         "==",
         ["get", "id"],
         selectedVesselId ?? -1,
-      ])
-    }
+      ]);
+    };
 
     // se o style já carregou
     if (map.isStyleLoaded()) {
-      updateSelectedVessel()
+      updateSelectedVessel();
     } else {
       // espera carregar
-      map.once("load", updateSelectedVessel)
+      map.once("load", updateSelectedVessel);
     }
-  }, [selectedVesselId])
+  }, [selectedVesselId]);
 
   // SEGMENT
   useEffect(() => {
-    const map = mapRef.current
-    if (!map) return
+    const map = mapRef.current;
+    if (!map) return;
 
     const update = () => {
-      if (!map.getLayer("canal-selected")) return
+      if (!map.getLayer("canal-selected")) return;
 
       map.setFilter("canal-selected", [
         "==",
         ["get", "id"],
         selectedSegId ?? -1,
-      ])
-    }
+      ]);
+    };
 
-    if (map.isStyleLoaded()) update()
-    map.on("load", update)
+    if (map.isStyleLoaded()) update();
+    map.on("load", update);
 
     return () => {
-      map.off("load", update)
-    }
-  }, [selectedSegId])
+      map.off("load", update);
+    };
+  }, [selectedSegId]);
 
-
-
-  return <div ref={containerRef} className="map-container" />
+  return <div ref={containerRef} className="map-container" />;
 }
